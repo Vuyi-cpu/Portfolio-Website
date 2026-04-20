@@ -7,7 +7,7 @@
   align-items: center;
   position: relative;
   padding: 22px 60px;
-  background: #000;
+  background: #0c0c0c;
 }
 
 /* Logo left */
@@ -65,7 +65,7 @@
  FOOTER STYLES
 =============================== */
 .footer {
-  background: #000;
+  background: #0c0c0c;
   padding: 40px 60px;
   border-top: 1px solid #222; /* Subtle top border if desired */
 }

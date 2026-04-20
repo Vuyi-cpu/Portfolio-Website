@@ -26,6 +26,7 @@ section {
 =============================== */
 .skills {
   text-align: center;
+   background-color: #0f0f0f;
 }
 
 .skills-container {
@@ -46,6 +47,8 @@ section {
 =============================== */
 .projects {
   text-align: center;
+   background-color:  #111;
+  
 }
 
 .projects p{
@@ -60,6 +63,7 @@ text-align:center;
   gap: 40px;
   margin-top: 40px;
   flex-wrap: wrap;
+ 
 }
 
 /* ===============================
@@ -130,3 +134,6 @@ text-align:center;
   justify-content: center;
   margin-top: 40px;
 }
+
+
+
