@@ -63,7 +63,7 @@ function loadFooter() {
         </div>
 
         <div class="footer-section footer-right">
-          <span class="footer-value">Copyright 2026 Vuyisa Msipa</span>
+          <span class="footer-value">@ 2026 Vuyisa Msipa. Designed and built by me</span>
         </div>
 
       </div>
