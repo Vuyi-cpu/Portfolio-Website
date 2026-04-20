@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Form Submitted:", { name, email, message });
         alert(`Thank you, ${name}! Your message has been sent successfully.`);
         contactForm.reset();
-      } else {
-        alert("Please ensure all fields are filled out correctly.");
-      }
+      } 
     });
   }
 });

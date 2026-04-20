@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-  const modal = document.getElementById("project-modal");
+  const modal = document.querySelector("#project-modal");
   const closeBtn = document.querySelector(".close-button");
-  const modalImg = document.getElementById("modal-image");
-  const modalTitle = document.getElementById("modal-title");
-  const modalDesc = document.getElementById("modal-desc");
+  const modalImg = document.querySelector("#modal-image");
+  const modalTitle = document.querySelector("#modal-title");
+  const modalDesc = document.querySelector("#modal-desc");
 
   // 2. Attach click events to cards and rows (including the 'View Project' buttons)
   document.querySelectorAll('.project-card, .project-row').forEach(item => {

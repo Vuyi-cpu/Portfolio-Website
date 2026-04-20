@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loaderHTML = `<div id="page-loader" class="loader"><div class="spinner"></div></div>`;
   document.body.insertAdjacentHTML('afterbegin', loaderHTML);
 
-  const loader = document.getElementById('page-loader');
+  const loader = document.querySelector('#page-loader');
 
   // Hide loader once the page is fully loaded
   window.addEventListener('load', () => {
