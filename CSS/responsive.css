@@ -111,15 +111,22 @@
 
   .hero-image img { width: 180px; }
   
-  .project-card { width: 100%; max-width: 320px; }
-  .portfolio-alt { gap: 50px; margin: 30px auto; }
+  .project-card { width: 100%;
+     max-width: 320px;
+     }
+
+  .portfolio-alt { gap: 50px;
+     margin: 30px auto;
+     }
   
   /* Wrap skills icons to look better on small screens */
   .skills-icons {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
-  .circle { width: 50px; height: 50px; }
+  .circle { width: 50px; 
+    height: 50px; 
+  }
 }
 
 /* For mobile: make the button stretch full width for easier tapping */
