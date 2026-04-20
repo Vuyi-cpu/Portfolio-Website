@@ -1,0 +1,116 @@
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+  display: flex;
+  justify-content: center;     /* center menu */
+  align-items: center;
+  position: relative;
+  padding: 22px 60px;
+  background: #000;
+}
+
+/* Logo left */
+.logo {
+  position: absolute;
+  left: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #39b9ff;
+  letter-spacing: 1px;
+}
+
+/* Menu center */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 45px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+/* Active page underline */
+.nav-links a.active {
+  border-bottom: 2px solid #39b9ff;
+}
+
+/* Hover */
+.nav-links a:hover {
+  color: #39b9ff;
+}
+
+/* Moon icon right */
+.toggle {
+  position: absolute;
+  right: 60px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.footer {
+  background: #000; /* keep your theme */
+  color: white;
+  padding: 30px 60px;
+  font-size: 14px;
+}
+
+/* Top row */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Left section */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-label {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* Icons */
+.footer-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  background: #39b9ff; /* your accent color */
+  border-radius: 50%;
+}
+
+/* Email */
+.footer-email {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* Bottom text centered */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}

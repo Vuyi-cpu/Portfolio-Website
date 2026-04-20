@@ -1,0 +1,33 @@
+/* ===============================
+   RESET + GLOBAL STYLES
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+}
+
+/* ===============================
+   TYPOGRAPHY
+=============================== */
+h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}

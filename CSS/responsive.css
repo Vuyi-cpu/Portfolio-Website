@@ -1,0 +1,93 @@
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+  .hero-container,
+  .skills-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .logo {
+    left: 20px;
+  }
+
+  .toggle {
+    right: 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+
+  /* ✅ ADD THIS (PORTFOLIO FIX) */
+  .project-row,
+  .project-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-image {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-image img {
+    width: 180px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(2, 60px);
+  }
+
+  /* ✅ OPTIONAL IMPROVEMENT */
+  .portfolio-alt {
+    gap: 50px;
+  }
+}
+
+/* ===============================
+   CONTACT RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%;
+  }
+}
