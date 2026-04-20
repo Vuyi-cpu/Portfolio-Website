@@ -14,9 +14,9 @@
 .logo {
   position: absolute;
   left: 60px;
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 500;
-  color: #39b9ff;
+  color: #57b6e9;
   letter-spacing: 1px;
 }
 
@@ -60,57 +60,76 @@
   font-size: 18px;
   cursor: pointer;
 }
+
+/* ===============================
+ FOOTER STYLES
+=============================== */
 .footer {
-  background: #000; /* keep your theme */
-  color: white;
-  padding: 30px 60px;
-  font-size: 14px;
+  background: #000;
+  padding: 40px 60px;
+  border-top: 1px solid #222; /* Subtle top border if desired */
 }
 
-/* Top row */
-.footer-top {
+.footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Spreads sections to left, center, right */
   align-items: center;
-  margin-bottom: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Left section */
+.footer-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1; /* Ensures equal spacing */
+}
+
+/* Alignments for the three sections */
 .footer-left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  justify-content: flex-start;
 }
 
+.footer-center {
+  justify-content: center;
+}
+
+.footer-right {
+  justify-content: flex-end;
+}
+
+/* Typography & Elements */
 .footer-label {
-  font-size: 13px;
-  color: #ccc;
+  font-size: 14px;
+  color: #888;
 }
 
-/* Icons */
+.footer-value {
+  font-size: 14px;
+  color: #fff;
+}
+
 .footer-icons {
   display: flex;
   gap: 10px;
 }
 
 .footer-icon {
-  width: 18px;
-  height: 18px;
-  background: #39b9ff; /* your accent color */
+  width: 20px;
+  height: 20px;
+  background: #39b9ff; /* Your signature blue */
   border-radius: 50%;
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
-/* Email */
-.footer-email {
-  display: flex;
-  gap: 8px;
-  font-size: 13px;
-  color: #ccc;
+.footer-icon:hover {
+  transform: scale(1.1);
 }
 
-/* Bottom text centered */
 .footer-bottom {
   text-align: center;
-  font-size: 13px;
-  color: #aaa;
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
 }
