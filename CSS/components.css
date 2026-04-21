@@ -11,10 +11,17 @@
 =============================== */
 .skills-icons {
   display: grid;
-  grid-template-columns: repeat(3, 60px);
+  grid-template-columns: repeat(4, 60px);
   gap: 25px;
 }
 
+#icons-head{
+transform: translateY(-30px);
+text-decoration: underline;
+  white-space: nowrap;
+display: inline-block;
+
+}
 .circle {
   width: 60px;
   height: 60px;
@@ -27,9 +34,9 @@
 =============================== */
 .project-card {
   background: #2C2C2C;
-  padding: 20px;
+ padding: 25px;
   border-radius: 12px;
-  width: 240px;
+   width: 300px; /* was 240px */
   transition: 0.3s ease;
 
   /* Ensures the container doesn't shift other elements weirdly when lifted */
@@ -38,7 +45,9 @@
 
 .project-card img {
   width: 100%;
+   height: 180px;
   border-radius: 10px;
+   object-fit: cover;
    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
 }
@@ -74,21 +83,30 @@ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
    CONTACT FORM
 =============================== */
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 500px;
+  
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
+
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+max-width: 600px; /* bigger */
+
+}
+
+.contact-form input,
+.contact-form textarea {
   border-radius: 8px;
   border: none;
   background: #2C2C2C;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
+  padding: 14px;
 }
 
 .contact-form input::placeholder,
@@ -132,4 +150,37 @@ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
 }
+
+/* FULLSCREEN LOADER */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+/* TEXT STYLE */
+.loader-text {
+  font-size: 60px;
+  color: #357ABD;
+  letter-spacing: 8px;
+  font-weight: bold;
+  animation: fadePulse 1.5s infinite alternate;
+}
+body.loading {
+  overflow: hidden;
+}
+
+body.loading > *:not(#page-loader) {
+  visibility: hidden;
+}
+
+
 

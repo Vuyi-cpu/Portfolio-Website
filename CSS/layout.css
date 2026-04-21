@@ -2,23 +2,38 @@
    SECTION SPACING
 =============================== */
 section {
-  padding: 80px 20px;
+  min-height: 100vh; /* 🔥 Full screen height */
+  padding: 100px 40px; /* more breathing room */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center content vertically */
 }
 
 /* ===============================
    HERO LAYOUT
 =============================== */
+.hero-container,
+.skills-container,
+.project-container,
+.footer-container,
+.portfolio-alt {
+  max-width: 1200px; /* was ~900–1000 */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-image img {
+  width: 320px; /* bigger image */
+}
 .hero-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
-  max-width: 1000px;
-  margin: 0 auto;
+   gap: 120px; /* more spacing */
 }
 
 .hero-text {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 /* ===============================
@@ -27,6 +42,7 @@ section {
 .skills {
   text-align: center;
    background-color: #0f0f0f;
+   gap: 40px;
 }
 
 .skills-container {
@@ -34,9 +50,9 @@ section {
   justify-content: center;
   align-items: center;
   gap: 80px;
-  max-width: 900px;
-  margin: 0 auto;
+
 }
+
 
 .skills-text {
   max-width: 400px;
@@ -48,6 +64,7 @@ section {
 .projects {
   text-align: center;
    background-color:  #111;
+   gap: 40px;
   
 }
 
@@ -60,10 +77,9 @@ text-align:center;
 .project-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  gap: 50px;
   flex-wrap: wrap;
- 
+ margin-top: 60px;
 }
 
 /* ===============================
@@ -73,16 +89,12 @@ text-align:center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1100px;
-  margin: auto;
 }
 
 /* ===============================
    PORTFOLIO ZIG-ZAG LAYOUT
 =============================== */
 .portfolio-alt {
-  max-width: 1000px;
-  margin: 60px auto;
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -92,6 +104,7 @@ text-align:center;
   display: flex;
   align-items: center;
   justify-content: space-between;
+   min-height: 70vh; /* 🔥 makes each project feel like a section */
   gap: 60px;
 }
 
@@ -101,8 +114,8 @@ text-align:center;
 
 /* Images */
 .project-image {
-  width: 220px;
-  height: 220px;
+   width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 12px;
   background: #2C2C2C;
@@ -110,7 +123,7 @@ text-align:center;
 
 /* Text */
 .project-text {
-  max-width: 420px;
+   max-width: 500px;
 }
 
 .project-text h3 {

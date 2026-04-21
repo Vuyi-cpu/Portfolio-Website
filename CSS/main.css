@@ -11,24 +11,23 @@ body {
   font-family: Arial, sans-serif;
   background: #121212;
   color: white;
+  
 }
 
 /* ===============================
    TYPOGRAPHY
 =============================== */
 h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-h2 {
-  font-size: 28px;
+  font-size: 64px; /* was 48 */
   margin-bottom: 20px;
 }
 
-p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ccc;
+h2 {
+  font-size: 36px; /* was 28 */
 }
 
+p {
+  font-size: 18px; /* was 16 */
+  line-height: 1.7;
+}
+ /* scroll-snap-type: y mandatory; */

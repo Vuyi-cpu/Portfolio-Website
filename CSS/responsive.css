@@ -135,3 +135,9 @@
     width: 100%;
   }
 }
+
+/* subtle animation */
+@keyframes fadePulse {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
