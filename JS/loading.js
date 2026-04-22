@@ -1,86 +1,70 @@
-/**
- * =========================================
- * loading.js
- * Fix 2: Prevent page flicker (hide content until ready)
- * =========================================
- */
-
 document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector("#page-loader");
+  const loaderText = loader.querySelector(".loader-text");
 
-  // ===============================
-  // ADD LOADING CLASS (hide page)
-  // ===============================
-  document.body.classList.add("loading");
+  const firstVisit = !sessionStorage.getItem("visited");
+  const isTransition = sessionStorage.getItem("pageTransition");
+  const nextPage = sessionStorage.getItem("nextPage");
 
-  // ===============================
-  // CREATE LOADING SCREEN
-  // ===============================
-  const loaderHTML = `
-    <div id="page-loader" class="loader">
-      <div class="loader-text">LOADING.......</div>
-    </div>
-  `;
-  document.body.insertAdjacentHTML("afterbegin", loaderHTML);
+  if (firstVisit) {
+    loaderText.textContent = "WELCOME";
+  } else if (isTransition && nextPage) {
+    loaderText.textContent = nextPage;
+  } else {
+    loaderText.textContent = "LOADING....";
+  }
 
-  const loader = document.getElementById("page-loader");
+  sessionStorage.setItem("visited", "true");
 
-  // ===============================
-  // INITIAL PAGE LOAD
-  // ===============================
   window.addEventListener("load", () => {
     setTimeout(() => {
-
       loader.style.opacity = "0";
 
       setTimeout(() => {
         loader.style.display = "none";
-
-        //  SHOW PAGE ONLY AFTER LOADER IS GONE
         document.body.classList.remove("loading");
 
-      }, 400);
+        sessionStorage.removeItem("pageTransition");
+        sessionStorage.removeItem("nextPage");
+      }, 500);
 
-    }, 600);
+    }, isTransition ? 300 : (firstVisit ? 2000 : 1000));
   });
 
-  // ===============================
-  // PAGE TRANSITIONS
-  // ===============================
   document.addEventListener("click", (e) => {
-
     const link = e.target.closest("a");
-
-    // Ignore non-links
     if (!link) return;
 
     const href = link.getAttribute("href");
 
-    // Ignore invalid links
     if (
       !href ||
       href.startsWith("#") ||
       href.startsWith("http") ||
       link.hasAttribute("download")
-    ) {
-      return;
-    }
+    ) return;
 
     e.preventDefault();
 
-    //  Hide page again during transition
+    // Extract page name
+    let pageName = href
+      .replace(".html", "")
+      .replace("./", "")
+      .toUpperCase();
+
+    if (pageName === "INDEX") pageName = "HOME";
+
+    sessionStorage.setItem("pageTransition", "true");
+    sessionStorage.setItem("nextPage", pageName);
+
+    loaderText.textContent = pageName;
     document.body.classList.add("loading");
 
-    // Show loader
     loader.style.display = "flex";
+    loader.style.opacity = "1";
 
-    setTimeout(() => {
-      loader.style.opacity = "1";
-    }, 10);
-
-    // Navigate after delay
     setTimeout(() => {
       window.location.href = href;
-    }, 600);
+    }, 800);
   });
-
 });

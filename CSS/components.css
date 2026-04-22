@@ -1,9 +1,19 @@
+/* components.css */
+
 /* ===============================
    HERO IMAGE
 =============================== */
 .hero-image img {
-  width: 250px;
+  width: 320px;
   border-radius: 12px;
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-image h1 {
+  padding-top: 50px;
 }
 
 /* ===============================
@@ -15,58 +25,76 @@
   gap: 25px;
 }
 
-#icons-head{
-transform: translateY(-30px);
-text-decoration: underline;
+#icons-head {
+  transform: translateY(-30px);
+  text-decoration: underline;
   white-space: nowrap;
-display: inline-block;
-
+  display: inline-block;
 }
+
 .circle {
   width: 60px;
   height: 60px;
-  background: #2C2C2C;
+  background: rgba(34, 34, 34, 0.65);
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 50%;
 }
 
 /* ===============================
    PROJECT CARD
 =============================== */
-
 .project-card {
-  background: #2C2C2C;
- padding: 25px;
-  border-radius: 12px;
-   width: 300px; /* was 240px */
-  transition: 0.3s ease;
+  background: linear-gradient(
+    145deg,
+    rgba(34,34,34,0.75),
+    rgba(24,24,24,0.72)
+  );
 
-  /* Ensures the container doesn't shift other elements weirdly when lifted */
-  will-change: transform; 
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+
+  width: 300px;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.03);
 }
 
 .project-card img {
   width: 100%;
-   height: 180px;
+  height: 180px;
   border-radius: 10px;
-   object-fit: cover;
-   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
   transition: box-shadow 0.3s ease;
 }
 
-/* The lift effect applied to both */
-/* Shadow for the home page cards */
 .project-card:hover {
-  transform: translateY(-8px);
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
- /* transform: scale(1.05); */
+  transform: translateY(-8px) scale(1.05);
+
+  border-color: rgba(102,184,255,0.45);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 18px rgba(102,184,255,0.12);
 }
 
 /* ===============================
    BUTTON
 =============================== */
 .projects .btn {
-padding: 16px 40px;
-  background: #4A90E2;
+  padding: 16px 40px;
+  background: #66B8FF;
   color: white;
   text-decoration: none;
   border-radius: 10px;
@@ -74,33 +102,47 @@ padding: 16px 40px;
   margin: 20px auto 0;
   transition: 0.2s;
   border: none;
-  width: fit-content; 
+  width: fit-content;
 }
 
 .projects .btn:hover {
-   background: #357ABD;
-   transform: scale(1.05);
+  background: #4DA3FF;
+  transform: scale(1.05);
 }
 
-/* 
+/* ===============================
    CONTACT FORM
- */
+=============================== */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 25px;
   width: 100%;
-  background: #2C2C2C;
+
+  background: linear-gradient(
+    145deg,
+    rgba(34,34,34,0.78),
+    rgba(24,24,24,0.75)
+  );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.05);
   padding: 40px;
   border-radius: 16px;
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.03);
 }
 
 .contact-form input,
 .contact-form textarea {
   padding: 18px;
   border-radius: 10px;
-  border: 1px solid #3A3A3A;
-  background: #1E1E1E;
+  border: 1px solid #2E2E2E;
+  background: #141414;
   color: white;
   font-size: 15px;
   width: 100%;
@@ -109,17 +151,17 @@ padding: 16px 40px;
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #4A90E2;
+  border-color: #66B8FF;
   outline: none;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #aaa;
+  color: #B3B3B3;
 }
 
 .contact-form textarea {
-  min-height: 140px; 
+  min-height: 140px;
   resize: none;
 }
 
@@ -132,7 +174,7 @@ padding: 16px 40px;
   padding: 10px 20px;
   font-size: 14px;
   font-weight: bold;
-  background: #4A90E2;
+  background: #66B8FF;
   color: white;
   border: none;
   border-radius: 8px;
@@ -141,57 +183,22 @@ padding: 16px 40px;
 }
 
 .view-project-btn:hover {
-  background: #357ABD;
+  background: #4DA3FF;
   transform: scale(1.05);
 }
 
 
-/* FULLSCREEN LOADER */
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
-
-/* TEXT STYLE */
-.loader-text {
-  font-size: 60px;
-  color: #357ABD;
-  letter-spacing: 8px;
-  font-weight: bold;
-  animation: fadePulse 1.5s infinite alternate;
-}
-body.loading {
-  overflow: hidden;
-}
-
-body.loading > *:not(#page-loader) {
-  visibility: hidden;
-}
-
-.projects a{
-  width: auto;
+.projects a {
+  width: 500px;
   padding: 16px 40px;
   display: block;
   margin: 20px auto 0;
-  background: #4A90E2;
+  background: #66B8FF;
   border: none;
   border-radius: 10px;
   color: white;
 }
 
-.projects div{
-  text-align:center;
+.cta div {
+  margin-top: 20px;
 }
-.projects p{
- max-width:600px; margin:20px auto; text-align:center;
-}
-

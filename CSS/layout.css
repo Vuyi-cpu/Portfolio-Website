@@ -1,48 +1,49 @@
+/* layout.css */
+
 /* ===============================
    SECTION SPACING
 =============================== */
-.home-page section , .portfolio-page section, .about-page section {
-  min-height: 100vh; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
+section {
+  position: relative;
+  padding: 80px 20px;
+  z-index: 1;
 }
 
 /* ===============================
    HERO LAYOUT
 =============================== */
-.hero-container,
-.skills-container,
-.project-container,
-.footer-container,
-.portfolio-alt {
-  max-width: 1200px; /* was ~900–1000 */
-  margin: 0 auto;
-  width: 100%;
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #141414;
 }
-.hero-image{
-  text-align:center;
-}
-.hero-image h1{
- padding-top: 50px;
-}
-.hero-image img {
- 
-  width: 320px; 
 
-}
 .hero-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-   gap: 120px; /* more spacing */
+  justify-content: center;
+  gap: 120px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .hero-text {
-  max-width: 500px;
-  text-align:center;
-  margin:auto; 
-  margin-top:30px;
+  max-width: 520px;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.hero-text h1 {
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  line-height: 1.8;
 }
 
 /* ===============================
@@ -50,18 +51,20 @@
 =============================== */
 .skills {
   text-align: center;
-   background-color: #0f0f0f;
-   gap: 40px;
+  gap: 40px;
+  background: #181818;
 }
 
 .skills-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 80px;
-
+  justify-content: center;
+  gap: 120px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 40px;
+  width: 100%;
 }
-
 
 .skills-text {
   max-width: 400px;
@@ -71,11 +74,22 @@
    PROJECTS LAYOUT
 =============================== */
 .projects {
-  padding: 60px 20px; /* reduce vertical space */
+  padding: 80px 20px;
   text-align: center;
   gap: 40px;
-  background-color:  #0c0b0b;
+  background: #1F1F1F;
   color: white;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .projects h2 {
@@ -84,23 +98,12 @@
 }
 
 .projects p {
- max-width:700px; 
-margin:20px auto; 
-text-align:center;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
   font-size: 1rem;
   opacity: 0.9;
 }
-
-
-
-.project-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
- margin-top: 60px;
-}
-
 
 /* ===============================
    PORTFOLIO ZIG-ZAG LAYOUT
@@ -108,14 +111,20 @@ text-align:center;
 .portfolio-alt {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .project-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-   min-height: 70vh; /* 🔥 makes each project feel like a section */
+  padding: 60px 0;
   gap: 60px;
 }
 
@@ -125,16 +134,16 @@ text-align:center;
 
 /* Images */
 .project-image {
-   width: 300px;
+  width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 12px;
-  background: #2C2C2C;
+  background: #222222;
 }
 
 /* Text */
 .project-text {
-   max-width: 500px;
+  max-width: 500px;
 }
 
 .project-text h3 {
@@ -143,19 +152,20 @@ text-align:center;
 }
 
 .project-text p {
-  color: #ccc;
+  color: #CFCFCF;
 }
 
-/* 
+/* ===============================
    CONTACT LAYOUT
- */
+=============================== */
 .contact {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   padding: 80px 20px;
+  background: #141414;
 }
 
 .contact h1 {
@@ -168,16 +178,47 @@ text-align:center;
   max-width: 600px;
   margin: 30px auto;
   text-align: center;
-  color: #ccc;
+  color: #CFCFCF;
 }
 
 .contact-container {
   width: 100%;
   max-width: 700px;
-
 }
+
 .contact-form button {
   width: 100%;
   padding: 16px;
   font-size: 15px;
+}
+
+/* ===============================
+   PORTFOLIO INTRO
+=============================== */
+.portfolio-intro {
+  padding: 80px 20px 40px;
+  text-align: center;
+  background: #141414;
+}
+
+.portfolio-intro p {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* ===============================
+   CTA SECTION
+=============================== */
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  background: #181818;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 60px auto;
+}
+
+.cta p {
+  max-width: 500px;
+  margin: 20px auto;
 }

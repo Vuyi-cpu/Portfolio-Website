@@ -1,3 +1,4 @@
+// Section.js
 document.addEventListener("DOMContentLoaded", () => {
 
   const canvases = document.querySelectorAll(".wave-divider");
@@ -38,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const p2 = points[i + 1];
 
         const midX = (p1.x + p2.x) / 2;
-        const y1 = p1.baseY + Math.sin(time + p1.offset) * 20;
-        const y2 = p2.baseY + Math.sin(time + p2.offset) * 20;
+        const y1 = p1.baseY + Math.sin(time + p1.offset) * 30;
+        const y2 = p2.baseY + Math.sin(time + p2.offset) * 30;
         const midY = (y1 + y2) / 2;
 
         ctx.quadraticCurveTo(p1.x, y1, midX, midY);

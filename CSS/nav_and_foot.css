@@ -1,3 +1,5 @@
+/* nav_and_foot.css */
+
 /* ==========================
    NAVBAR
 ========================== */
@@ -5,10 +7,14 @@
   display: flex;
   justify-content: center;     /* center menu */
   align-items: center;
-  position: relative;
   padding: 22px 60px;
-  background: #0c0c0c;
-  
+  background: #1B1B1B;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2E2E2E;
+  position: sticky; /* Keep it at the top while scrolling */
+  top: 0;
+  z-index: 1000;
 }
 
 /* Logo left */
@@ -17,7 +23,7 @@
   left: 60px;
   font-size: 30px;
   font-weight: 500;
-  color: #57b6e9;
+  color: #66B8FF;
   letter-spacing: 1px;
 }
 
@@ -36,7 +42,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -46,12 +52,13 @@
 
 /* Active page underline */
 .nav-links a.active {
-  border-bottom: 2px solid #39b9ff;
+  color: #66B8FF;
+  border-bottom: 2px solid #66B8FF;
 }
 
 /* Hover */
 .nav-links a:hover {
-  color: #39b9ff;
+  color: #66B8FF;
 }
 
 /* Moon icon right */
@@ -59,12 +66,14 @@
   position: absolute;
   right: 60px;
   font-size: 18px;
+  color: #FFFFFF;
   cursor: pointer;
 }
 
 /* ===============================
- FOOTER STYLES
+   FOOTER STYLES
 =============================== */
+
 /* ===============================
    FOOTER LAYOUT
 =============================== */
@@ -75,9 +84,16 @@
 }
 
 .footer {
-  background: #0c0c0c;
+  background: #181818;
   padding: 40px 60px;
-  border-top: 1px solid #222; /* Subtle top border if desired */
+  border-top: 1px solid #2E2E2E;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  margin: auto;
+  width: 100%;
 }
 
 .footer-content {
@@ -111,12 +127,12 @@
 /* Typography & Elements */
 .footer-label {
   font-size: 14px;
-  color: #888;
+  color: #CFCFCF;
 }
 
 .footer-value {
   font-size: 14px;
-  color: #fff;
+  color: #FFFFFF;
 }
 
 .footer-icons {
@@ -127,7 +143,7 @@
 .footer-icon {
   width: 20px;
   height: 20px;
-  background: #39b9ff; /* Your signature blue */
+  background: #66B8FF;
   border-radius: 50%;
   transition: transform 0.2s ease;
   cursor: pointer;
@@ -135,11 +151,5 @@
 
 .footer-icon:hover {
   transform: scale(1.1);
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  color: #666;
-  font-size: 14px;
+  background: #8BCBFF;
 }

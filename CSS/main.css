@@ -1,34 +1,35 @@
+/* main.css */
+/* At the very top */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 /* ===============================
    RESET + GLOBAL STYLES
 =============================== */
 * {
   margin: 0px;
   box-sizing: border-box;
-   
+  
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #121212;
-  color: white;
-  
+  font-family: 'Inter', sans-serif; /* Cleaner for long text */
+ background:#141414;
+ color:#e6edf3;
+line-height: 1.8;
 }
 
 /* ===============================
    TYPOGRAPHY
 =============================== */
-h1 {
-  font-size: 48px; 
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 28px; /* was 28 */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; /* Bold and modern for headings */
+  letter-spacing: -0.02em; 
+  color: #ffffff;
 }
 
 p {
-  font-size: 16px; /* was 16 */
-  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8; /* Give your text room to breathe */
+   color:#9aa4b2;
 }
 
 /* Scroll Animation Classes */
@@ -54,4 +55,68 @@ p {
   border: 4px solid rgba(255, 255, 255, 0.1);
   border-top-color: #4A90E2; /* Primary blue */
   animation: spin 1s linear infinite;
+}
+
+.wave-divider {
+  display: block;
+  width: 100%;
+  height: 120px;
+   margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+
+/* Loader */
+.loader-box {
+  width: 35px;
+  height: 35px;
+  border: 4px solid #4A90E2;
+  transform-style: preserve-3d;
+  animation: rotate3DBox 4s infinite ease-in-out;
+}
+
+.loader-text {
+  font-size: 60px;
+  color: #4A90E2;
+  letter-spacing: 8px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes rotate3DBox {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(180deg) rotateY(90deg) rotateZ(45deg);
+  }
+  50% {
+    transform: rotateX(360deg) rotateY(180deg) rotateZ(90deg);
+  }
+  75% {
+    transform: rotateX(540deg) rotateY(270deg) rotateZ(135deg);
+  }
+  100% {
+    transform: rotateX(720deg) rotateY(360deg) rotateZ(180deg);
+  }
 }
