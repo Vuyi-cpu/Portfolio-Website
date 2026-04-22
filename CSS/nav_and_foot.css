@@ -65,6 +65,15 @@
 /* ===============================
  FOOTER STYLES
 =============================== */
+/* ===============================
+   FOOTER LAYOUT
+=============================== */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer {
   background: #0c0c0c;
   padding: 40px 60px;

@@ -32,6 +32,7 @@ display: inline-block;
 /* ===============================
    PROJECT CARD
 =============================== */
+
 .project-card {
   background: #2C2C2C;
  padding: 25px;
@@ -64,49 +65,53 @@ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 /* ===============================
    BUTTON
 =============================== */
-.btn {
-  padding: 12px 24px;
+.projects .btn {
+padding: 16px 40px;
   background: #4A90E2;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
-  display: inline-block;
-  margin-top: 20px;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto 0;
   transition: 0.2s;
+  border: none;
+  width: fit-content; 
 }
 
-.btn:hover {
-  background: #357ABD;
+.projects .btn:hover {
+   background: #357ABD;
+   transform: scale(1.05);
 }
 
-/* ===============================
+/* 
    CONTACT FORM
-=============================== */
-.contact-form {
-  
-}
-
-.contact-form input,
-.contact-form textarea {
-
-}
+ */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   width: 100%;
-max-width: 600px; /* bigger */
-
+  background: #2C2C2C;
+  padding: 40px;
+  border-radius: 16px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  border-radius: 8px;
-  border: none;
-  background: #2C2C2C;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #3A3A3A;
+  background: #1E1E1E;
   color: white;
-  font-size: 16px;
-  padding: 14px;
+  font-size: 15px;
+  width: 100%;
+  transition: 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4A90E2;
+  outline: none;
 }
 
 .contact-form input::placeholder,
@@ -115,6 +120,7 @@ max-width: 600px; /* bigger */
 }
 
 .contact-form textarea {
+  min-height: 140px; 
   resize: none;
 }
 
@@ -182,5 +188,21 @@ body.loading > *:not(#page-loader) {
   visibility: hidden;
 }
 
+.projects a{
+  width: auto;
+  padding: 16px 40px;
+  display: block;
+  margin: 20px auto 0;
+  background: #4A90E2;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
 
+.projects div{
+  text-align:center;
+}
+.projects p{
+ max-width:600px; margin:20px auto; text-align:center;
+}
 

@@ -1,12 +1,11 @@
 /* ===============================
    SECTION SPACING
 =============================== */
-section {
-  min-height: 100vh; /* 🔥 Full screen height */
-  padding: 100px 40px; /* more breathing room */
+.home-page section , .portfolio-page section, .about-page section {
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center content vertically */
+  justify-content: center; 
 }
 
 /* ===============================
@@ -21,9 +20,16 @@ section {
   margin: 0 auto;
   width: 100%;
 }
-
+.hero-image{
+  text-align:center;
+}
+.hero-image h1{
+ padding-top: 50px;
+}
 .hero-image img {
-  width: 320px; /* bigger image */
+ 
+  width: 320px; 
+
 }
 .hero-container {
   display: flex;
@@ -34,6 +40,9 @@ section {
 
 .hero-text {
   max-width: 500px;
+  text-align:center;
+  margin:auto; 
+  margin-top:30px;
 }
 
 /* ===============================
@@ -62,17 +71,27 @@ section {
    PROJECTS LAYOUT
 =============================== */
 .projects {
+  padding: 60px 20px; /* reduce vertical space */
   text-align: center;
-   background-color:  #111;
-   gap: 40px;
-  
+  gap: 40px;
+  background-color:  #0c0b0b;
+  color: white;
 }
 
-.projects p{
-max-width:700px; 
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.projects p {
+ max-width:700px; 
 margin:20px auto; 
 text-align:center;
+  font-size: 1rem;
+  opacity: 0.9;
 }
+
+
 
 .project-container {
   display: flex;
@@ -82,14 +101,6 @@ text-align:center;
  margin-top: 60px;
 }
 
-/* ===============================
-   FOOTER LAYOUT
-=============================== */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /* ===============================
    PORTFOLIO ZIG-ZAG LAYOUT
@@ -135,18 +146,38 @@ text-align:center;
   color: #ccc;
 }
 
-/* ===============================
+/* 
    CONTACT LAYOUT
-=============================== */
+ */
 .contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.contact h1 {
   text-align: center;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: center;
+  color: #ccc;
 }
 
 .contact-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+  width: 100%;
+  max-width: 700px;
+
 }
-
-
-
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  font-size: 15px;
+}
