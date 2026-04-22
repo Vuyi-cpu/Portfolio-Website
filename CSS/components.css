@@ -61,7 +61,6 @@ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
  /* transform: scale(1.05); */
 }
 
-
 /* ===============================
    BUTTON
 =============================== */
@@ -141,21 +140,11 @@ padding: 16px 40px;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Subtle button interaction */
 .view-project-btn:hover {
   background: #357ABD;
   transform: scale(1.05);
 }
 
-.see-more-btn button{
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 6px;
-  background-color: #4a86cf;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 
 /* FULLSCREEN LOADER */
 .loader {
