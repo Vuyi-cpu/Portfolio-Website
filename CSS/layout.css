@@ -18,13 +18,16 @@ section {
   align-items: center;
   justify-content: center;
   background: #141414;
+  flex-direction: column; 
+  text-align: center;
+  
 }
 
 .hero-container {
+  gap: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 120px;
   max-width: 1200px;
   margin: auto;
   padding: 0 40px;
@@ -33,13 +36,13 @@ section {
 
 .hero-text {
   max-width: 520px;
-  text-align: center;
-  margin: auto;
+  text-align: left;
+  margin: 0;
   margin-top: 30px;
 }
 
 .hero-text h1 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .hero-text p {
@@ -113,7 +116,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 50px;
   max-width: 1200px;
   margin: auto;
   padding: 0 40px;
@@ -222,3 +225,5 @@ section {
   max-width: 500px;
   margin: 20px auto;
 }
+
+

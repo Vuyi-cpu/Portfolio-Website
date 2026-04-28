@@ -51,9 +51,9 @@ function loadFooter() {
         <div class="footer-section footer-left">
           <span class="footer-label">Social link icons</span>
           <div class="footer-icons">
-            <div class="footer-icon"></div>
-            <div class="footer-icon"></div>
-            <div class="footer-icon"></div>
+            <div class="footer-icon"><img src="./Assets/Icons/github-original.svg" /></div>
+            <div class="footer-icon"><img src="./Assets/Icons/linkedin-original.svg" /></div>
+            <div class="footer-icon"><img src="./Assets/Icons/unity-original.svg" /></div>
           </div>
         </div>
 

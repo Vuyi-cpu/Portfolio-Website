@@ -5,7 +5,8 @@
 =============================== */
 .hero-image img {
   width: 320px;
-  border-radius: 12px;
+  border-radius: 50%;
+ 
 }
 
 .hero-image {
@@ -13,8 +14,40 @@
 }
 
 .hero-image h1 {
+ padding-bottom: 40px;
+}
+.typing-text{
+
+  font-weight: 600;
+  min-width: 280px;
+
+}
+.typing-text span{
+
+  position :relative;
+}
+
+.typing-text span::before{
+content: "Software Developer";
+color: #66B8FF;
+animation: words 10s infinite;
+}
+
+.typing-text span::after{
+content: "";
+background-color: #2E2E2E;
+position: absolute;
+width: calc (100% + 8px);
+height:100%;
+border-left: 3px solid #ffffff;
+right:-8;
+animation: cursor 0,6s infinite;
+}
+
+.hero-image h1 {
   padding-top: 50px;
 }
+
 
 /* ===============================
    SKILL ICONS
@@ -201,4 +234,33 @@
 
 .cta div {
   margin-top: 20px;
+}
+
+
+@keyframes cursor{
+to{
+  border-left: 3px solid #66B8FF;
+}
+} 
+ 
+@keyframes words{
+  0%, 20%{
+content: "Web Developer";
+  }
+  21%, 40%{
+    content: "Music Engineer";
+  }
+  41%, 60%{
+    content: "Web Designer";
+  }
+  61%, 80%{
+    content: "Software Engineer";
+  }
+  81%, 100%{
+    content: "Game Developer";
+  }
+}
+
+@media screen {
+  
 }

@@ -14,14 +14,17 @@ body {
   font-family: 'Inter', sans-serif; /* Cleaner for long text */
  background:#141414;
  color:#e6edf3;
-line-height: 1.8;
+line-height: 1.2;
+}
+span{
+  color: #66B8FF;
 }
 
 /* ===============================
    TYPOGRAPHY
 =============================== */
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif; /* Bold and modern for headings */
+  font-family: 'Poppins', sans-serif; 
   letter-spacing: -0.02em; 
   color: #ffffff;
 }
