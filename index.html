@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="./CSS/responsive.css">
 
 <script src="./JS/loading.js" defer></script>
+<script src="./JS/data.js" defer></script>
 <script src="./JS/main.js" defer></script>
 <script src="./JS/navigation.js" defer></script>
 <script src="./JS/scroll-animation.js" defer></script>
@@ -23,7 +24,7 @@
 </head>
 <body>
 <div id="cur"></div><div id="cur-r"></div>
-<div id="loader"><div class="l-name">VM / Portfolio</div><div class="l-bar"><div class="l-fill"></div></div></div>
+<div id="loader"><div class="l-name">VM / Home</div><div class="l-bar"><div class="l-fill"></div></div></div>
  
 <nav id="nav">
   <a href="index.html" class="nav-logo">Vuyisa</a>
@@ -93,32 +94,7 @@
       </div>
       <a href="portfolio.html" class="view-all reveal">View full portfolio</a>
     </div>
-    <div class="proj-grid">
-      <div class="pc reveal">
-        <div class="pc-img"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/p3.jpg" alt="Portfolio website"></div>
-        <div class="pc-body">
-          <div class="pc-title">Personal Portfolio Website</div>
-          <p class="pc-desc">Modern portfolio built with vanilla HTML, CSS and JavaScript, designed for clarity and performance across all devices.</p>
-          <a href="portfolio.html" class="pc-link">View Project</a>
-        </div>
-      </div>
-      <div class="pc reveal" style="transition-delay:.1s">
-        <div class="pc-img"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/p1.jpg" alt="Game project"></div>
-        <div class="pc-body">
-          <div class="pc-title">Interactive Game Project</div>
-          <p class="pc-desc">A logic-driven interactive game showcasing real-time state management, UI mechanics, and creative problem-solving in Unity.</p>
-          <a href="portfolio.html" class="pc-link">View Project</a>
-        </div>
-      </div>
-      <div class="pc reveal" style="transition-delay:.2s">
-        <div class="pc-img"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/p2.jpg" alt="Responsive site"></div>
-        <div class="pc-body">
-          <div class="pc-title">Responsive Multi-Page Site</div>
-          <p class="pc-desc">A fully responsive multi-page website engineered to scale seamlessly from mobile to desktop with clean breakpoints.</p>
-          <a href="portfolio.html" class="pc-link">View Project</a>
-        </div>
-      </div>
-    </div>
+    <div class="proj-grid" id="proj-grid"></div>
   </div>
 </section>
  
@@ -132,5 +108,21 @@
     </div>
   </div>
 </footer>
+
+<div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <img class="modal-img" id="m-img" src="" alt="">
+    <div class="modal-body">
+      <div class="modal-num" id="m-num"></div>
+      <div class="modal-title" id="m-title"></div>
+      <div class="modal-tags" id="m-tags"></div>
+      <div class="modal-section"><h4>Overview</h4><p id="m-desc"></p></div>
+      <div class="modal-section"><h4>Process & Approach</h4><p id="m-process"></p></div>
+      <div class="modal-section"><h4>Key Features</h4><p id="m-features"></p></div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

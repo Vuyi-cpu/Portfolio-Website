@@ -1,6 +1,6 @@
 /* Navigation */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); height: 68px; background: rgba(14, 14, 14, .97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: background .3s; }
-.nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--text); text-decoration: none; position: relative; }
+.nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--accent); text-decoration: none; position: relative; }
 .nav-logo::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; letter-spacing: .04em; transition: color .2s; position: relative; }
@@ -31,3 +31,16 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 .soc-icon { width: 36px; height: 36px; background: var(--surface2); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--accent); flex-shrink: 0; }
 .soc-label { font-family: 'Syne', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); }
 .soc-sub { font-size: .75rem; color: var(--muted); }
+
+/* Injected Graphical Social Asset Control */
+.soc img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    /* Inverts default dark assets to white to match your UI contrast. Remove if your assets are already white. */
+    filter: invert(1);
+    transition: opacity 0.2s ease;
+}
+.soc:hover img {
+    opacity: 0.8;
+}

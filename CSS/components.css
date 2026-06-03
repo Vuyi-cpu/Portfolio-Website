@@ -144,3 +144,26 @@ ul.styled li::before { content: '→'; color: var(--accent); font-family: 'DM Mo
 .scroll-ind { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--subtle); font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .1em; animation: bob 2s ease-in-out infinite; }
 @keyframes bob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 .scroll-ind::after { content: ''; width: 1px; height: 40px; background: linear-gradient(var(--subtle), transparent); }
+
+/* Pill-shaped buttons */
+.btn-p, 
+.btn-s, 
+.btn-submit, 
+.pc-link {
+  border-radius: 50px; /* Use 12px or 16px if you prefer a rounded rectangle instead of a pill shape */
+}
+
+/* Rounded Cards */
+.pc, 
+.soc-card,
+.contact-card,
+.skills-card { /* Add any other card classes you might have used */
+  border-radius: 16px; 
+  overflow: hidden; /* Crucial: stops images from ignoring the rounded corners */
+}
+
+/* Ensure the photo frames/images are also nicely rounded */
+.photo-frame,
+.hobbies-img img {
+  border-radius: 16px;
+}

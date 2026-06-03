@@ -1,15 +1,20 @@
 const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-        if (!e.isIntersecting) return;
         const el = e.target;
         
-        if (el.classList.contains('sk')) {
-            const d = el.dataset.d || 0;
-            setTimeout(() => el.classList.add('visible'), +d);
-        } else {
-            el.classList.add('visible');
+        // When the element enters the viewport (scrolling down or up)
+        if (e.isIntersecting) {
+            if (el.classList.contains('sk')) {
+                const d = el.dataset.d || 0;
+                setTimeout(() => el.classList.add('visible'), +d);
+            } else {
+                el.classList.add('visible');
+            }
+        } 
+        // When the element leaves the viewport, remove the class to reset it
+        else {
+            el.classList.remove('visible');
         }
-        obs.unobserve(el);
     });
 }, { threshold: .1 });
 
