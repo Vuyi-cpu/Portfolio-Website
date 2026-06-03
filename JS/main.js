@@ -48,8 +48,8 @@ function renderAllCards() {
 // 2. DYNAMIC SOCIAL ICON RENDERER
 // ==========================================================
 const socialLinks = [
-    { name: 'GitHub', url: '#', img: './assets/icons/github.svg' },
-    { name: 'LinkedIn', url: '#', img: './assets/icons/linkedin.svg' },
+    { name: 'GitHub', url: '#', img: './assets/icons/github-original.svg' },
+    { name: 'LinkedIn', url: '#', img: './assets/icons/linkedin-original.svg' },
     { name: 'Email', url: 'mailto:Vuyim1907@gmail.com', img: './assets/icons/email.svg' },
     { name: 'Instagram', url: '#', img: './assets/icons/instagram.svg' }
 ];
@@ -100,8 +100,48 @@ function renderCoreStrengths() {
     }
 }
 
+// ==========================================================
+// 4. DYNAMIC TECHNOLOGIES RENDERER
+// ==========================================================
+const technologies = [
+    { name: 'HTML5', img: './Assets/Icons/html5-original.svg' },
+    { name: 'CSS3', img: './Assets/Icons/css3-original.svg' },
+    { name: 'JS', img: './Assets/Icons/javascript-original.svg' },
+    { name: 'Python', img: './Assets/Icons/python-original.svg' },
+    { name: 'Java', img: './Assets/Icons/java-original.svg' },
+    { name: 'C++', img: './Assets/Icons/cplusplus-original.svg' },
+    { name: 'C#', img: './Assets/Icons/csharp-original.svg' },
+    { name: 'Unity', img: './Assets/Icons/unity-original.svg' },
+    { name: 'Git', img: './Assets/Icons/git-original.svg' },
+    { name: 'MySQL', img: './Assets/Icons/mysql-plain-wordmark.svg' },
+    { name: 'MATLAB', img: './Assets/Icons/matlab-original.svg' },
+    { name: 'Shell', img: './Assets/Icons/powershell-original.svg' }
+];
+
+function renderTechnologies() {
+    const container = document.querySelector('.skills-grid');
+
+    if (!container) return;
+
+    container.innerHTML = technologies.map((tech, index) => {
+        const delay = index * 60; 
+        return `
+            <div class="sk" data-d="${delay}">
+                <img src="${tech.img}" alt="${tech.name} Icon">
+                <span>${tech.name}</span>
+            </div>
+        `;
+    }).join('');
+
+    if (typeof obs !== 'undefined') {
+        container.querySelectorAll('.sk').forEach(el => obs.observe(el));
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     renderAllCards();
     renderSocials();
     renderCoreStrengths();
+    renderTechnologies(); 
 });
