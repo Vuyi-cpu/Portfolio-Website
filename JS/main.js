@@ -1,6 +1,3 @@
-// ==========================================================
-// 1. CUSTOM CURSOR TRACKER (Disabled on Touch Devices)
-// ==========================================================
 const cur = document.getElementById('cur'), ring = document.getElementById('cur-r');
 let mx = 0, my = 0, rx = 0, ry = 0;
 
@@ -106,9 +103,6 @@ function renderSocials() {
     });
 }
 
-// ==========================================================
-// EXECUTE ALL DYNAMIC RENDERS ON LOAD
-// ==========================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderAllCards();
     renderSocials();

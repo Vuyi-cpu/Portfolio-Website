@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     setTimeout(() => {
-        const loader = document.getElementById('loader');
+        const loader = document.querySelector('#loader');
         if (loader) loader.classList.add('done');
     }, 1400);
 });

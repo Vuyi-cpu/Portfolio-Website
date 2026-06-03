@@ -1,4 +1,4 @@
-const ham = document.getElementById('ham'), mm = document.getElementById('mm');
+const ham = document.querySelector('#ham'), mm = document.querySelector('#mm');
 if (ham && mm) {
     ham.addEventListener('click', () => {
         mm.classList.toggle('open');

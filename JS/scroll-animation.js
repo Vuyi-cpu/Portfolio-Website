@@ -20,7 +20,7 @@ const obs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal, .sk, .pc').forEach(el => obs.observe(el));
 
-const nav = document.getElementById('nav');
+const nav = document.querySelector('#nav');
 if (nav) {
     // Specifically targets index.html transparent navbar logic
     nav.style.background = 'rgba(14,14,14,.85)'; 
