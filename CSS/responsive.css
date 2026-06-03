@@ -25,3 +25,12 @@
   .form-row { grid-template-columns: 1fr; }
   .soc-grid { grid-template-columns: 1fr; }
 }
+
+@media (pointer: coarse) {
+  #cur, #cur-r {
+    display: none !important;
+  }
+  body, a, button, .soc, .soc-card, .ham {
+    cursor: auto !important;
+  }
+}
