@@ -1,42 +1,9 @@
-const cur = document.getElementById('cur'), ring = document.getElementById('cur-r');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-const isFinePointer = window.matchMedia('(pointer: fine)').matches;
-
-if (cur && ring && isFinePointer) {
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY });
-    
-    (function animR() {
-        rx += (mx - rx) * .12;
-        ry += (my - ry) * .12;
-        cur.style.left = mx + 'px';
-        cur.style.top = my + 'px';
-        ring.style.left = rx + 'px';
-        ring.style.top = ry + 'px';
-        requestAnimationFrame(animR);
-    })();
-    
-    document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => { 
-            cur.style.width = '12px'; cur.style.height = '12px'; 
-            ring.style.width = '46px'; ring.style.height = '46px'; 
-        });
-        el.addEventListener('mouseleave', () => { 
-            cur.style.width = '8px'; cur.style.height = '8px'; 
-            ring.style.width = '32px'; ring.style.height = '32px'; 
-        });
-    });
-} else {
-    if (cur) cur.style.display = 'none';
-    if (ring) ring.style.display = 'none';
-}
-
 // ==========================================================
-// 2. UNIVERSAL DYNAMIC CARD RENDERER
+// 1. UNIVERSAL DYNAMIC CARD RENDERER
 // ==========================================================
 function renderAllCards() {
-    const homeGrid = document.getElementById('proj-grid');
-    const portStack = document.getElementById('proj-stack');
+    const homeGrid = document.querySelector('.proj-grid');
+    const portStack = document.querySelector('.proj-stack');
 
     if (homeGrid && typeof projects !== 'undefined') {
         homeGrid.innerHTML = projects.slice(0, 3).map((project, index) => {
@@ -78,10 +45,9 @@ function renderAllCards() {
 }
 
 // ==========================================================
-// 3. DYNAMIC SOCIAL ICON RENDERER
+// 2. DYNAMIC SOCIAL ICON RENDERER
 // ==========================================================
 const socialLinks = [
-    // IMPORTANT: Update the 'img' paths to match exactly what is in your folder!
     { name: 'GitHub', url: '#', img: './assets/icons/github.svg' },
     { name: 'LinkedIn', url: '#', img: './assets/icons/linkedin.svg' },
     { name: 'Email', url: 'mailto:Vuyim1907@gmail.com', img: './assets/icons/email.svg' },
@@ -92,7 +58,6 @@ function renderSocials() {
     const socContainers = document.querySelectorAll('.soc-row');
     
     socContainers.forEach(container => {
-        // Only inject if the container is empty so we don't accidentally duplicate
         if (container.innerHTML.trim() === '') {
             container.innerHTML = socialLinks.map(link => `
                 <a href="${link.url}" class="soc" aria-label="${link.name}" target="${link.url.startsWith('mailto') ? '_self' : '_blank'}">

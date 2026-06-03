@@ -87,7 +87,6 @@ nav {
   background: none; 
   border: none; 
   padding: 4px; 
-  cursor: none; 
 }
 
 .ham span { 
@@ -203,7 +202,6 @@ footer {
   font-size: .8rem; 
   font-family: 'DM Mono', monospace; 
   transition: border-color .2s, color .2s; 
-  cursor: none; 
 }
 
 .soc:hover { 
@@ -228,7 +226,6 @@ footer {
   gap: 12px; 
   text-decoration: none; 
   transition: border-color .2s, background .2s; 
-  cursor: none; 
 }
 
 .soc-card:hover { 

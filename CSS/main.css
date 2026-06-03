@@ -8,7 +8,7 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Outfit', sans-serif; background: var(--bg);
-  color: var(--text); overflow-x: hidden; cursor: none;
+  color: var(--text); overflow-x: hidden; 
 }
 body::before {
   content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
@@ -16,8 +16,6 @@ body::before {
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%);
 }
-#cur { position: fixed; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width .15s, height .15s; }
-#cur-r { position: fixed; width: 32px; height: 32px; border: 1px solid var(--accent-glow); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); }
 #loader { position: fixed; inset: 0; background: var(--bg); z-index: 10000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity .6s .2s, visibility .6s .2s; }
 #loader.done { opacity: 0; visibility: hidden; }
 .l-name { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: .12em; color: var(--accent); }
