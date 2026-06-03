@@ -1,7 +1,7 @@
 // Handles specific section interactive components like the Home Hero Typewriter
 const tw = document.querySelector('#tw');
 if (tw) {
-    const phrases = ['Web Developer.', 'Software Engineer.', 'Game Designer.', 'Problem Solver.','Embedded Systems Developer','Music Engineer','Digital Artist.'];
+    const phrases = ['Web Developer.', 'Software Engineer.', 'Game Designer.','Embedded Systems Developer','Music Engineer','Digital Artist.'];
     let pi = 0, ci = 0, del = false;
     
     function type() {

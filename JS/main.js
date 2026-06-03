@@ -68,7 +68,40 @@ function renderSocials() {
     });
 }
 
+// ==========================================================
+// 3. DYNAMIC CORE STRENGTHS RENDERER
+// ==========================================================
+const coreStrengths = [
+    'Problem Solving',
+    'Technical Aptitude',
+    'Leadership',
+    'Communication',
+    'Collaboration',
+    'Adaptability',
+    'Project Management',
+    'Initiative',
+    'Attention to Detail',
+    'Continuous Learning'
+];
+
+function renderCoreStrengths() {
+    const container = document.querySelector('.core-strengths');
+
+    if (!container) return;
+
+    container.innerHTML = coreStrengths.map(skill => `
+        <div class="strength-card reveal">
+            <h4>${skill}</h4>
+        </div>
+    `).join('');
+
+    if (typeof obs !== 'undefined') {
+        container.querySelectorAll('.strength-card').forEach(card => obs.observe(card));
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     renderAllCards();
     renderSocials();
+    renderCoreStrengths();
 });

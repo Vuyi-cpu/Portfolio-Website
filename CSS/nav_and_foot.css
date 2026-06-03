@@ -27,17 +27,6 @@ nav {
   position: relative; 
 }
 
-.nav-logo::after { 
-  content: ''; 
-  position: absolute; 
-  bottom: -2px; 
-  left: 0; 
-  width: 6px; 
-  height: 6px; 
-  border-radius: 50%; 
-  background: var(--accent); 
-}
-
 .nav-links { 
   display: flex; 
   gap: 2rem; 
