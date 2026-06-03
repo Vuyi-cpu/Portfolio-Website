@@ -101,16 +101,20 @@ ul.styled li::before { content: '→'; color: var(--accent); font-family: 'DM Mo
 .info-val { font-size: .9rem; color: var(--text); }
 .info-val a { color: var(--accent); text-decoration: none; transition: opacity .2s; }
 .info-val a:hover { opacity: .75; }
-.form-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 2.5rem; }
+
+/* Form Elements */
+.form-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: clamp(2.5rem, 6vw, 3.5rem); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
 .form-card h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: .5rem; }
 .form-card p { color: var(--muted); font-size: .88rem; line-height: 1.6; margin-bottom: 2rem; }
-.field { margin-bottom: 1.4rem; }
+.field { margin-bottom: 2rem; }
 .field label { display: block; font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .5rem; }
-.field input, .field textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 2px; padding: .85rem 1rem; color: var(--text); font-family: 'Outfit', sans-serif; font-size: .9rem; line-height: 1.5; transition: border-color .2s; outline: none; resize: vertical; cursor: none; }
-.field input:focus, .field textarea:focus { border-color: var(--accent); }
+.field input, .field textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; color: var(--text); font-family: 'Outfit', sans-serif; font-size: .95rem; line-height: 1.5; transition: border-color .2s, background-color .2s; outline: none; resize: vertical; cursor: none; }
+.field input:focus, .field textarea:focus { border-color: var(--accent); background: var(--bg); }
 .field input::placeholder, .field textarea::placeholder { color: var(--subtle); }
-.field textarea { min-height: 130px; }
+.field textarea { min-height: 165px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* Validation & Success States */
 .form-success { display: none; text-align: center; padding: 2rem; color: var(--accent); font-family: 'DM Mono', monospace; font-size: .9rem; }
 .form-success.show { display: block; }
 .err { color: #e05; font-size: .78rem; margin-top: 4px; font-family: 'DM Mono', monospace; display: none; }
