@@ -3,7 +3,6 @@
   .hero-vis { order: -1; }
   .photo-frame { width: 180px; }
   .hero-desc { max-width: 100%; margin-inline: auto; }
-  .cta-row { justify-content: center; }
   .kicker { justify-content: center; }
   .skills-lay { grid-template-columns: 1fr; gap: 2rem; }
   .proj-grid { grid-template-columns: 1fr; }

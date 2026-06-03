@@ -1,19 +1,117 @@
-const ham = document.querySelector('#ham'), mm = document.querySelector('#mm');
-if (ham && mm) {
-    ham.addEventListener('click', () => {
-        mm.classList.toggle('open');
-        const s = ham.querySelectorAll('span');
-        if (mm.classList.contains('open')) {
-            s[0].style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
-            s[1].style.opacity = '0';
-            s[2].style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
-        } else {
-            s.forEach(x => { x.style.transform = ''; x.style.opacity = '' });
-        }
-    });
+/**
+ * =========================================================
+ * navigation.js
+ * Centralized Layout Injection & Interactive Control System
+ * =========================================================
+ */
 
-    mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        mm.classList.remove('open');
-        ham.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = '' });
-    }));
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Core Component Dom Injection
+    injectLayoutComponents();
+
+    // 2. Event Binding For Hamburger Physics
+    setupHamburgerMenu();
+
+    // 3. Prevent Script Race Conditions With main.js Social Engine
+    if (typeof renderSocials === 'function') {
+        renderSocials();
+    }
+});
+
+function injectLayoutComponents() {
+    const navContainer = document.getElementById('nav');
+    const mobMenuContainer = document.getElementById('mm');
+    const footerContainer = document.querySelector('footer');
+
+    // Central site routing configuration mapping
+    const pages = [
+        { name: 'Home', url: 'index.html' },
+        { name: 'About', url: 'about.html' },
+        { name: 'Portfolio', url: 'portfolio.html' },
+        { name: 'Contact', url: 'contact.html' }
+    ];
+
+    // Read the active path from the current location to evaluate highlighters
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+
+    // A. Dynamic Global Navbar Component Rendering
+    if (navContainer) {
+        navContainer.innerHTML = `
+            <a href="index.html" class="nav-logo">Vuyisa</a>
+            <ul class="nav-links">
+                ${pages.map(page => {
+                    const isActive = currentPage === page.url ? 'class="active"' : '';
+                    return `<li><a href="${page.url}" ${isActive}>${page.name}</a></li>`;
+                }).join('')}
+            </ul>
+            <button class="ham" id="ham" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        `;
+    }
+
+    // B. Dynamic Responsive Mobile Sliding Menu Rendering
+    if (mobMenuContainer) {
+        mobMenuContainer.innerHTML = pages.map(page => {
+            const isActive = currentPage === page.url ? 'class="active"' : '';
+            return `<a href="${page.url}" ${isActive}>${page.name}</a>`;
+        }).join('');
+    }
+
+    // C. Dynamic Fixed 3-Column Footer Component Rendering
+    if (footerContainer) {
+        footerContainer.innerHTML = `
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div class="f-logo">Vuyisa Msipa</div>
+                <div class="soc-row">
+                    </div>
+            </div>
+
+            <div">
+                <p>Email: Vuyim1907@gmail.com</p>
+            </div>
+
+            <div style="text-align: right;">
+                <div class="f-copy">© 2026 — All rights reserved</div>
+            </div>
+        `;
+    }
+}
+
+function setupHamburgerMenu() {
+    const ham = document.querySelector('#ham');
+    const mm = document.querySelector('#mm');
+
+    if (ham && mm) {
+        // Toggle mobile panel view states and convert horizontal lines into mathematical cross close triggers
+        ham.addEventListener('click', () => {
+            mm.classList.toggle('open');
+            const s = ham.querySelectorAll('span');
+            
+            if (mm.classList.contains('open')) {
+                s[0].style.transform = 'rotate(45deg) translate(4.5px, 4.5px)';
+                s[1].style.opacity = '0';
+                s[2].style.transform = 'rotate(-45deg) translate(4.5px, -4.5px)';
+            } else {
+                s.forEach(span => {
+                    span.style.transform = '';
+                    span.style.opacity = '';
+                });
+            }
+        });
+
+        // Safe dismiss overlay controls when anchor links are targeted inside mobile menu overlays
+        mm.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mm.classList.remove('open');
+                ham.querySelectorAll('span').forEach(span => {
+                    span.style.transform = '';
+                    span.style.opacity = '';
+                });
+            });
+        });
+    }
 }

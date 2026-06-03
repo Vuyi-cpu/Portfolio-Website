@@ -1,146 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | Vuyisa Msipa</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./CSS/main.css">
-<link rel="stylesheet" href="./CSS/layout.css">
-<link rel="stylesheet" href="./CSS/components.css">
-<link rel="stylesheet" href="./CSS/nav_and_foot.css">
-<link rel="stylesheet" href="./CSS/responsive.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="./JS/loading.js" defer></script>
-<script src="./JS/data.js" defer></script>
-<script src="./JS/main.js" defer></script>
-<script src="./JS/navigation.js" defer></script>
-<script src="./JS/scroll-animation.js" defer></script>
-<script src="./JS/modal.js" defer></script>
-<script src="./JS/form-validation.js" defer></script>
-<script src="./JS/sections.js" defer></script>
+  <title>Home | Vuyisa Portfolio</title>
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <link rel="stylesheet" href="./CSS/components.css">
+  <link rel="stylesheet" href="./CSS/main.css">
+  <link rel="stylesheet" href="./CSS/layout.css">
+  <link rel="stylesheet" href="./CSS/responsive.css">
+  <link rel="stylesheet" href="./CSS/nav_and_foot.css">
+
+  <script src="./JS/loading.js" defer></script>
+  <script src="./JS/navigation.js" defer></script>
+  <script src="./JS/scroll-animation.js" defer></script>
+  <script src="./JS/modal.js" defer></script>
+  <script src="./JS/form-validation.js" defer></script>
+  <script src="./JS/main.js" defer></script>
+  <script src="./JS/sections.js" defer></script>
 </head>
-<body>
-<div id="cur"></div><div id="cur-r"></div>
-<div id="loader"><div class="l-name">VM / Home</div><div class="l-bar"><div class="l-fill"></div></div></div>
- 
-<nav id="nav">
-  <a href="index.html" class="nav-logo">Vuyisa</a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-<div class="mob-menu" id="mm">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
-</div>
- 
-<!-- UPDATED HERO SECTION -->
-<section class="hero" style="position:relative">
-  <!-- Hero Image on the left -->
-  <div class="hero-vis">
-    <div class="photo-frame">
-      <img src="./Assets/Images/Me.jpg" alt="Vuyisa Msipa">
-    </div>
+
+<body class="home-page">
+
+  <div id="cur"></div>
+  <div id="cur-r"></div>
+
+  <div id="page-loader" class="loader">
+    <div class="loader-box"></div>
   </div>
-
-  <!-- Hero Text on the right -->
-  <div class="hero-text">
-    <div class="kicker">Available for opportunities</div>
-    <h1>Hi, I'm<br><span>Vuyisa Msipa</span></h1>
-    <div class="tw-wrap" id="tw"></div>
-    <p class="hero-desc">Based in Johannesburg, South Africa, I turn ideas into engaging digital experiences, combining design, technology, and problem-solving to create solutions that are both innovative and effective.</p>
-    <div class="cta-row">
-      <a href="portfolio.html" class="btn-p">View My Work</a>
-      <a href="about.html" class="btn-g">About Me</a>
-    </div>
-  </div>
-  <div class="scroll-ind">scroll</div>
-</section>
- 
-<!-- UPDATED SKILLS SECTION -->
-<section class="skills-sec">
-  <div class="inner">
-    <!-- Centered Section Header -->
-    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <div class="sec-label" style="justify-content: center; transform: translateX(14px);">What I know</div>
-      <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Skills</h2>
-    </div>
-
-    <div class="skills-lay">
-      <!-- Skills icons on the left -->
-      <div class="skills-grid">
-        <div class="sk" data-d="0"><img src="./Assets/Icons/html5-original.svg" alt=""><span>HTML5</span></div>
-        <div class="sk" data-d="60"><img src="./Assets/Icons/css3-original.svg" alt=""><span>CSS3</span></div>
-        <div class="sk" data-d="120"><img src="./Assets/Icons/javascript-original.svg" alt=""><span>JS</span></div>
-        <div class="sk" data-d="180"><img src="./Assets/Icons/python-original.svg" alt=""><span>Python</span></div>
-        <div class="sk" data-d="240"><img src="./Assets/Icons/java-original.svg" alt=""><span>Java</span></div>
-        <div class="sk" data-d="300"><img src="./Assets/Icons/cplusplus-original.svg" alt=""><span>C++</span></div>
-        <div class="sk" data-d="360"><img src="./Assets/Icons/csharp-original.svg" alt=""><span>C#</span></div>
-        <div class="sk" data-d="420"><img src="./Assets/Icons/unity-original.svg" alt=""><span>Unity</span></div>
-        <div class="sk" data-d="480"><img src="./Assets/Icons/git-original.svg" alt=""><span>Git</span></div>
-        <div class="sk" data-d="540"><img src="./Assets/Icons/mysql-plain-wordmark.svg" alt=""><span>MySQL</span></div>
-        <div class="sk" data-d="600"><img src="./Assets/Icons/matlab-original.svg" alt=""><span>MATLAB</span></div>
-        <div class="sk" data-d="660"><img src="./Assets/Icons/powershell-original.svg" alt=""><span>Shell</span></div>
-      </div>
-
-      <!-- List of skills description on the right -->
-      <div class="reveal">
-        <p class="skills-desc">I work across the full front-end spectrum — from semantic HTML and responsive CSS to interactive JavaScript, game development in Unity, and scripting in Python, Java, and C++.<br><br>I prioritise clean code, consistent structure, and maintainable architecture in every project.</p>
+  
+  <nav id="nav"></nav>
+  
+  <div class="mob-menu" id="mm"></div>
+  
+  <section class="hero" style="position:relative">
+    <div class="hero-vis">
+      <div class="photo-frame">
+        <img src="./Assets/Images/Me.jpg" alt="Vuyisa Msipa">
       </div>
     </div>
-  </div>
-</section>
- 
-<!-- UPDATED PROJECTS SECTION -->
-<section class="proj-sec">
-  <div class="inner">
-    <!-- Centered Section Header -->
-    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <div class="sec-label" style="justify-content: center; transform: translateX(14px);">Selected work</div>
-      <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Projects</h2>
-    </div>
 
-    <!-- 3-Column Display Grid -->
-    <div class="proj-grid" id="proj-grid"></div>
+    <div class="hero-text">
+      <div class="kicker">Available for opportunities</div>
+      <h1>Hi, I'm<br><span>Vuyisa Msipa</span></h1>
+      <div class="tw-wrap" id="tw"></div>
+      <p class="hero-desc">Based in Johannesburg, South Africa, I turn ideas into engaging digital experiences, combining design, technology, and problem-solving to create solutions that are both innovative and effective.</p>
+    </div>
+    <div class="scroll-ind">scroll</div>
+  </section>
+  
+  <section class="skills-sec">
+    <div class="inner">
+      <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+        <div class="sec-label" style="justify-content: center; transform: translateX(14px);">What I know</div>
+        <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Skills</h2>
+      </div>
 
-    <!-- Centered CTA Action Button -->
-    <div style="text-align: center; margin-top: 4rem;">
-      <a href="portfolio.html" class="btn-p reveal">See More Projects</a>
-    </div>
-  </div>
-</section>
- 
-<footer>
-  <div><div class="f-logo">Vuyisa Msipa</div><div class="f-copy">© 2026 — All rights reserved</div></div>
-  <div class="f-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div>
-  <div>
-    <div class="f-copy" style="margin-bottom:8px">Vuyim1907@gmail.com</div>
-    <div class="soc-row">
-      <!-- Social icons injected here dynamically by main.js -->
-    </div>
-  </div>
-</footer>
+      <div class="skills-lay">
+        <div class="skills-grid">
+          <div class="sk" data-d="0"><img src="./Assets/Icons/html5-original.svg" alt=""><span>HTML5</span></div>
+          <div class="sk" data-d="60"><img src="./Assets/Icons/css3-original.svg" alt=""><span>CSS3</span></div>
+          <div class="sk" data-d="120"><img src="./Assets/Icons/javascript-original.svg" alt=""><span>JS</span></div>
+          <div class="sk" data-d="180"><img src="./Assets/Icons/python-original.svg" alt=""><span>Python</span></div>
+          <div class="sk" data-d="240"><img src="./Assets/Icons/java-original.svg" alt=""><span>Java</span></div>
+          <div class="sk" data-d="300"><img src="./Assets/Icons/cplusplus-original.svg" alt=""><span>C++</span></div>
+          <div class="sk" data-d="360"><img src="./Assets/Icons/csharp-original.svg" alt=""><span>C#</span></div>
+          <div class="sk" data-d="420"><img src="./Assets/Icons/unity-original.svg" alt=""><span>Unity</span></div>
+          <div class="sk" data-d="480"><img src="./Assets/Icons/git-original.svg" alt=""><span>Git</span></div>
+          <div class="sk" data-d="540"><img src="./Assets/Icons/mysql-plain-wordmark.svg" alt=""><span>MySQL</span></div>
+          <div class="sk" data-d="600"><img src="./Assets/Icons/matlab-original.svg" alt=""><span>MATLAB</span></div>
+          <div class="sk" data-d="660"><img src="./Assets/Icons/powershell-original.svg" alt=""><span>Shell</span></div>
+        </div>
 
-<div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
-  <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    <img class="modal-img" id="m-img" src="" alt="">
-    <div class="modal-body">
-      <div class="modal-num" id="m-num"></div>
-      <div class="modal-title" id="m-title"></div>
-      <div class="modal-tags" id="m-tags"></div>
-      <div class="modal-section"><h4>Overview</h4><p id="m-desc"></p></div>
-      <div class="modal-section"><h4>Process & Approach</h4><p id="m-process"></p></div>
-      <div class="modal-section"><h4>Key Features</h4><p id="m-features"></p></div>
+        <div class="reveal">
+          <p class="skills-desc">I work across the full front-end spectrum — from semantic HTML and responsive CSS to interactive JavaScript, game development in Unity, and scripting in Python, Java, and C++.<br><br>I prioritise clean code, consistent structure, and maintainable architecture in every project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="proj-sec">
+    <div class="inner">
+      <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+        <div class="sec-label" style="justify-content: center; transform: translateX(14px);">Selected work</div>
+        <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Projects</h2>
+      </div>
+
+      <div class="proj-grid" id="proj-grid"></div>
+
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="portfolio.html" class="btn-p reveal">See More Projects</a>
+      </div>
+    </div>
+  </section>
+  
+  <footer></footer>
+
+  <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <img class="modal-img" id="m-img" src="" alt="">
+      <div class="modal-body">
+        <div class="modal-num" id="m-num"></div>
+        <div class="modal-title" id="m-title"></div>
+        <div class="modal-tags" id="m-tags"></div>
+        <div class="modal-section"><h4>Overview</h4><p id="m-desc"></p></div>
+        <div class="modal-section"><h4>Process & Approach</h4><p id="m-process"></p></div>
+        <div class="modal-section"><h4>Key Features</h4><p id="m-features"></p></div>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
