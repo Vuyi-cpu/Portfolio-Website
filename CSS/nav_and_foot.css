@@ -1,155 +1,33 @@
-/* nav_and_foot.css */
+/* Navigation */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); height: 68px; background: rgba(14, 14, 14, .97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: background .3s; }
+.nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--text); text-decoration: none; position: relative; }
+.nav-logo::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; letter-spacing: .04em; transition: color .2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--text); }
+.ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; cursor: none; }
+.ham span { width: 24px; height: 1.5px; background: var(--text); transition: transform .3s, opacity .3s; display: block; }
+.mob-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: rgba(14, 14, 14, .97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+.mob-menu.open { display: flex; }
+.mob-menu a { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 700; color: var(--text); text-decoration: none; transition: color .2s; }
+.mob-menu a:hover { color: var(--accent); }
 
-/* ==========================
-   NAVBAR
-========================== */
-.navbar {
-  display: flex;
-  justify-content: center;     /* center menu */
-  align-items: center;
-  padding: 22px 60px;
-  background: #1B1B1B;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid #2E2E2E;
-  position: sticky; /* Keep it at the top while scrolling */
-  top: 0;
-  z-index: 1000;
-}
-
-/* Logo left */
-.logo {
-  position: absolute;
-  left: 60px;
-  font-size: 30px;
-  font-weight: 500;
-  color: #66B8FF;
-  letter-spacing: 1px;
-}
-
-/* Menu center */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 45px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline-block;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  padding-bottom: 5px;
-  transition: 0.3s ease;
-}
-
-/* Active page underline */
-.nav-links a.active {
-  color: #66B8FF;
-  border-bottom: 2px solid #66B8FF;
-}
-
-/* Hover */
-.nav-links a:hover {
-  color: #66B8FF;
-}
-
-/* Moon icon right */
-.toggle {
-  position: absolute;
-  right: 60px;
-  font-size: 18px;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-/* ===============================
-   FOOTER STYLES
-=============================== */
-
-/* ===============================
-   FOOTER LAYOUT
-=============================== */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer {
-  background: #181818;
-  padding: 40px 60px;
-  border-top: 1px solid #2E2E2E;
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 120px;
-  margin: auto;
-  width: 100%;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between; /* Spreads sections to left, center, right */
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-section {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1; /* Ensures equal spacing */
-}
-
-/* Alignments for the three sections */
-.footer-left {
-  justify-content: flex-start;
-}
-
-.footer-center {
-  justify-content: center;
-}
-
-.footer-right {
-  justify-content: flex-end;
-}
-
-/* Typography & Elements */
-.footer-label {
-  font-size: 14px;
-  color: #CFCFCF;
-}
-
-.footer-value {
-  font-size: 14px;
-  color: #FFFFFF;
-}
-
-.footer-icons {
-  display: flex;
-  gap: 10px;
-}
-
-.footer-icon {
-  width: 20px;
-  height: 20px;
-  background: #FFFFFF;
-  border-radius: 50%;
-  transition: transform 0.2s ease;
-  cursor: pointer;
-}
-
-.footer-icon:hover {
-  transform: scale(1.1);
-  background: #8BCBFF;
-}
+/* Footer & Socials */
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3rem clamp(1.5rem, 5vw, 4rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; position: relative; z-index: 1; margin-top: clamp(3rem, 6vw, 6rem); }
+.f-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; }
+.f-copy { color: var(--subtle); font-size: .78rem; font-family: 'DM Mono', monospace; margin-top: 4px; }
+.f-links { display: flex; gap: 1.5rem; }
+.f-links a { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; }
+.f-links a:hover { color: var(--accent); }
+.soc-row { display: flex; gap: 10px; }
+.soc { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); text-decoration: none; font-size: .8rem; font-family: 'DM Mono', monospace; transition: border-color .2s, color .2s; cursor: none; }
+.soc:hover { border-color: var(--accent); color: var(--accent); }
+.soc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.soc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; display: flex; align-items: center; gap: 12px; text-decoration: none; transition: border-color .2s, background .2s; cursor: none; }
+.soc-card:hover { border-color: var(--accent); background: var(--accent-dim); }
+.soc-icon { width: 36px; height: 36px; background: var(--surface2); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--accent); flex-shrink: 0; }
+.soc-label { font-family: 'Syne', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); }
+.soc-sub { font-size: .75rem; color: var(--muted); }

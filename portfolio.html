@@ -1,133 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- META -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Portfolio | Vuyisa</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="./CSS/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Vuyisa Msipa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./CSS/main.css">
 <link rel="stylesheet" href="./CSS/layout.css">
 <link rel="stylesheet" href="./CSS/components.css">
+<link rel="stylesheet" href="./CSS/nav_and_foot.css">
 <link rel="stylesheet" href="./CSS/responsive.css">
-  <link rel="stylesheet" href="./CSS/nav_and_foot.css">
 
-  <!-- JS -->
 <script src="./JS/loading.js" defer></script>
-  <script src="./JS/navigation.js" defer></script>
-  <script src="./JS/scroll-animation.js" defer></script>
-  <script src="./JS/modal.js" defer></script>
-  <script src="./JS/form-validation.js" defer></script>
-  <script src="./JS/main.js" defer></script>
-    <script src="./JS/sections.js" defer></script>
+<script src="./JS/main.js" defer></script>
+<script src="./JS/navigation.js" defer></script>
+<script src="./JS/scroll-animation.js" defer></script>
+<script src="./JS/modal.js" defer></script>
+<script src="./JS/form-validation.js" defer></script>
+<script src="./JS/sections.js" defer></script>link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="components.css">
+<link rel="stylesheet" href="nav_and_foot.css">
+<link rel="stylesheet" href="responsive.css">
 </head>
-
-<body class = "portfolio-page">
-<div id="page-loader" class="loader">
-  <div class="loader-box"></div>
-  <div class="loader-text">WELCOME</div>
+<body>
+<div id="cur"></div><div id="cur-r"></div>
+<div id="loader"><div class="l-name">VM / Projects</div><div class="l-bar"><div class="l-fill"></div></div></div>
+ 
+<nav>
+  <a href="index.html" class="nav-logo">Vuyisa</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mm">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
 </div>
-  <!-- NAVBAR -->
-  <div id="navbar-container"></div>
-
-  <main>
-
-    <!-- ===============================
-         INTRO
-    ================================ -->
-  <section class="portfolio-intro">
-  <h1>Projects</h1>
-
-      <p >
-        A collection of projects showcasing my skills in front-end development,
-        UI design, and interactive experiences.
-      </p>
-    </section>
-
-    <!-- ===============================
-         ZIG-ZAG PROJECTS
-    ================================ -->
-    <canvas class="wave-divider" data-color="#151a22"></canvas>
-    <section class="portfolio-alt">
-      <!-- PROJECT 1 -->
-      <div class="project-row">
-        <img src="./assets/images/p1.jpg" class="project-image">
-
-        <div class="project-text">
-          <h3>Project 1 image with description</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <button class="view-project-btn">View Project</button>
+ 
+<div class="page-header reveal">
+  <div class="page-kicker">Selected work</div>
+  <h1 class="page-title">My <span>Projects</span></h1>
+  <p class="page-intro">A collection of projects showcasing my abilities in front-end development, UI design, game development, and interactive experiences. Click any project to view full details.</p>
+</div>
+ 
+<section class="projects-sec">
+  <div class="inner">
+    <div class="proj-stack">
+ 
+      <div class="pc reveal" data-project="0">
+        <div class="pc-thumb"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/p3.jpg" alt="Portfolio website"></div>
+        <div class="pc-info">
+          <div class="pc-num">01 / 04</div>
+          <div class="pc-title">Personal Portfolio Website</div>
+          <p class="pc-desc">Modern portfolio website built with vanilla HTML, CSS and JavaScript — designed for performance and visual clarity across all devices.</p>
+          <div class="pc-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive</span></div>
+          <button class="pc-btn" onclick="openModal(0)">View Details →</button>
         </div>
       </div>
-
-      <!-- PROJECT 2 -->
-      <div class="project-row reverse">
-        <img src="./assets/images/p2.jpg" class="project-image">
-
-        <div class="project-text">
-          <h3>Project 2 image with description</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <button class="view-project-btn">View Project</button>
+ 
+      <div class="pc reveal" data-project="1">
+        <div class="pc-thumb"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/p1.jpg" alt="Game project"></div>
+        <div class="pc-info">
+          <div class="pc-num">02 / 04</div>
+          <div class="pc-title">Interactive Game Project</div>
+          <p class="pc-desc">An interactive game focused on logic and UI mechanics, built with Unity and C# to demonstrate real-time state management and creative problem-solving.</p>
+          <div class="pc-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Game Design</span><span class="tag">UI</span></div>
+          <button class="pc-btn" onclick="openModal(1)">View Details →</button>
         </div>
       </div>
-
-      <!-- PROJECT 3 -->
-      <div class="project-row">
-        <img src="./assets/images/p3.jpg" class="project-image">
-
-        <div class="project-text">
-          <h3>Project 3 image with description</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <button class="view-project-btn">View Project</button>
+ 
+      <div class="pc reveal" data-project="2">
+        <div class="pc-thumb"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/p2.jpg" alt="Responsive site"></div>
+        <div class="pc-info">
+          <div class="pc-num">03 / 04</div>
+          <div class="pc-title">Responsive Multi-Page Website</div>
+          <p class="pc-desc">A fully responsive multi-page website engineered to scale seamlessly from mobile to desktop, with careful attention to layout shifts and breakpoints.</p>
+          <div class="pc-tags"><span class="tag">HTML</span><span class="tag">CSS Grid</span><span class="tag">JavaScript</span><span class="tag">Mobile-first</span></div>
+          <button class="pc-btn" onclick="openModal(2)">View Details →</button>
         </div>
       </div>
-
-      <!-- PROJECT 4 -->
-      <div class="project-row reverse">
-        <img src="./assets/images/project4.jpg" class="project-image">
-
-        <div class="project-text">
-          <h3>Project 4 image with description</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <button class="view-project-btn">View Project</button>
+ 
+      <div class="pc reveal" data-project="3">
+        <div class="pc-thumb"><img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/project4.jpg" alt="Project 4"></div>
+        <div class="pc-info">
+          <div class="pc-num">04 / 04</div>
+          <div class="pc-title">UI Component Library</div>
+          <p class="pc-desc">A curated set of reusable UI components built with clean HTML, CSS, and JavaScript — demonstrating modular design thinking and consistent visual language.</p>
+          <div class="pc-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Design Systems</span></div>
+          <button class="pc-btn" onclick="openModal(3)">View Details →</button>
         </div>
       </div>
-
-    </section>
-<canvas class="wave-divider" data-color="#12161c"></canvas>
-    <!-- ===============================
-         CTA
-    ================================ -->
-   <section class="cta">
-      <h2>Want to see more?</h2>
-
-      <p>
-        More projects are continuously being added as I grow and improve my skills.
-      </p>
-
-      <div >
-        <a href="contact.html" class="btn">Contact Me</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <div id="footer-container"></div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<section class="cta-sec">
+  <div class="cta-box reveal">
+    <h3>Want to see more?</h3>
+    <p>More projects are continuously being added as I grow and refine my skills. Reach out to discuss collaboration or freelance opportunities.</p>
+    <a href="contact.html" class="btn-p">Contact Me →</a>
+  </div>
+</section>
+ 
+<footer>
+  <div><div class="f-logo">Vuyisa Msipa</div><div class="f-copy">© 2026 — All rights reserved</div></div>
+  <div class="f-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div>
+  <div>
+    <div class="f-copy" style="margin-bottom:8px">Vuyim1907@gmail.com</div>
+    <div class="soc-row"><a href="#" class="soc">GH</a><a href="#" class="soc">LI</a><a href="mailto:Vuyim1907@gmail.com" class="soc">@</a><a href="#" class="soc">IG</a></div>
+  </div>
+</footer>
+ 
+<div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <img class="modal-img" id="m-img" src="" alt="">
+    <div class="modal-body">
+      <div class="modal-num" id="m-num"></div>
+      <div class="modal-title" id="m-title"></div>
+      <div class="modal-tags" id="m-tags"></div>
+      <div class="modal-section"><h4>Overview</h4><p id="m-desc"></p></div>
+      <div class="modal-section"><h4>Process & Approach</h4><p id="m-process"></p></div>
+      <div class="modal-section"><h4>Key Features</h4><p id="m-features"></p></div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

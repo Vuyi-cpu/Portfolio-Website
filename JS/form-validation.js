@@ -1,33 +1,29 @@
-/**
- * SCRIPT: form-validation.js
- * DESCRIPTION: Validates contact form inputs and provides user feedback.
- */
-document.addEventListener("DOMContentLoaded", () => {
-  const contactForm = document.querySelector('.contact-form');
-
-  if (!contactForm) return;
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nameInput = contactForm.querySelector('input[type="text"]');
-    const emailInput = contactForm.querySelector('input[type="email"]');
-    const messageInput = contactForm.querySelector('textarea');
+function submitForm() {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const msgInput = document.getElementById('message');
+    
+    if(!nameInput || !emailInput || !msgInput) return;
 
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-
-    // Better email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    alert(`Thank you, ${name}! Your message has been sent successfully.`);
-
-    contactForm.reset();
-  });
-});
+    const msg = msgInput.value.trim();
+    let ok = true;
+    
+    document.querySelectorAll('.err').forEach(e => e.classList.remove('show'));
+    
+    if (!name) { document.getElementById('name-err').classList.add('show'); ok = false; }
+    if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) { document.getElementById('email-err').classList.add('show'); ok = false; }
+    if (!msg) { document.getElementById('msg-err').classList.add('show'); ok = false; }
+    
+    if (!ok) return;
+    
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('form-success').classList.add('show');
+    }, 1200);
+}

@@ -1,74 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- META -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Vuyisa Msipa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./CSS/main.css">
+<link rel="stylesheet" href="./CSS/layout.css">
+<link rel="stylesheet" href="./CSS/components.css">
+<link rel="stylesheet" href="./CSS/nav_and_foot.css">
+<link rel="stylesheet" href="./CSS/responsive.css">
 
-  <title>Contact | Vuyisa</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="./CSS/main.css">
-  <link rel="stylesheet" href="./CSS/layout.css">
-  <link rel="stylesheet" href="./CSS/components.css">
-  <link rel="stylesheet" href="./CSS/responsive.css">
-    <link rel="stylesheet" href="./CSS/nav_and_foot.css">
-
-  <!-- JS -->
- <script src="./JS/loading.js" defer></script>
-  <script src="./JS/navigation.js" defer></script>
-  <script src="./JS/scroll-animation.js" defer></script>
-  <script src="./JS/modal.js" defer></script>
-  <script src="./JS/form-validation.js" defer></script>
-  <script src="./JS/main.js" defer></script>
-    <script src="./JS/sections.js" defer></script>
+<script src="./JS/loading.js" defer></script>
+<script src="./JS/main.js" defer></script>
+<script src="./JS/navigation.js" defer></script>
+<script src="./JS/scroll-animation.js" defer></script>
+<script src="./JS/modal.js" defer></script>
+<script src="./JS/form-validation.js" defer></script>
+<script src="./JS/sections.js" defer></script>
 </head>
-
-<body class = "contact-page">
-<div id="page-loader" class="loader">
-  <div class="loader-box"></div>
-  <div class="loader-text">WELCOME</div>
+<body>
+<div id="cur"></div><div id="cur-r"></div>
+<div id="loader"><div class="l-name">VM / Contact</div><div class="l-bar"><div class="l-fill"></div></div></div>
+ 
+<nav>
+  <a href="index.html" class="nav-logo">Vuyisa</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mm">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
 </div>
-  <!-- NAVBAR -->
-  <div id="navbar-container"></div>
-
-  <main>
-
-    <!-- ===============================
-         CONTACT INTRO
-    ================================ -->
-    <section class="contact">
-      <h1>Contact Me</h1>
-      <p>
-        Have a project in mind or just want to connect? Feel free to reach out.
-      </p>
-    
-
-    <!-- ===============================
-         CONTACT FORM
-    ================================ -->
-    <section class="contact-container">
-
-      <form class="contact-form">
-
-        <input type="text" placeholder="Your Name" required>
-
-        <input type="email" placeholder="Your Email" required>
-
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-
-        <button type="submit" class="view-project-btn">Send Message</button>
-
-      </form>
-
-    </section>
-    </section>
-   
-
-  </main>
-
-  <!-- FOOTER -->
-  <div id="footer-container"></div>
+ 
+<div class="page-header reveal">
+  <div class="page-kicker">Get in touch</div>
+  <h1 class="page-title">Let's <span>Connect</span></h1>
+  <p class="page-intro">Have a project in mind or want to discuss opportunities? Fill out the form or reach me directly through any of the channels below.</p>
+</div>
+ 
+<section class="contact-sec">
+  <div class="contact-grid">
+ 
+    <div class="info-side reveal">
+      <div class="info-block">
+        <h3>Contact Details</h3>
+        <div class="info-item">
+          <div class="info-icon">@</div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-val"><a href="mailto:Vuyim1907@gmail.com">Vuyim1907@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">JHB</div>
+          <div>
+            <div class="info-label">Location</div>
+            <div class="info-val">Johannesburg, South Africa</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">↗</div>
+          <div>
+            <div class="info-label">Status</div>
+            <div class="info-val" style="color:#4A90E2">Available for opportunities</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="info-block">
+        <h3>Connect on Social</h3>
+        <div class="soc-grid">
+          <a href="#" class="soc-card">
+            <div class="soc-icon">LI</div>
+            <div><div class="soc-label">LinkedIn</div><div class="soc-sub">Let's connect</div></div>
+          </a>
+          <a href="#" class="soc-card">
+            <div class="soc-icon">GH</div>
+            <div><div class="soc-label">GitHub</div><div class="soc-sub">View my code</div></div>
+          </a>
+          <a href="mailto:Vuyim1907@gmail.com" class="soc-card">
+            <div class="soc-icon">@</div>
+            <div><div class="soc-label">Email</div><div class="soc-sub">Direct message</div></div>
+          </a>
+          <a href="#" class="soc-card">
+            <div class="soc-icon">IG</div>
+            <div><div class="soc-label">Instagram</div><div class="soc-sub">Creative work</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="form-side reveal" style="transition-delay:.15s">
+      <div class="form-card">
+        <h3>Send a Message</h3>
+        <p>Fill in your details and I'll get back to you as soon as possible.</p>
+        <div id="contact-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="e.g. Jane Smith">
+              <div class="err" id="name-err">Please enter your name</div>
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="jane@example.com">
+              <div class="err" id="email-err">Please enter a valid email</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="What's this about?">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell me about your project or opportunity..."></textarea>
+            <div class="err" id="msg-err">Please enter a message</div>
+          </div>
+          <button class="btn-submit" id="submit-btn" onclick="submitForm()">Send Message →</button>
+        </div>
+        <div class="form-success" id="form-success">
+          ✓ Message sent successfully!<br>
+          <span style="color:var(--muted);font-size:.82rem">I'll be in touch within 1–2 business days.</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<footer>
+  <div><div class="f-logo">Vuyisa Msipa</div><div class="f-copy">© 2026 — All rights reserved</div></div>
+  <div class="f-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div>
+  <div>
+    <div class="f-copy" style="margin-bottom:8px">Vuyim1907@gmail.com</div>
+    <div class="soc-row"><a href="#" class="soc">GH</a><a href="#" class="soc">LI</a><a href="mailto:Vuyim1907@gmail.com" class="soc">@</a><a href="#" class="soc">IG</a></div>
+  </div>
+</footer>
 
 </body>
 </html>

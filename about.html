@@ -1,187 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===============================
-       META DATA
-  ================================ -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Vuyisa Msipa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./CSS/main.css">
+<link rel="stylesheet" href="./CSS/layout.css">
+<link rel="stylesheet" href="./CSS/components.css">
+<link rel="stylesheet" href="./CSS/nav_and_foot.css">
+<link rel="stylesheet" href="./CSS/responsive.css">
 
-  <!-- ===============================
-       PAGE TITLE
-  ================================ -->
-  <title>About | Vuyisa Portfolio</title>
-
-  <!-- ===============================
-       CSS FILES
-  ================================ -->
-  <link rel="stylesheet" href="./CSS/main.css">
-  <link rel="stylesheet" href="./CSS/layout.css">
-  <link rel="stylesheet" href="./CSS/components.css">
-  <link rel="stylesheet" href="./CSS/responsive.css">
-    <link rel="stylesheet" href="./CSS/nav_and_foot.css">
-
-  <!-- ===============================
-       JAVASCRIPT FILES
-  ================================ -->
 <script src="./JS/loading.js" defer></script>
-  <script src="./JS/navigation.js" defer></script>
-  <script src="./JS/scroll-animation.js" defer></script>
-  <script src="./JS/modal.js" defer></script>
-  <script src="./JS/form-validation.js" defer></script>
-  <script src="./JS/main.js" defer></script>
-    <script src="./JS/sections.js" defer></script>
+<script src="./JS/main.js" defer></script>
+<script src="./JS/navigation.js" defer></script>
+<script src="./JS/scroll-animation.js" defer></script>
+<script src="./JS/modal.js" defer></script>
+<script src="./JS/form-validation.js" defer></script>
+<script src="./JS/sections.js" defer></script>
 </head>
-
-<body class = "about-page">
-<div id="page-loader" class="loader">
-  <div class="loader-box"></div>
-  <div class="loader-text">WELCOME</div>
+<body>
+<div id="cur"></div><div id="cur-r"></div>
+<div id="loader"><div class="l-name">VM / About</div><div class="l-bar"><div class="l-fill"></div></div></div>
+ 
+<nav>
+  <a href="index.html" class="nav-logo">Vuyisa</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mm">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
 </div>
-  <!-- NAVBAR -->
-  <div id="navbar-container"></div>
-
-  <main>
-
-    <!-- ===============================
-         ABOUT INTRO
-    ================================ -->
-      <section class="hero">
-      <div class="hero-image">
-
-           <h1>About Me</h1>
-        <img src="./assets/images/me.jpg" alt="Portrait of Vuyisa Msipa">
+ 
+<div class="page-header reveal">
+  <div class="page-kicker">Get to know me</div>
+  <h1 class="page-title">About <span>Me</span></h1>
+</div>
+ 
+<section class="about-sec">
+  <div class="inner">
+    <div class="intro-grid reveal">
+      <div class="intro-img">
+        <img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/me.jpg" alt="Vuyisa Msipa">
       </div>
-      <div class="hero-text">
-        <p>
-          I am Vuyisa Msipa, a passionate web developer focused on creating
-          clean, modern and engaging digital experiences. I enjoy combining
-          creative design with practical coding solutions that deliver strong
-          user experiences.
-        </p>
+      <div class="intro-text">
+        <div class="sec-label">Background</div>
+        <h2 class="sec-title">Who I Am</h2>
+        <p>I'm Vuyisa Msipa, a web developer and digital designer based in Johannesburg, South Africa, currently studying towards a degree in Digital Arts at Wits University (DIGA4014A/3008A). I'm passionate about the intersection of technology and design — building things that are both technically sound and visually meaningful.</p>
+        <p style="margin-top:1rem">My journey into development started through curiosity about how things work on the web. That curiosity grew into a genuine love for crafting interactive experiences, writing clean code, and solving creative problems through a structured, thoughtful process.</p>
+        <p style="margin-top:1rem">I bring a multidisciplinary perspective to every project — combining front-end development, UI thinking, and an understanding of game mechanics to create experiences that engage users and communicate clearly.</p>
       </div>
-
-    </section>
-
-<canvas class="wave-divider" data-color="#12161c"></canvas>
-    <!-- ===============================
-         ACHIEVEMENTS
-    ================================ -->
-    <section class="projects">
-
-      <h2>Achievements</h2>
-
-      <div class="project-container">
-
-        <div class="project-card">
-          <p>
-            Built multiple responsive websites using HTML, CSS and JavaScript.
-          </p>
+    </div>
+  </div>
+</section>
+ 
+<hr class="divider">
+ 
+<section class="about-sec">
+  <div class="inner">
+    <div class="reveal">
+      <div class="sec-label">Recognition</div>
+      <h2 class="sec-title">Achievements</h2>
+    </div>
+    <div class="card reveal">
+      <div class="card-head">Awards & Recognition</div>
+      <p class="card-desc">A selection of academic and extracurricular achievements that reflect my commitment to growth and excellence.</p>
+      <ul class="styled">
+        <li>Dean's Merit List — Academic Excellence in Digital Arts</li>
+        <li>Completed front-end web development certification with distinction</li>
+        <li>Led team project that received highest grade in module cohort</li>
+        <li>Active contributor to university coding community and workshops</li>
+        <li>Developed portfolio projects recognised for design and interactivity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+ 
+<hr class="divider">
+ 
+<section class="about-sec">
+  <div class="inner">
+    <div class="reveal">
+      <div class="sec-label">Education</div>
+      <h2 class="sec-title">Qualifications</h2>
+    </div>
+    <div class="card reveal">
+      <div class="card-head">Education & Qualifications</div>
+      <p class="card-desc">My academic background spans digital arts, programming, and design — giving me a strong foundation to work across both creative and technical disciplines.</p>
+      <ul class="styled" style="margin-bottom:1.8rem">
+        <li>Bachelor of Arts in Digital Arts — University of the Witwatersrand (in progress)</li>
+        <li>National Senior Certificate — High school, Johannesburg</li>
+        <li>JavaScript Essentials — Online certification (freeCodeCamp)</li>
+        <li>Responsive Web Design — Online certification (freeCodeCamp)</li>
+        <li>Unity Game Development — Self-directed learning and coursework</li>
+      </ul>
+      <a href="#" class="btn-p" download>Download CV ↓</a>
+    </div>
+  </div>
+</section>
+ 
+<hr class="divider">
+ 
+<section class="about-sec">
+  <div class="inner">
+    <div class="reveal">
+      <div class="sec-label">Looking ahead</div>
+      <h2 class="sec-title">Career Goals</h2>
+    </div>
+    <div class="reveal">
+      <div class="goals-grid">
+        <div class="goal-card">
+          <h4>Short-term</h4>
+          <p>Secure a graduate developer role or internship where I can contribute real solutions to real products while continuing to grow technically. I aim to deepen my JavaScript skills, explore React, and gain exposure to production codebases within a collaborative team environment.</p>
         </div>
-
-        <div class="project-card">
-          <p>
-            Completed various academic and personal coding projects.
-          </p>
+        <div class="goal-card">
+          <h4>Long-term</h4>
+          <p>Build a career as a full-stack developer or creative technologist — someone who bridges the gap between engineering precision and design thinking. I aspire to work on products that matter, lead front-end projects, and eventually contribute to building tools that empower other developers and creatives.</p>
         </div>
-
-        <div class="project-card">
-          <p>
-            Continuously improving skills through self-learning and practice.
-          </p>
-        </div>
-
       </div>
-
-    </section>
-<canvas class="wave-divider" data-color="#151a22"></canvas>
-    <!-- ===============================
-         EDUCATION + QUALIFICATIONS
-    ================================ -->
-    <section class="skills">
-
-      <h2>Education & Qualifications</h2>
-
-      <div class="skills-container">
-
-        <div class="skills-text">
-          <p>
-            Currently studying digital arts and development while gaining
-            practical experience in front-end development and design systems.
-          </p>
-
-          <p>
-            • HTML, CSS & JavaScript <br>
-            • Responsive Web Design <br>
-            • UI / UX Principles <br>
-            • Front-End Development <br>
-            • GitHub & Version Control
-          </p>
-
-          <a href="./assets/files/Vuyisa-CV.pdf" class="view-project-btn" download>
-            Download CV
-          </a>
-        </div>
-
+      <div class="card" style="margin-top:16px">
+        <div class="card-head">What drives me</div>
+        <p class="card-desc" style="margin-bottom:0">I'm motivated by the challenge of translating complex ideas into clear, functional, and beautiful digital experiences. Every project I work on is an opportunity to push what's possible within constraints — and to leave something better than I found it. I believe the best work happens at the intersection of curiosity, craft, and collaboration.</p>
       </div>
-
-    </section>
-<canvas class="wave-divider" data-color="#12161c"></canvas>
-    <!-- ===============================
-         CAREER GOALS
-    ================================ -->
-    <section class="projects">
-
-      <h2>Career Goals</h2>
-
-      <div class="project-container">
-
-        <div class="project-card">
-          <p>
-            Gain valuable industry experience as a front-end developer.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <p>
-            Grow into a professional software developer creating impactful products.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <p>
-            Continue learning new technologies and industry trends.
-          </p>
-        </div>
-
+    </div>
+  </div>
+</section>
+ 
+<hr class="divider">
+ 
+<section class="about-sec">
+  <div class="inner">
+    <div class="reveal">
+      <div class="sec-label">Beyond the screen</div>
+      <h2 class="sec-title">Hobbies</h2>
+    </div>
+    <div class="card reveal">
+      <div class="card-head">What I do in my free time</div>
+      <p class="card-desc">Outside of coding and design, I stay curious and active in a range of creative and physical pursuits. I enjoy gaming — both playing and deconstructing how games are built — which feeds directly into my interest in interactive design and user experience. I'm also drawn to digital art and illustration, experimenting with visual styles that sometimes find their way into my web projects.<br><br>I spend time exploring music, photography, and keeping up with the latest in tech and design through blogs, videos, and communities. Staying connected to what's happening in the industry keeps me inspired and forward-thinking.</p>
+      <div class="hobbies-img">
+        <img src="https://portfolio-website-alpha-two-33.vercel.app/assets/images/me.jpg" alt="Activities and hobbies">
       </div>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <div><div class="f-logo">Vuyisa Msipa</div><div class="f-copy">© 2026 — All rights reserved</div></div>
+  <div class="f-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></div>
+  <div>
+    <div class="f-copy" style="margin-bottom:8px">Vuyim1907@gmail.com</div>
+    <div class="soc-row"><a href="#" class="soc">GH</a><a href="#" class="soc">LI</a><a href="mailto:Vuyim1907@gmail.com" class="soc">@</a><a href="#" class="soc">IG</a></div>
+  </div>
+</footer>
 
-    </section>
-<canvas class="wave-divider" data-color="#151a22"></canvas>
-    <!-- ===============================
-         INTERESTS & HOBBIES
-    ================================ -->
-    <section class="skills">
-
-      <h2>Interests & Hobbies</h2>
-
-      <div class="skills-container">
-
-        <div class="skills-text">
-          <p>
-            Outside of coding I enjoy gaming, fitness, learning about technology,
-            creative design inspiration and working on personal projects.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-<canvas class="wave-divider" data-color="#12161c"></canvas>
-  </main>
-
-  <!-- FOOTER -->
-  <div id="footer-container"></div>
 
 </body>
 </html>
