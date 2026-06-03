@@ -40,7 +40,16 @@
   <a href="index.html">Home</a><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
 </div>
  
+<!-- UPDATED HERO SECTION -->
 <section class="hero" style="position:relative">
+  <!-- Hero Image on the left -->
+  <div class="hero-vis">
+    <div class="photo-frame">
+      <img src="./Assets/Images/Me.jpg" alt="Vuyisa Msipa">
+    </div>
+  </div>
+
+  <!-- Hero Text on the right -->
   <div class="hero-text">
     <div class="kicker">Available for opportunities</div>
     <h1>Hi, I'm<br><span>Vuyisa Msipa</span></h1>
@@ -51,22 +60,20 @@
       <a href="about.html" class="btn-g">About Me</a>
     </div>
   </div>
-  <div class="hero-vis">
-    <div class="photo-frame">
-      <img src="./Assets/Images/Me.jpg" alt="Vuyisa Msipa">
-    </div>
-  </div>
   <div class="scroll-ind">scroll</div>
 </section>
  
+<!-- UPDATED SKILLS SECTION -->
 <section class="skills-sec">
   <div class="inner">
+    <!-- Centered Section Header -->
+    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+      <div class="sec-label" style="justify-content: center; transform: translateX(14px);">What I know</div>
+      <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Skills</h2>
+    </div>
+
     <div class="skills-lay">
-      <div class="reveal">
-        <div class="sec-label">What I know</div>
-        <h2 class="sec-title">Technical<br>Toolkit</h2>
-        <p class="skills-desc">I work across the full front-end spectrum — from semantic HTML and responsive CSS to interactive JavaScript, game development in Unity, and scripting in Python, Java, and C++.<br><br>I prioritise clean code, consistent structure, and maintainable architecture in every project.</p>
-      </div>
+      <!-- Skills icons on the left -->
       <div class="skills-grid">
         <div class="sk" data-d="0"><img src="./Assets/Icons/html5-original.svg" alt=""><span>HTML5</span></div>
         <div class="sk" data-d="60"><img src="./Assets/Icons/css3-original.svg" alt=""><span>CSS3</span></div>
@@ -81,20 +88,31 @@
         <div class="sk" data-d="600"><img src="./Assets/Icons/matlab-original.svg" alt=""><span>MATLAB</span></div>
         <div class="sk" data-d="660"><img src="./Assets/Icons/powershell-original.svg" alt=""><span>Shell</span></div>
       </div>
+
+      <!-- List of skills description on the right -->
+      <div class="reveal">
+        <p class="skills-desc">I work across the full front-end spectrum — from semantic HTML and responsive CSS to interactive JavaScript, game development in Unity, and scripting in Python, Java, and C++.<br><br>I prioritise clean code, consistent structure, and maintainable architecture in every project.</p>
+      </div>
     </div>
   </div>
 </section>
  
+<!-- UPDATED PROJECTS SECTION -->
 <section class="proj-sec">
   <div class="inner">
-    <div class="proj-header">
-      <div class="reveal">
-        <div class="sec-label">Selected work</div>
-        <h2 class="sec-title">Projects</h2>
-      </div>
-      <a href="portfolio.html" class="view-all reveal">View full portfolio</a>
+    <!-- Centered Section Header -->
+    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+      <div class="sec-label" style="justify-content: center; transform: translateX(14px);">Selected work</div>
+      <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Projects</h2>
     </div>
+
+    <!-- 3-Column Display Grid -->
     <div class="proj-grid" id="proj-grid"></div>
+
+    <!-- Centered CTA Action Button -->
+    <div style="text-align: center; margin-top: 4rem;">
+      <a href="portfolio.html" class="btn-p reveal">See More Projects</a>
+    </div>
   </div>
 </section>
  
@@ -104,7 +122,7 @@
   <div>
     <div class="f-copy" style="margin-bottom:8px">Vuyim1907@gmail.com</div>
     <div class="soc-row">
-      <a href="#" class="soc">GH</a><a href="#" class="soc">LI</a><a href="mailto:Vuyim1907@gmail.com" class="soc">@</a><a href="#" class="soc">IG</a>
+      <!-- Social icons injected here dynamically by main.js -->
     </div>
   </div>
 </footer>
