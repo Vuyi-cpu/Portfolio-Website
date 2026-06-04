@@ -180,9 +180,7 @@
     // 1. Smoothly interpolate current scroll towards the target scroll position
     currentScroll += (targetScroll - currentScroll) * 0.08;
       
-    // 2. Clear the full background
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
    
     // 3. Save context state, apply the vertical parallax offset, then draw
     ctx.save();

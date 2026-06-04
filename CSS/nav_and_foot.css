@@ -124,7 +124,7 @@ nav {
    GLOBAL SYSTEM FOOTER
    ========================================================= */
 footer { 
-  background: var(--surface); 
+  background: var(--section-area-bg); 
   border-top: 1px solid var(--border); 
   padding: 3rem clamp(1.5rem, 5vw, 4rem); 
   
@@ -206,7 +206,7 @@ footer {
 }
 
 .soc-card { 
-  background: var(--surface); 
+  background: var(--section-area-bg); 
   border: 1px solid var(--border); 
   border-radius: 4px; 
   padding: 1rem; 

@@ -1,6 +1,6 @@
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*{ margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #0e0e0e; --surface: #161616; --surface2: #1f1f1f;
+  --bg: #0e0e0e; --section-area-bg: #161616; --surface2: #1f1f1f;
   --border: rgba(255, 255, 255, 0.07); --accent: #4A90E2;
   --accent-dim: rgba(74, 144, 226, 0.15); --accent-glow: rgba(74, 144, 226, 0.3);
   --text: #f0f0f0; --muted: #888; --subtle: #444;
@@ -19,12 +19,120 @@ body::before {
   
   background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
   background-size: 30px 30px; 
-  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, var(--surface) 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, var(--section-area-bg) 40%, transparent 100%);
 }
-#loader { position: fixed; inset: 0; background: var(--bg); z-index: 10000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity .6s .2s, visibility .6s .2s; }
-#loader.done { opacity: 0; visibility: hidden; }
-.l-name { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: .12em; color: var(--accent); }
-.l-bar { width: 200px; height: 1px; background: var(--surface2); overflow: hidden; }
-.l-fill { height: 100%; background: var(--accent); width: 0; animation: lfill 1.2s cubic-bezier(.4, 0, .2, 1) forwards; }
-@keyframes lfill { to { width: 100%; } }
+/* Main Full-Screen Overlay Container */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg); 
+  z-index: 9999;
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Wrapper to hold the 200x200 space in the document flow */
+.ring-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; /* Space between the loader and the site name */
+}
+
+/* The Animated Shiny Ring */
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: shiny-ring 2s linear infinite;
+}
+
+.ring::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* The Loading Text inside the ring */
+.loading-text {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace; 
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: pulse-text 3s ease-in-out infinite;
+  z-index: 1; /* Ensures text stays above the ring */
+}
+
+/* The Website Name below the ring */
+.website-name {
+  font-family: 'Syne', sans-serif; 
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent); 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* The Loading Text inside the ring */
+.loading-text {
+  color: var(--text); /* Set to your crisp light text color */
+  font-family: 'DM Mono', monospace; 
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: pulse-text 2s ease-in-out infinite; /* Smoothly loops every 2 seconds */
+  z-index: 1;
+}
+
+/* ── Clean Fade In / Out Animation ─────────────────────── */
+@keyframes pulse-text {
+  0%, 100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0.15; /* Fades out almost completely */
+  }
+}
+/* ── Animation Timelines ─────────────────────────────── */
+
+@keyframes shiny-ring {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px var(--accent);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 1px 5px 7px var(--surface2); /* The crisp white reflection sweep */
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 1px 5px 2px var(--accent);
+  }
+}
+
+
+@keyframes pulse-text {
+  50% {
+    color: var(--bg); 
+  }
+}
 
