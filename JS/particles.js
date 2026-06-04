@@ -1,8 +1,3 @@
-/**
- * particles.js
- * Fullscreen Interactive 3D Background - Pure Particle Variant
- */
-
 (function () {
   const canvas = document.querySelector('#particle-canvas');
   if (!canvas) return;
@@ -19,12 +14,23 @@
    
   /* ── Simulation Constants ───────────────────────────────────── */
   const N   = 450;    
-  const FOV = 350;    
+  const FOV = 350;
+  
+  // Scroll Speed Control: 1.0 scrolls exactly with the page. 0.5 creates a 3D depth effect.
+  const PARALLAX_SPEED = 0.5; 
    
   /* ── Runtime State ─────────────────────────────────────────── */
   let rotY     = 0;
   let state    = 'sphere';   // 'sphere' | 'exploding' | 'floating'
   let explodeT = 0;
+  
+  // Smooth scroll tracking variables
+  let targetScroll = window.scrollY;
+  let currentScroll = window.scrollY;
+  
+  window.addEventListener('scroll', () => {
+    targetScroll = window.scrollY;
+  });
    
   /* ── Dimension Helpers ─────────────────────────────────────── */
   const CX = () => canvas.width  / 2;
@@ -76,8 +82,12 @@
     state    = 'exploding';
     explodeT = performance.now();
    
-    let mouseX = e.clientX || (e.touches && e.touches[0].clientX) || CX();
-    let mouseY = e.clientY || (e.touches && e.touches[0].clientY) || CY();
+    let clientX = e.clientX || (e.touches && e.touches[0].clientX) || CX();
+    let clientY = e.clientY || (e.touches && e.touches[0].clientY) || CY();
+    
+    // Offset the mouse coordinates by the current scroll shift to ensure accurate hit detection
+    let mouseX = clientX;
+    let mouseY = clientY + (currentScroll * PARALLAX_SPEED);
    
     particles.forEach(p => {
       const s = p.project();
@@ -96,8 +106,6 @@
   window.addEventListener('touchstart', explode, { passive: true });
    
   /* ── State Handlers ────────────────────────────────────────── */
-  
-  // 1. SPHERE STATE (Calculates 3D depth colors)
   function drawSphere() {
     rotY += 0.005;
    
@@ -120,18 +128,15 @@
     });
   }
    
-  // 2. EXPLODING STATE (Keeps circles at current physics positions)
   function drawExploding(t) {
     const elapsed = t - explodeT;
     const progress = Math.min(elapsed / 1500, 1);
     if (progress >= 1) state = 'floating';
    
     particles.forEach(p => {
-      // Apply friction drag
       p.vx *= 0.935;
       p.vy *= 0.935;
    
-      // Blend to drift velocities smoothly over time
       if (progress > 0.25) {
         const blend = Math.min((progress - 0.25) / 0.75, 1);
         p.vx += (p.fvx - p.vx * 0.015) * blend * 0.065;
@@ -141,13 +146,12 @@
       p.x += p.vx;
       p.y += p.vy;
    
-      // Screen edge constraints wrapping
-      if (p.x < -20) p.x = canvas.width  + 20;
-      if (p.x >  canvas.width  + 20) p.x = -20;
-      if (p.y < -20) p.y = canvas.height + 20;
-      if (p.y >  canvas.height + 20) p.y = -20;
+      // Screen edge wrapping (extended slightly to account for scrolling boundaries)
+      if (p.x < -100) p.x = canvas.width  + 100;
+      if (p.x >  canvas.width  + 100) p.x = -100;
+      if (p.y < -100 - (currentScroll * PARALLAX_SPEED)) p.y = canvas.height + 100 - (currentScroll * PARALLAX_SPEED);
+      if (p.y >  canvas.height + 100 - (currentScroll * PARALLAX_SPEED)) p.y = -100 - (currentScroll * PARALLAX_SPEED);
    
-      // Rendered as clean particles instead of lines
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.sz * 1.2, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(90, 170, 255, ${p.op * 0.85})`;
@@ -155,18 +159,16 @@
     });
   }
    
-  // 3. FLOATING STATE (Keeps circles drifting across the window background)
   function drawFloating() {
     particles.forEach(p => {
       p.x += p.fvx;
       p.y += p.fvy;
    
-      if (p.x < -20) p.x = canvas.width  + 20;
-      if (p.x >  canvas.width  + 20) p.x = -20;
-      if (p.y < -20) p.y = canvas.height + 20;
-      if (p.y >  canvas.height + 20) p.y = -20;
+      if (p.x < -100) p.x = canvas.width  + 100;
+      if (p.x >  canvas.width  + 100) p.x = -100;
+      if (p.y < -100 - (currentScroll * PARALLAX_SPEED)) p.y = canvas.height + 100 - (currentScroll * PARALLAX_SPEED);
+      if (p.y >  canvas.height + 100 - (currentScroll * PARALLAX_SPEED)) p.y = -100 - (currentScroll * PARALLAX_SPEED);
    
-      // Rendered as clean drifting particles
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.sz * 1.1, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(90, 170, 255, ${p.op * 0.65})`;
@@ -176,12 +178,23 @@
    
   /* ── Simulation Runtime Loop ────────────────────────────────── */
   function frame(t) {
+    // 1. Smoothly interpolate current scroll towards the target scroll position
+    currentScroll += (targetScroll - currentScroll) * 0.08;
+      
+    // 2. Clear the full background
     ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
    
+    // 3. Save context state, apply the vertical parallax offset, then draw
+    ctx.save();
+    ctx.translate(0, -currentScroll * PARALLAX_SPEED);
+    
     if      (state === 'sphere')    drawSphere();
     else if (state === 'exploding') drawExploding(t);
     else                            drawFloating();
+   
+    // 4. Restore context so the background fill stays stationary next frame
+    ctx.restore();
    
     requestAnimationFrame(frame);
   }

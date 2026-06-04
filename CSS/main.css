@@ -11,10 +11,15 @@ body {
   color: var(--text); overflow-x: hidden; 
 }
 body::before {
-  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black 40%, transparent 100%);
+  content: ''; 
+  position: fixed; 
+  inset: 0; 
+  pointer-events: none; 
+  z-index: 0;
+  
+  background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
+  background-size: 30px 30px; 
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, var(--surface) 40%, transparent 100%);
 }
 #loader { position: fixed; inset: 0; background: var(--bg); z-index: 10000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity .6s .2s, visibility .6s .2s; }
 #loader.done { opacity: 0; visibility: hidden; }
