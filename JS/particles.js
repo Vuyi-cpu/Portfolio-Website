@@ -17,7 +17,7 @@
   const FOV = 350;
   
   // Scroll Speed Control: 1.0 scrolls exactly with the page. 0.5 creates a 3D depth effect.
-  const PARALLAX_SPEED = 0.5; 
+  const PARALLAX_SPEED = 1.0; 
    
   /* ── Runtime State ─────────────────────────────────────────── */
   let rotY     = 0;
@@ -72,7 +72,7 @@
    
   const particles = Array.from({ length: N }, (_, i) => new Particle(i));
    
-  /* ── Interactive Explosion Trigger ─────────────────────────── */
+/* ── Interactive Explosion Trigger ─────────────────────────── */
   function explode(e) {
     if (state !== 'sphere') return;
     state    = 'exploding';
@@ -81,7 +81,6 @@
     let clientX = e.clientX || (e.touches && e.touches[0].clientX) || CX();
     let clientY = e.clientY || (e.touches && e.touches[0].clientY) || CY();
     
-    // Offset the mouse coordinates by the current scroll shift to ensure accurate hit detection
     let mouseX = clientX;
     let mouseY = clientY + (currentScroll * PARALLAX_SPEED);
    
@@ -92,7 +91,11 @@
       const dx = s.x - mouseX;
       const dy = s.y - mouseY;
       const d  = Math.sqrt(dx * dx + dy * dy) || 1;
-      const spd = Math.random() * 15 + 5;
+      
+      // SOFTER EXPLOSION: Lowered the burst speed so it expands gracefully
+      const spd = Math.random() * 18 + 8; 
+      
+      // Reduced the random scatter so it feels more uniform and less chaotic
       p.vx = (dx / d) * spd + (Math.random() - 0.5) * 4;
       p.vy = (dy / d) * spd + (Math.random() - 0.5) * 4;
     });
@@ -132,24 +135,27 @@
     const progress = Math.min(elapsed / 1500, 1);
     if (progress >= 1) state = 'floating';
    
+    const camOffset = currentScroll * PARALLAX_SPEED;
+
     particles.forEach(p => {
-      p.vx *= 0.935;
-      p.vy *= 0.935;
+      // FIXED: Reduced friction coefficients to prevent deceleration before scattering full-width
+      p.vx *= 0.98;
+      p.vy *= 0.98;
    
-      if (progress > 0.25) {
-        const blend = Math.min((progress - 0.25) / 0.75, 1);
-        p.vx += (p.fvx - p.vx * 0.015) * blend * 0.065;
-        p.vy += (p.fvy - p.vy * 0.015) * blend * 0.065;
+      if (progress > 0.15) {
+        const blend = Math.min((progress - 0.15) / 0.85, 1);
+        p.vx += (p.fvx - p.vx * 0.01) * blend * 0.05;
+        p.vy += (p.fvy - p.vy * 0.01) * blend * 0.05;
       }
    
       p.x += p.vx;
       p.y += p.vy;
    
-      // Screen edge wrapping (extended slightly to account for scrolling boundaries)
+      // FIXED: Boundary wrap equations now account correctly for parallax scroll movement direction
       if (p.x < -100) p.x = canvas.width  + 100;
       if (p.x >  canvas.width  + 100) p.x = -100;
-      if (p.y < -100 - (currentScroll * PARALLAX_SPEED)) p.y = canvas.height + 100 - (currentScroll * PARALLAX_SPEED);
-      if (p.y >  canvas.height + 100 - (currentScroll * PARALLAX_SPEED)) p.y = -100 - (currentScroll * PARALLAX_SPEED);
+      if (p.y < -100 + camOffset) p.y = canvas.height + 100 + camOffset;
+      if (p.y >  canvas.height + 100 + camOffset) p.y = -100 + camOffset;
    
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.sz * 1.2, 0, Math.PI * 2);
@@ -159,14 +165,17 @@
   }
    
   function drawFloating() {
+    const camOffset = currentScroll * PARALLAX_SPEED;
+
     particles.forEach(p => {
       p.x += p.fvx;
       p.y += p.fvy;
    
+      // FIXED: Parallax boundaries match up seamlessly with the active window viewport height
       if (p.x < -100) p.x = canvas.width  + 100;
       if (p.x >  canvas.width  + 100) p.x = -100;
-      if (p.y < -100 - (currentScroll * PARALLAX_SPEED)) p.y = canvas.height + 100 - (currentScroll * PARALLAX_SPEED);
-      if (p.y >  canvas.height + 100 - (currentScroll * PARALLAX_SPEED)) p.y = -100 - (currentScroll * PARALLAX_SPEED);
+      if (p.y < -100 + camOffset) p.y = canvas.height + 100 + camOffset;
+      if (p.y >  canvas.height + 100 + camOffset) p.y = -100 + camOffset;
    
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.sz * 1.1, 0, Math.PI * 2);
