@@ -28,10 +28,6 @@
   let targetScroll = window.scrollY;
   let currentScroll = window.scrollY;
   
-  window.addEventListener('scroll', () => {
-    targetScroll = window.scrollY;
-  });
-   
   /* ── Dimension Helpers ─────────────────────────────────────── */
   const CX = () => canvas.width  / 2;
   const CY = () => canvas.height / 2;
@@ -102,8 +98,11 @@
     });
   }
    
-  window.addEventListener('mousemove', explode);
-  window.addEventListener('touchstart', explode, { passive: true });
+  /* ── Scroll Event Listener (Updated) ───────────────────────── */
+  window.addEventListener('scroll', (e) => {
+    targetScroll = window.scrollY;
+    explode(e); // Trigger dispersion when the user scrolls
+  });
    
   /* ── State Handlers ────────────────────────────────────────── */
   function drawSphere() {
