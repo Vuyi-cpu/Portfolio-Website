@@ -61,16 +61,28 @@ function injectLayoutComponents() {
         }).join('');
     }
 
-    // C. Dynamic Fixed 3-Column Footer Component Rendering
+   // C. Dynamic Fixed 3-Column Footer Component Rendering
     if (footerContainer) {
         footerContainer.innerHTML = `
             <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div class="f-logo">Vuyisa Msipa</div>
-                <div class="soc-row">
-                    </div>
+                <div class="f-logo">Social Links</div>
+                
+                <div class="soc-row soc" style="display: flex; gap: 10px;">
+                    <a href="https://github.com/Vuyi-cpu" class="soc-icon" aria-label="GitHub">
+                        <img src="./assets/icons/github-original.svg" alt="GitHub">
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/your-username" class="soc-icon" aria-label="LinkedIn">
+                        <img src="./assets/icons/linkedin-original.svg" alt="LinkedIn">
+                    </a>
+                    
+                    <a href="https://instagram.com/your-username" class="soc-icon" aria-label="Instagram">
+                        <img src="./assets/icons/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
             </div>
 
-            <div">
+            <div>
                 <p>Email: Vuyim1907@gmail.com</p>
             </div>
 
