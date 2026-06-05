@@ -48,10 +48,10 @@ function renderAllCards() {
 // 2. DYNAMIC SOCIAL ICON RENDERER
 // ==========================================================
 const socialLinks = [
-    { name: 'GitHub', url: '#', img: './assets/icons/github-original.svg' },
-    { name: 'LinkedIn', url: '#', img: './assets/icons/linkedin-original.svg' },
-    { name: 'Email', url: 'mailto:Vuyim1907@gmail.com', img: './assets/icons/email.svg' },
-    { name: 'Instagram', url: '#', img: './assets/icons/instagram.svg' }
+    { name: 'GitHub', url: '#', img: './Assets/Icons/github-original.svg' },
+    { name: 'LinkedIn', url: '#', img: './Assets/Icons/linkedin-original.svg' },
+    { name: 'Email', url: 'mailto:Vuyim1907@gmail.com', img: './Assets/Icons/email.svg' },
+    { name: 'Instagram', url: '#', img: './Assets/Icons/instagram.svg' }
 ];
 
 function renderSocials() {
