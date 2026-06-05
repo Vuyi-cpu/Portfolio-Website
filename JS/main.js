@@ -50,7 +50,6 @@ function renderAllCards() {
 const socialLinks = [
     { name: 'GitHub', url: '#', img: './Assets/Icons/github-original.svg' },
     { name: 'LinkedIn', url: '#', img: './Assets/Icons/linkedin-original.svg' },
-    { name: 'Email', url: 'mailto:Vuyim1907@gmail.com', img: './Assets/Icons/email.svg' },
     { name: 'Instagram', url: '#', img: './Assets/Icons/instagram.svg' }
 ];
 
