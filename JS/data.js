@@ -2,7 +2,7 @@ const projects = [
   {
     num: '01 / 04', // Update total numbers as you add more
     title: 'Personal Portfolio Website',
-    img: './assets/images/p1.jpg',
+    img: './assets/images/Morabaraba.png',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
     desc: 'A fully custom portfolio website built from scratch with vanilla HTML, CSS, and JavaScript — no frameworks or libraries. Designed to professionally present my skills, projects, and background to potential employers and clients.',
     process: 'The project began with a detailed PRD and wireframe phase, defining user personas, content architecture, and visual direction. Development followed the structure laid out in the document, with a focus on clean semantic HTML, modular CSS, and interactive JavaScript features.',
