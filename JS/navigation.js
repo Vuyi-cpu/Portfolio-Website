@@ -76,7 +76,7 @@ function injectLayoutComponents() {
                         <img src="./assets/icons/linkedin-original.svg" alt="LinkedIn">
                     </a>
                     
-                    <a href="https://instagram.com/your-username" class="soc-icon" aria-label="Instagram">
+                    <a href="https://www.instagram.com/jake_msipa/?hl=en" class="soc-icon" aria-label="Instagram">
                         <img src="./assets/icons/instagram.svg" alt="Instagram">
                     </a>
                 </div>

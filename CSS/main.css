@@ -11,7 +11,7 @@ body {
   color: var(--text); overflow-x: hidden; 
 }
 body::before {
-  content: ''; 
+  content: '';
   position: fixed; 
   inset: 0; 
   pointer-events: none; 

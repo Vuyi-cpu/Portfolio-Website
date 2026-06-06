@@ -17,7 +17,8 @@ section { position: relative; z-index: 1; }
   align-items: start; 
   max-width: 680px;           /* Narrows the layout slightly so long text lines remain highly readable */
   margin: 0 auto; 
-}.skills-sec { background: var(--section-area-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
+}
+.skills-sec { background: var(--section-area-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 .skills-lay { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; max-width: 1200px; margin: 0 auto; }
 .proj-sec { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
