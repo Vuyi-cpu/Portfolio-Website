@@ -1,6 +1,5 @@
-// ==========================================================
-// 1. UNIVERSAL DYNAMIC CARD RENDERER
-// ==========================================================
+//Card Renderer
+
 function renderAllCards() {
     const homeGrid = document.querySelector('.proj-grid');
     const portStack = document.querySelector('.proj-stack');
@@ -44,9 +43,8 @@ function renderAllCards() {
     }
 }
 
-// ==========================================================
-// 2. DYNAMIC SOCIAL ICON RENDERER
-// ==========================================================
+// Socials Icon Renderer
+
 const socialLinks = [
     { name: 'GitHub', url: '#', img: './Assets/Icons/github-original.svg' },
     { name: 'LinkedIn', url: '#', img: './Assets/Icons/linkedin-original.svg' },
@@ -67,9 +65,8 @@ function renderSocials() {
     });
 }
 
-// ==========================================================
-// 3. DYNAMIC CORE STRENGTHS RENDERER
-// ==========================================================
+//Strengths Renderer
+
 const coreStrengths = [
     'Problem Solving',
     'Technical Aptitude',
@@ -99,9 +96,8 @@ function renderCoreStrengths() {
     }
 }
 
-// ==========================================================
-// 4. DYNAMIC TECHNOLOGIES RENDERER
-// ==========================================================
+//Technology Icon Renderer
+
 const technologies = [
     { name: 'HTML5', img: './Assets/Icons/html5-original.svg' },
     { name: 'CSS3', img: './Assets/Icons/css3-original.svg' },

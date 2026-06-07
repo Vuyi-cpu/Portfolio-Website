@@ -1,10 +1,3 @@
-/**
- * =========================================================
- * navigation.js
- * Centralized Layout Injection & Interactive Control System
- * =========================================================
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Core Component Dom Injection
     injectLayoutComponents();
@@ -53,7 +46,7 @@ function injectLayoutComponents() {
         `;
     }
 
-    // B. Dynamic Responsive Mobile Sliding Menu Rendering
+    //Dynamic Responsive Mobile Sliding Menu Rendering
     if (mobMenuContainer) {
         mobMenuContainer.innerHTML = pages.map(page => {
             const isActive = currentPage === page.url ? 'class="active"' : '';

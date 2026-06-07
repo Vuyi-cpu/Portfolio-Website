@@ -155,9 +155,7 @@ ul.styled li::before { content: '→'; color: var(--accent); font-family: 'DM Mo
 .scroll-ind { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--subtle); font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .1em; animation: bob 2s ease-in-out infinite; }
 @keyframes bob { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 .scroll-ind::after { content: ''; width: 1px; height: 40px; background: linear-gradient(var(--subtle), transparent); }
-/* =========================================================
-   FULLSCREEN 3D PARTICLE CANVAS
-   ========================================================= */
+/*3D Particle Canvas*/
 #particle-canvas {
   position: fixed;
   top: 0;

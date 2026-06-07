@@ -12,10 +12,10 @@ section { position: relative; z-index: 1; }
 .about-sec { padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 4rem); }
 .intro-grid { 
   display: grid; 
-  grid-template-columns: 1fr; /* Changed from 1fr 1.6fr to drop everything into a single column */
-  gap: 2rem;                 /* Clean vertical spacing between the image and the text */
+  grid-template-columns: 1fr; 
+  gap: 2rem;                 
   align-items: start; 
-  max-width: 680px;           /* Narrows the layout slightly so long text lines remain highly readable */
+  max-width: 680px;           
   margin: 0 auto; 
 }
 .skills-sec { background: var(--section-area-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }

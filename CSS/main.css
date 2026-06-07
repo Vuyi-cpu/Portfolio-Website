@@ -41,7 +41,6 @@ body::before {
   pointer-events: none;
 }
 
-/* Wrapper to hold the 200x200 space in the document flow */
 .ring-wrapper {
   position: relative;
   width: 200px;
@@ -49,10 +48,9 @@ body::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px; /* Space between the loader and the site name */
+  margin-bottom: 30px; 
 }
 
-/* The Animated Shiny Ring */
 .ring {
   position: absolute;
   inset: 0;
@@ -71,7 +69,6 @@ body::before {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
-/* The Loading Text inside the ring */
 .loading-text {
   color: var(--muted);
   font-family: 'DM Mono', monospace; 
@@ -82,7 +79,6 @@ body::before {
   z-index: 1; /* Ensures text stays above the ring */
 }
 
-/* The Website Name below the ring */
 .website-name {
   font-family: 'Syne', sans-serif; 
   font-size: 1.5rem;
@@ -92,18 +88,16 @@ body::before {
   text-transform: uppercase;
 }
 
-/* The Loading Text inside the ring */
 .loading-text {
-  color: var(--text); /* Set to your crisp light text color */
+  color: var(--text); 
   font-family: 'DM Mono', monospace; 
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: pulse-text 2s ease-in-out infinite; /* Smoothly loops every 2 seconds */
+  animation: pulse-text 2s ease-in-out infinite; 
   z-index: 1;
 }
 
-/* ── Clean Fade In / Out Animation ─────────────────────── */
 @keyframes pulse-text {
   0%, 100% {
     opacity: 1; /* Fully visible */
@@ -112,7 +106,6 @@ body::before {
     opacity: 0.15; /* Fades out almost completely */
   }
 }
-/* ── Animation Timelines ─────────────────────────────── */
 
 @keyframes shiny-ring {
   0% {
@@ -128,7 +121,6 @@ body::before {
     box-shadow: 1px 5px 2px var(--accent);
   }
 }
-
 
 @keyframes pulse-text {
   50% {

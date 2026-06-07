@@ -4,7 +4,7 @@
 
   const ctx = canvas.getContext('2d');
   
-  /* ── Resize Engine ─────────────────────────────────────────── */
+  /*Resize Engine*/
   function resize() {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -12,14 +12,14 @@
   resize();
   window.addEventListener('resize', resize);
    
-  /* ── Simulation Constants ───────────────────────────────────── */
+  /*Simulation Constants*/
   const N   = 450;    
   const FOV = 350;
   
   // Scroll Speed Control: 1.0 scrolls exactly with the page. 0.5 creates a 3D depth effect.
   const PARALLAX_SPEED = 1.0; 
    
-  /* ── Runtime State ─────────────────────────────────────────── */
+  /*Runtime State*/
   let rotY     = 0;
   let state    = 'sphere';   //'sphere' | 'exploding' | 'floating'
   let explodeT = 0;
@@ -28,12 +28,12 @@
   let targetScroll = window.scrollY;
   let currentScroll = window.scrollY;
   
-  /* ── Dimension Helpers ─────────────────────────────────────── */
+  /*Resize Engine*/
   const CX = () => canvas.width  / 2;
   const CY = () => canvas.height / 2;
   const SR = () => Math.min(canvas.width, canvas.height) * 0.35; 
    
-  /* ── Particle Class ────────────────────────────────────────── */
+  /*Particle Class*/
   class Particle {
     constructor(i) {
       const phi   = Math.acos(1 - 2 * (i + 0.5) / N);
@@ -72,7 +72,7 @@
    
   const particles = Array.from({ length: N }, (_, i) => new Particle(i));
    
-/* ── Interactive Explosion Trigger ─────────────────────────── */
+/*Interactive Explosion Trigger*/
   function explode(e) {
     if (state !== 'sphere') return;
     state    = 'exploding';
@@ -92,22 +92,22 @@
       const dy = s.y - mouseY;
       const d  = Math.sqrt(dx * dx + dy * dy) || 1;
       
-      // SOFTER EXPLOSION: Lowered the burst speed so it expands gracefully
+     
       const spd = Math.random() * 18 + 8; 
       
-      // Reduced the random scatter so it feels more uniform and less chaotic
+    
       p.vx = (dx / d) * spd + (Math.random() - 0.5) * 4;
       p.vy = (dy / d) * spd + (Math.random() - 0.5) * 4;
     });
   }
    
-  /* ── Scroll Event Listener (Updated) ───────────────────────── */
+  /*Scroll Event Listener (Updated)*/
   window.addEventListener('scroll', (e) => {
     targetScroll = window.scrollY;
     explode(e); // Trigger dispersion when the user scrolls
   });
    
-  /* ── State Handlers ────────────────────────────────────────── */
+  /*State Handlers*/
   function drawSphere() {
     rotY += 0.005;
    
@@ -138,7 +138,7 @@
     const camOffset = currentScroll * PARALLAX_SPEED;
 
     particles.forEach(p => {
-      // FIXED: Reduced friction coefficients to prevent deceleration before scattering full-width
+     
       p.vx *= 0.98;
       p.vy *= 0.98;
    
@@ -151,7 +151,7 @@
       p.x += p.vx;
       p.y += p.vy;
    
-      // FIXED: Boundary wrap equations now account correctly for parallax scroll movement direction
+     
       if (p.x < -100) p.x = canvas.width  + 100;
       if (p.x >  canvas.width  + 100) p.x = -100;
       if (p.y < -100 + camOffset) p.y = canvas.height + 100 + camOffset;
@@ -171,7 +171,7 @@
       p.x += p.fvx;
       p.y += p.fvy;
    
-      // FIXED: Parallax boundaries match up seamlessly with the active window viewport height
+     
       if (p.x < -100) p.x = canvas.width  + 100;
       if (p.x >  canvas.width  + 100) p.x = -100;
       if (p.y < -100 + camOffset) p.y = canvas.height + 100 + camOffset;
@@ -184,9 +184,8 @@
     });
   }
    
-  /* ── Simulation Runtime Loop ────────────────────────────────── */
+  /*Simulation Runtime Loop*/
   function frame(t) {
-    // 1. Smoothly interpolate current scroll towards the target scroll position
     currentScroll += (targetScroll - currentScroll) * 0.08;
       
     ctx.clearRect(0, 0, canvas.width, canvas.height);

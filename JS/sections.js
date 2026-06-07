@@ -1,4 +1,3 @@
-// Handles specific section interactive components like the Home Hero Typewriter
 const tw = document.querySelector('#tw');
 if (tw) {
     const phrases = ['Web Developer.', 'Software Engineer.', 'Game Designer.','Embedded Systems Developer','Digital Artist.'];
