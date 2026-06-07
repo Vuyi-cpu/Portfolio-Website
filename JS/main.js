@@ -43,28 +43,6 @@ function renderAllCards() {
     }
 }
 
-// Socials Icon Renderer
-
-const socialLinks = [
-    { name: 'GitHub', url: '#', img: './Assets/Icons/github-original.svg' },
-    { name: 'LinkedIn', url: '#', img: './Assets/Icons/linkedin-original.svg' },
-    { name: 'Instagram', url: '#', img: './Assets/Icons/instagram.svg' }
-];
-
-function renderSocials() {
-    const socContainers = document.querySelectorAll('.soc-row');
-    
-    socContainers.forEach(container => {
-        if (container.innerHTML.trim() === '') {
-            container.innerHTML = socialLinks.map(link => `
-                <a href="${link.url}" class="soc" aria-label="${link.name}" target="${link.url.startsWith('mailto') ? '_self' : '_blank'}">
-                    <img src="${link.img}" alt="${link.name}">
-                </a>
-            `).join('');
-        }
-    });
-}
-
 //Strengths Renderer
 
 const coreStrengths = [

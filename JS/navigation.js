@@ -62,15 +62,15 @@ function injectLayoutComponents() {
                 
                 <div class="soc-row soc" style="display: flex; gap: 10px;">
                     <a href="https://github.com/Vuyi-cpu" class="soc-icon" aria-label="GitHub">
-                        <img src="./assets/icons/github-original.svg" alt="GitHub">
+                        <img src="./Assets/Icons/github-original.svg" alt="GitHub">
                     </a>
                     
                     <a href="https://linkedin.com/in/your-username" class="soc-icon" aria-label="LinkedIn">
-                        <img src="./assets/icons/linkedin-original.svg" alt="LinkedIn">
+                        <img src="./Assets/Icons/linkedin-original.svg" alt="LinkedIn">
                     </a>
                     
                     <a href="https://www.instagram.com/jake_msipa/?hl=en" class="soc-icon" aria-label="Instagram">
-                        <img src="./assets/icons/instagram.svg" alt="Instagram">
+                        <img src="./Assets/Icons/instagram.svg" alt="Instagram">
                     </a>
                 </div>
             </div>
