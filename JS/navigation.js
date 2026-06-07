@@ -29,7 +29,7 @@ function injectLayoutComponents() {
     const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
 
    
-    if (navContainer) {
+ if (navContainer) {
         navContainer.innerHTML = `
             <a href="index.html" class="nav-logo">Vuyisa</a>
             <ul class="nav-links">

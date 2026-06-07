@@ -17,7 +17,7 @@ nav {
 }
 
 .nav-logo { 
-  font-family: 'Syne', sans-serif; 
+  font-family: Inter, sans-serif; 
   font-weight: 800; 
   font-size: 1.2rem; 
   color: var(--accent); 
@@ -105,7 +105,7 @@ nav {
 }
 
 .mob-menu a { 
-  font-family: 'Syne', sans-serif; 
+  font-family: Inter, sans-serif; 
   font-size: 2rem; 
   font-weight: 700; 
   color: var(--text); 
@@ -135,7 +135,7 @@ footer {
 }
 
 .f-logo { 
-  font-family: 'Syne', sans-serif; 
+  font-family: Inter, sans-serif; 
   font-weight: 700; 
   font-size: 1.1rem; 
 }

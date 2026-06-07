@@ -46,3 +46,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  /* Hides the standard text links on small screens */
+  .nav-links { 
+    display: none; 
+  }
+  /* Shows the hamburger button */
+  .ham { 
+    display: flex; 
+  }
+}
