@@ -10,17 +10,7 @@ body {
   font-family: 'Outfit', sans-serif; background: var(--bg);
   color: var(--text); overflow-x: hidden; 
 }
-body::before {
-  content: '';
-  position: fixed; 
-  inset: 0; 
-  pointer-events: none; 
-  z-index: 0;
-  
-  background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
-  background-size: 30px 30px; 
-  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, var(--section-area-bg) 40%, transparent 100%);
-}
+
 /* Main Full-Screen Overlay Container */
 #loader {
   position: fixed;

@@ -77,7 +77,7 @@ function renderCoreStrengths() {
 //Technology Icon Renderer
 
 const technologies = [
-    { name: 'HTML5', img: './Assets/Icons/html5-original.svg' },
+    { name: 'HTML5', img: './Assets/Icons/html.png'},
     { name: 'CSS3', img: './Assets/Icons/css3-original.svg' },
     { name: 'JS', img: './Assets/Icons/javascript-original.svg' },
     { name: 'Python', img: './Assets/Icons/python-original.svg' },
@@ -114,7 +114,7 @@ function renderTechnologies() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderAllCards();
-    renderSocials();
+  
     renderCoreStrengths();
     renderTechnologies(); 
 });
