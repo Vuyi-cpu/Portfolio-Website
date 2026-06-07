@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Core Component Dom Injection
+  
     injectLayoutComponents();
 
-    // 2. Event Binding For Hamburger Physics
+    
     setupHamburgerMenu();
 
-    // 3. Prevent Script Race Conditions With main.js Social Engine
+   
     if (typeof renderSocials === 'function') {
         renderSocials();
     }
@@ -16,7 +16,7 @@ function injectLayoutComponents() {
     const mobMenuContainer = document.getElementById('mm');
     const footerContainer = document.querySelector('footer');
 
-    // Central site routing configuration mapping
+   
     const pages = [
         { name: 'Home', url: 'index.html' },
         { name: 'About', url: 'about.html' },
@@ -24,11 +24,11 @@ function injectLayoutComponents() {
         { name: 'Contact', url: 'contact.html' }
     ];
 
-    // Read the active path from the current location to evaluate highlighters
+  
     const currentPath = window.location.pathname;
     const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
 
-    // A. Dynamic Global Navbar Component Rendering
+   
     if (navContainer) {
         navContainer.innerHTML = `
             <a href="index.html" class="nav-logo">Vuyisa</a>
@@ -46,7 +46,7 @@ function injectLayoutComponents() {
         `;
     }
 
-    //Dynamic Responsive Mobile Sliding Menu Rendering
+  
     if (mobMenuContainer) {
         mobMenuContainer.innerHTML = pages.map(page => {
             const isActive = currentPage === page.url ? 'class="active"' : '';
@@ -91,7 +91,7 @@ function setupHamburgerMenu() {
     const mm = document.querySelector('#mm');
 
     if (ham && mm) {
-        // Toggle mobile panel view states and convert horizontal lines into mathematical cross close triggers
+      
         ham.addEventListener('click', () => {
             mm.classList.toggle('open');
             const s = ham.querySelectorAll('span');
@@ -108,7 +108,7 @@ function setupHamburgerMenu() {
             }
         });
 
-        // Safe dismiss overlay controls when anchor links are targeted inside mobile menu overlays
+      
         mm.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mm.classList.remove('open');
