@@ -24,7 +24,7 @@
 <script src="./JS/particles.js" defer></script>
 </head>
 <body>
-<canvas id="particle-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+<canvas id="particle-canvas"></canvas>
 <div id="loader">
   <div class="ring-wrapper">
     <div class="ring"></div>
@@ -38,8 +38,7 @@
   
   <div class="mob-menu" id="mm"></div>
  
-
-<section class="hero" style="position:relative">
+<section class="hero">
   <div class="hero-vis">
     <div class="photo-frame">
       <img src="./Assets/Images/Me.jpg" alt="Vuyisa Msipa">
@@ -48,7 +47,7 @@
 
   <div class="hero-text">
     <div class="kicker">Available for opportunities</div>
-    <h1>Hi, I'm <span style="color: var(--accent);">Vuyisa Msipa</span></h1>
+    <h1>Hi, I'm <span class="text-accent">Vuyisa Msipa</span></h1>
     <div class="tw-wrap" id="tw"></div>
     <p class="hero-desc">Based in Johannesburg, South Africa, I turn ideas into engaging digital experiences, combining design, technology, and problem-solving to create solutions that are both innovative and effective.</p>
   </div>
@@ -57,9 +56,9 @@
  
 <section class="skills-sec">
   <div class="inner">
-    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <div class="sec-label" style="justify-content: center; transform: translateX(14px);">Curated Capabilities</div>
-      <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Skills</h2>
+<div class="reveal section-header-centered">
+<div class="sec-label centered-label">Curated Capabilities</div>
+      <h2 class="sec-title large-title">Skills</h2>
     </div>
 
     <div class="skills-lay">
@@ -68,12 +67,12 @@
       <div class="skills-grid"></div>
       </div>
 
-      <div class="reveal" style="text-align: center;">
+     <div class="reveal text-center">
         <p class="skills-desc">
           Beyond technical expertise, I bring a combination of leadership, problem-solving, and collaborative skills that help transform ideas into effective digital solutions.
         </p>
         <div class="sk-divider"></div>
-        <div class="sk-tech-label" style="text-align: left; margin-bottom: 14px;">Soft Skills</div>
+       <div class="sk-tech-label left-label">Soft Skills</div>
         <div class="core-strengths"></div>
       </div>
     </div>
@@ -82,16 +81,16 @@
  
 <section class="proj-sec">
   <div class="inner">
-    <!-- Centered Section Header -->
-    <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-      <div class="sec-label" style="justify-content: center; transform: translateX(14px);">Selected work</div>
-      <h2 class="sec-title" style="font-size: 3rem; margin-bottom: 0;">Projects</h2>
+  
+    <div class="reveal section-header-centered">
+   <div class="sec-label centered-label">Selected work</div>
+      <h2 class="sec-title large-title">Projects</h2>
     </div>
 
     <div class="proj-grid" id="proj-grid"></div>
 
-    <div style="text-align: center; margin-top: 4rem;">
-      <a href="portfolio.html" class="btn-p reveal">See More Projects</a>
+<div class="btn-wrapper-centered">
+<a href="portfolio.html" class="btn-p reveal">See More Projects</a>
     </div>
   </div>
 </section>

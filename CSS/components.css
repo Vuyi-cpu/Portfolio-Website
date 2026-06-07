@@ -17,6 +17,7 @@
 .view-all:hover { gap: 14px; }
 .view-all::after { content: '→'; }
 
+
 /* General Cards & Blocks */
 .card { background: var(--section-area-bg); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; margin-bottom: 2px; max-width: 900px; margin-inline: auto; }
 .card:hover { border-color: rgba(74, 144, 226, .2); }
@@ -166,3 +167,23 @@ ul.styled li::before { content: '→'; color: var(--accent); font-family: 'DM Mo
   display: block;
   pointer-events: none; /* Allows clicks to pass through to your buttons/links */
 }
+
+/* Extracted Utility Classes */
+.text-accent { color: var(--accent); }
+.text-center { text-align: center; }
+.section-header-centered { text-align: center; margin-bottom: 3rem; }
+.centered-label { justify-content: center; transform: translateX(14px); }
+.large-title { font-size: 3rem; margin-bottom: 0; }
+.left-label { text-align: left; margin-bottom: 14px; }
+.btn-wrapper-centered { text-align: center; margin-top: 4rem; }
+
+/* Contact Form Utilities */
+.contact-header { display: flex; flex-direction: column; align-items: center; padding-bottom: 2rem; }
+.contact-intro { text-align: center; margin: 0 auto; }
+.form-wrapper { max-width: 650px; margin: 0 auto; }
+.form-success-note { color: var(--muted); font-size: .82rem; }
+
+/* About Page Utilities */
+.mb-1 { margin-bottom: 1rem; }
+.mt-16 { margin-top: 16px; }
+.mb-0 { margin-bottom: 0 !important; }

@@ -59,16 +59,6 @@ body {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
-.loading-text {
-  color: var(--muted);
-  font-family: 'DM Mono', monospace; 
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  animation: pulse-text 3s ease-in-out infinite;
-  z-index: 1; /* Ensures text stays above the ring */
-}
-
 .website-name {
   font-family: 'Syne', sans-serif; 
   font-size: 1.5rem;
@@ -88,14 +78,6 @@ body {
   z-index: 1;
 }
 
-@keyframes pulse-text {
-  0%, 100% {
-    opacity: 1; /* Fully visible */
-  }
-  50% {
-    opacity: 0.15; /* Fades out almost completely */
-  }
-}
 
 @keyframes shiny-ring {
   0% {
@@ -113,8 +95,14 @@ body {
 }
 
 @keyframes pulse-text {
+  0%, 100% {
+    opacity: 1;
+    color: var(--text);
+  }
   50% {
-    color: var(--bg); 
+    opacity: 0.15;
+    color: var(--bg);
   }
 }
+
 
