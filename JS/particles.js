@@ -21,7 +21,7 @@
    
   /* ── Runtime State ─────────────────────────────────────────── */
   let rotY     = 0;
-  let state    = 'sphere';   // 'sphere' | 'exploding' | 'floating'
+  let state    = 'sphere';   //'sphere' | 'exploding' | 'floating'
   let explodeT = 0;
   
   // Smooth scroll tracking variables

@@ -3,7 +3,7 @@ const projects = [
     num: '01 / 07',
     title: 'Traditional African Board Game Website Prototype',
     img: './Assets/Images/Morabaraba.png',
-    tags: ['HTML', 'CSS', 'JavaScript', 'C#', 'Unity/Unity WebGL', 'Game Design'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'C#', 'Unity/Unity WebGL', 'Game Design','Web Development'],
     desc: 'An interactive educational website that introduces players to traditional African board games through a modern digital experience. The project combines web development with a playable Unity WebGL game, making cultural heritage engaging and accessible.',
     process: 'The project began with research into traditional African games and their rules, followed by wireframing and UI design. The website was built using HTML, CSS, and JavaScript while the game itself was developed in Unity using C#. Unity WebGL was integrated into the website to create a seamless interactive experience.',
     features: 'Responsive design, embedded Unity WebGL gameplay, interactive navigation, educational content, modern UI, and cross-platform compatibility.'
