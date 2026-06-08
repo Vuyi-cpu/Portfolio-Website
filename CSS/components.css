@@ -15,7 +15,6 @@
 .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
 
 
-
 /* General Cards & Blocks */
 .card { background: var(--section-area-bg); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; margin-bottom: 2px; max-width: 900px; margin-inline: auto; }
 .card:hover { border-color: rgba(74, 144, 226, .2); }
