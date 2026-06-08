@@ -23,20 +23,20 @@
 <script src="./JS/particles.js" defer></script>
 </head>
 <body>
-<canvas id="particle-canvas"></canvas>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
 <div id="loader">
   <div class="ring-wrapper">
     <div class="ring"></div>
     <span class="loading-text">loading...</span>
   </div>
   
-  <h1 class="website-name">Portfolio</h1>
+  <p class="website-name">Portfolio</p>
 </div>
  
  <nav id="nav"></nav>
   
   <div class="mob-menu" id="mm"></div>
- 
+ <main>
 <div class="page-header reveal">
   <div class="page-kicker">Selected work</div>
   <h1 class="page-title">My <span>Projects</span></h1>
@@ -56,7 +56,7 @@
     <a href="contact.html" class="btn-p">Contact Me →</a>
   </div>
 </section>
- 
+ </main>
 <footer></footer>
  
 <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">

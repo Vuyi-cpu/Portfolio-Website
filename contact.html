@@ -22,20 +22,20 @@
 <script src="./JS/particles.js" defer></script>
 </head>
 <body>
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
 <div id="loader">
   <div class="ring-wrapper">
     <div class="ring"></div>
     <span class="loading-text">loading...</span>
   </div>
   
-  <h1 class="website-name">Contacts</h1>
+  <p class="website-name">Contacts</p>
 </div>
  
  <nav id="nav"></nav>
   
   <div class="mob-menu" id="mm"></div>
- 
+ <main>
 
 <div class="page-header reveal contact-header">
     <h1 class="page-title">Contact <span>Me</span></h1>
@@ -49,16 +49,19 @@
       <div id="contact-form">
         
         <div class="field">
-          <input type="text" id="name" placeholder="Your Name">
+  <label for="name">Your Name</label>
+  <input type="text" id="name" placeholder="Your Name">
           <div class="err" id="name-err">Please enter your name</div>
         </div>
         
         <div class="field">
+          <label for="email">Your Email</label>
           <input type="email" id="email" placeholder="Your Email">
           <div class="err" id="email-err">Please enter a valid email</div>
         </div>
         
         <div class="field">
+          <label for="message">Your Message</label>
           <textarea id="message" placeholder="Your Message"></textarea>
           <div class="err" id="msg-err">Please enter a message</div>
         </div>
@@ -73,7 +76,7 @@
     </div>
   </div>
 </section>
- 
+ </main>
 <footer></footer>
 
 </body>

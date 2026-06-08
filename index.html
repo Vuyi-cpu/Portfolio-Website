@@ -25,20 +25,20 @@
 <script src="./JS/particles.js" defer></script>
 </head>
 <body>
-<canvas id="particle-canvas"></canvas>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
 <div id="loader">
   <div class="ring-wrapper">
     <div class="ring"></div>
     <span class="loading-text">loading...</span>
   </div>
   
-  <h1 class="website-name">Home</h1>
+  <p class="website-name">Home</p>
 </div>
  
 <nav id="nav"></nav>
   
   <div class="mob-menu" id="mm"></div>
- 
+ <main>
 <section class="hero">
   <div class="hero-vis">
     <div class="photo-frame">
@@ -95,7 +95,7 @@
     </div>
   </div>
 </section>
- 
+ </main>
 <footer></footer>
 
 <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
