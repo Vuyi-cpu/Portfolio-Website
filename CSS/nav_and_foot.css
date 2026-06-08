@@ -177,7 +177,4 @@ footer {
   transition: opacity 0.2s ease;
 }
 
-/* Adds a slight fade to the image on hover */
-.soc:hover img {
-  opacity: 0.8;
-}
+.soc:hover img {opacity: 0.8;}
