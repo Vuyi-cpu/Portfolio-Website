@@ -5,10 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     setupHamburgerMenu();
 
-   
-    if (typeof renderSocials === 'function') {
-        renderSocials();
-    }
 });
 
 function injectLayoutComponents() {

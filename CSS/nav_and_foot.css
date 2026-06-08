@@ -19,7 +19,7 @@ nav {
 .nav-logo { 
   font-family: Inter, sans-serif; 
   font-weight: 800; 
-  font-size: 1.2rem; 
+  font-size: 2rem; 
   color: var(--accent); 
   text-decoration: none; 
   position: relative; 
@@ -143,26 +143,9 @@ footer {
 .f-copy { 
   color: var(--subtle); 
   font-size: .78rem; 
-  font-family: 'DM Mono', monospace; 
+  font-family: Inter, sans-serif; 
   margin-top: 4px; 
 }
-
-.f-links { 
-  display: flex; 
-  gap: 1.5rem; 
-}
-
-.f-links a { 
-  color: var(--muted); 
-  text-decoration: none; 
-  font-size: .85rem; 
-  transition: color .2s; 
-}
-
-.f-links a:hover { 
-  color: var(--accent); 
-}
-
 
 /* Social Links & Icons */
 .soc-row { 

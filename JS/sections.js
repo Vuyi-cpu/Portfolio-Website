@@ -1,6 +1,6 @@
 const tw = document.querySelector('#tw');
 if (tw) {
-    const phrases = ['Web Developer.', 'Software Engineer.', 'Game Designer.','Embedded Systems Developer','Digital Artist.'];
+    const phrases = ['Web Developer.', 'Software Engineer.', 'Game Designer.','Embedded Systems Developer.','Digital Artist.'];
     let pi = 0, ci = 0, del = false;
     
     function type() {

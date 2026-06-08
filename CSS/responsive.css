@@ -6,7 +6,6 @@
   .kicker { justify-content: center; }
   .skills-lay { grid-template-columns: 1fr; gap: 2rem; }
   .proj-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
   .proj-stack .pc { grid-template-columns: 1fr; }
   .proj-stack .pc:nth-child(even) { direction: ltr; }
   .pc-thumb { aspect-ratio: 16/9; }
@@ -33,26 +32,10 @@
   .nav-links { display: none; }
   .ham { display: flex; }
   .proj-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .soc-grid { grid-template-columns: 1fr; }
 }
 
 @media (pointer: coarse) {
-  #cur, #cur-r {
-    display: none !important;
-  }
-  body, a, button, .soc, .soc-card, .ham {
+  body, a, button, .soc-card, .ham {
     cursor: auto !important;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Hides the standard text links on small screens */
-  .nav-links { 
-    display: none; 
-  }
-  /* Shows the hamburger button */
-  .ham { 
-    display: flex; 
   }
 }

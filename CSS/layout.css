@@ -1,11 +1,11 @@
 section { position: relative; z-index: 1; }
 .inner { max-width: 1100px; margin: 0 auto; }
 .page-header { padding: clamp(7rem, 14vh, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem); max-width: 1100px; margin: 0 auto; }
-.page-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: .78rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1rem; }
+.page-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: Inter, sans-serif; font-size: .78rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1rem; }
 .page-kicker::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
 .page-title { font-family: 'Inter', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; margin-bottom: 1.2rem; }
 .page-title span { color: var(--accent); }
-.page-intro { color: var(--muted); font-size: .95rem; line-height: 1.8; max-width: 600px; }
+.page-intro { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 600px; }
 
 /* Section Specific Layouts */
 .hero { min-height: 100vh; padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 4rem) 5rem; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; max-width: 1200px; margin: 0 auto; }
@@ -19,13 +19,12 @@ section { position: relative; z-index: 1; }
   margin: 0 auto; 
 }
 .skills-sec { background: var(--section-area-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
-.skills-lay { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+.skills-lay { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: start; }
 .proj-sec { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
 .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
 .projects-sec { padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem); }
 .proj-stack { display: flex; flex-direction: column; gap: 2px; }
 .contact-sec { padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; max-width: 1100px; margin: 0 auto; align-items: start; }
 .cta-sec { padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem); }
 .divider { border: none; border-top: 1px solid var(--border); margin: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 4rem); }
 
