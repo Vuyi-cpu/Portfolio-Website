@@ -177,5 +177,12 @@ footer {
   transition: opacity 0.2s ease;
 }
 
-.soc:hover img {opacity: 0.8;}
-.f-col { display: flex; flex-direction: column; gap: 8px; }
+.soc:hover img {
+  opacity: 0.8;
+}
+
+.f-col { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
+}

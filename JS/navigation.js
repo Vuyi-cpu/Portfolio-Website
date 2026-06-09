@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     setupHamburgerMenu();
 
+    setupPageTransitions();
+
 });
 
 function injectLayoutComponents() {
@@ -115,4 +117,27 @@ function setupHamburgerMenu() {
             });
         });
     }
+}
+
+// Page transition: fade out on exit, loader handles the entry on the new page
+function setupPageTransitions() {
+    document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+
+        // Skip: anchors, external URLs, JS handlers, and file downloads
+        if (!href ||
+            href.startsWith('#') ||
+            href.startsWith('http') ||
+            href.startsWith('javascript') ||
+            href.startsWith('mailto') ||
+            link.hasAttribute('download')) return;
+
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('page-exit');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300); // matches the 0.3s CSS transition
+        });
+    });
 }

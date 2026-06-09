@@ -6,12 +6,20 @@
   --text: #f0f0f0; --muted: #888; --subtle: #444;
 }
 html { scroll-behavior: smooth; }
+/* Prevent scroll during page loader */
+html.loading { overflow: hidden; }
  body {
   font-family: 'Inter', sans-serif; 
   background: var(--bg);
   color: var(--text); 
   overflow-x: hidden; 
-  line-height: 1.6; 
+  line-height: 1.6;
+  transition: opacity 0.3s ease;
+}
+
+body.page-exit {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .website-name {
@@ -106,5 +114,3 @@ html { scroll-behavior: smooth; }
     color: var(--bg);
   }
 }
-
-
