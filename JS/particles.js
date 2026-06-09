@@ -11,68 +11,68 @@
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
 
-  // ── Constants ─────────────────────────────────────────────────────────────
-  const PARTICLE_COUNT   = 450;
-  const FIELD_OF_VIEW    = 350;   // Perspective depth — higher = flatter projection
-  const PARALLAX_SPEED   = 1.0;   // How fast particles move relative to page scroll
+  //Constants
+  const PARTICLE_COUNT= 450;
+  const FIELD_OF_VIEW= 350;   // Perspective depth — higher = flatter projection
+  const PARALLAX_SPEED= 1.0;   // How fast particles move relative to page scroll
 
-  // ── State ──────────────────────────────────────────────────────────────────
-  let rotationY       = 0;
-  let animationState  = 'sphere';   // 'sphere' | 'exploding' | 'floating'
-  let explosionStart  = 0;          // timestamp when the explosion began
+  //State
+  let rotationY= 0;
+  let animationState= 'sphere';   // 'sphere' | 'exploding' | 'floating'
+  let explosionStart= 0;          // timestamp when the explosion began
 
   let targetScrollY  = window.scrollY;
   let currentScrollY = window.scrollY;
 
   // Dynamic helpers that recalculate on resize
-  const canvasCenterX = () => canvas.width  / 2;
-  const canvasCenterY = () => canvas.height / 2;
-  const sphereRadius  = () => Math.min(canvas.width, canvas.height) * 0.35;
+  const canvasCenterX= () => canvas.width  / 2;
+  const canvasCenterY= () => canvas.height / 2;
+  const sphereRadius= () => Math.min(canvas.width, canvas.height) * 0.35;
 
 
-  // ── Particle ───────────────────────────────────────────────────────────────
+  //Particle
   class Particle {
     constructor(index) {
       // Fibonacci sphere distribution — spreads points evenly across a sphere surface
-      const phi   = Math.acos(1 - 2 * (index + 0.5) / PARTICLE_COUNT);
-      const theta = Math.PI * (1 + Math.sqrt(5)) * index;
+      const phi= Math.acos(1 - 2 * (index + 0.5) / PARTICLE_COUNT);
+      const theta= Math.PI * (1 + Math.sqrt(5)) * index;
 
       // Unit-vector position on the sphere
-      this.nx = Math.sin(phi) * Math.cos(theta);
-      this.ny = Math.sin(phi) * Math.sin(theta);
-      this.nz = Math.cos(phi);
+      this.nx= Math.sin(phi) * Math.cos(theta);
+      this.ny= Math.sin(phi) * Math.sin(theta);
+      this.nz= Math.cos(phi);
 
-      this.baseSize = Math.random() * 1.8 + 0.5;   // Dot radius
-      this.opacity  = Math.random() * 0.4 + 0.6;
+      this.baseSize= Math.random() * 1.8 + 0.5;   // Dot radius
+      this.opacity= Math.random() * 0.4 + 0.6;
 
       // Screen position & velocity (used in exploding / floating states)
-      this.x  = 0;  this.y  = 0;
-      this.vx = 0;  this.vy = 0;
+      this.x= 0;  this.y= 0;
+      this.vx= 0;  this.vy= 0;
 
       // Steady drift direction once in the floating state
-      const driftAngle = 2.2 + (Math.random() - 0.5) * 0.45;
-      const driftSpeed = Math.random() * 0.6 + 0.3;
-      this.driftVX = Math.cos(driftAngle) * driftSpeed;
-      this.driftVY = Math.sin(driftAngle) * driftSpeed;
+      const driftAngle= 2.2 + (Math.random() - 0.5) * 0.45;
+      const driftSpeed= Math.random() * 0.6 + 0.3;
+      this.driftVX= Math.cos(driftAngle) * driftSpeed;
+      this.driftVY= Math.sin(driftAngle) * driftSpeed;
     }
 
     // Projects the 3-D sphere position onto 2-D screen coords using rotation + perspective
     project() {
-      const cosY = Math.cos(rotationY);
-      const sinY = Math.sin(rotationY);
+      const cosY= Math.cos(rotationY);
+      const sinY= Math.sin(rotationY);
 
       // Rotate around the Y axis
-      const rotatedX = this.nx * cosY + this.nz * sinY;
-      const rotatedY = this.ny;
-      const rotatedZ = -this.nx * sinY + this.nz * cosY;
+      const rotatedX= this.nx * cosY + this.nz * sinY;
+      const rotatedY= this.ny;
+      const rotatedZ= -this.nx * sinY + this.nz * cosY;
 
-      const radius = sphereRadius();
-      const scale  = FIELD_OF_VIEW / (rotatedZ * radius + FIELD_OF_VIEW);
+      const radius= sphereRadius();
+      const scale= FIELD_OF_VIEW / (rotatedZ * radius + FIELD_OF_VIEW);
 
       return {
-        x:     canvasCenterX() + rotatedX * radius * scale,
-        y:     canvasCenterY() + rotatedY * radius * scale,
-        z:     rotatedZ,
+        x:canvasCenterX() + rotatedX * radius * scale,
+        y:canvasCenterY() + rotatedY * radius * scale,
+        z:rotatedZ,
         scale: scale
       };
     }
@@ -81,7 +81,7 @@
   const particles = Array.from({ length: PARTICLE_COUNT }, (_, i) => new Particle(i));
 
 
-  // ── Trigger explosion on click / scroll ────────────────────────────────────
+  //Trigger explosion on click / scroll
   function triggerExplosion(event) {
     if (animationState !== 'sphere') return;
     animationState = 'exploding';
@@ -116,7 +116,7 @@
   });
 
 
-  // ── Draw functions per state ───────────────────────────────────────────────
+  //Draw functions per state
 
   function drawSphere() {
     rotationY += 0.005;
@@ -200,7 +200,7 @@
   }
 
 
-  // ── Animation loop ─────────────────────────────────────────────────────────
+  //Animation loop
   function animationFrame(timestamp) {
     // Smoothly lerp scroll position to avoid jarring jumps
     currentScrollY += (targetScrollY - currentScrollY) * 0.08;

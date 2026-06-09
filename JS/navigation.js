@@ -4,31 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPageTransitions();
 });
 
-// Injects the shared nav, mobile menu, and footer into every page
 function injectLayoutComponents() {
-  const navContainer        = document.getElementById('nav');
-  const mobileMenuContainer = document.getElementById('mobile-menu');
-  const footerContainer     = document.querySelector('footer');
+  const navEl= document.getElementById('nav');
+  const mobEl= document.getElementById('mobile-menu');
+  const footerEl= document.querySelector('footer');
 
   const pages = [
-    { name: 'Home',      url: 'index.html' },
-    { name: 'About',     url: 'about.html' },
-    { name: 'Portfolio', url: 'portfolio.html' },
-    { name: 'Contact',   url: 'contact.html' }
+    { name: 'Home',url: 'index.html'},
+    { name: 'About',url: 'about.html'},
+    { name: 'Portfolio',url: 'portfolio.html'},
+    { name: 'Contact',url: 'contact.html'}
   ];
 
-  // Determine the active page by comparing the filename in the URL path
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const activeClass = url => currentPage === url ? 'class="active"' : '';
 
-  if (navContainer) {
-    navContainer.innerHTML = `
+  if (navEl) {
+    navEl.innerHTML = `
       <a href="index.html" class="nav-logo">Vuyisa</a>
       <ul class="nav-links">
-        ${pages.map(page => {
-          const isActive = currentPage === page.url ? 'class="active"' : '';
-          return `<li><a href="${page.url}" ${isActive}>${page.name}</a></li>`;
-        }).join('')}
+        ${pages.map(p => `<li><a href="${p.url}" ${activeClass(p.url)}>${p.name}</a></li>`).join('')}
       </ul>
       <button class="ham" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -36,15 +31,14 @@ function injectLayoutComponents() {
     `;
   }
 
-  if (mobileMenuContainer) {
-    mobileMenuContainer.innerHTML = pages.map(page => {
-      const isActive = currentPage === page.url ? 'class="active"' : '';
-      return `<a href="${page.url}" ${isActive}>${page.name}</a>`;
-    }).join('');
+  if (mobEl) {
+    mobEl.innerHTML = pages.map(p =>
+      `<a href="${p.url}" ${activeClass(p.url)}>${p.name}</a>`
+    ).join('');
   }
 
-  if (footerContainer) {
-    footerContainer.innerHTML = `
+  if (footerEl) {
+    footerEl.innerHTML = `
       <div class="f-col">
         <div class="f-logo">Social Links</div>
         <div class="soc-row">
@@ -59,67 +53,46 @@ function injectLayoutComponents() {
           </a>
         </div>
       </div>
-      <div>
-        <p>Email: Vuyim1907@gmail.com</p>
-      </div>
-      <div style="text-align: right;">
-        <div class="f-copy">© 2026 — All rights reserved</div>
-      </div>
+      <div><p>Email: Vuyim1907@gmail.com</p></div>
+      <div style="text-align:right"><div class="f-copy">© 2026 — All rights reserved</div></div>
     `;
   }
 }
 
-// Hamburger toggle — animates the icon into an × and opens the slide-down menu
 function setupHamburgerMenu() {
-  const hamburgerBtn = document.querySelector('#hamburger');
-  const mobileMenu   = document.querySelector('#mobile-menu');
-  if (!hamburgerBtn || !mobileMenu) return;
+  const btn  = document.querySelector('#hamburger');
+  const menu = document.querySelector('#mobile-menu');
+  if (!btn || !menu) return;
 
-  hamburgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    const hamburgerSpans = hamburgerBtn.querySelectorAll('span');
+  const resetSpans = () => btn.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
 
-    if (mobileMenu.classList.contains('open')) {
-      hamburgerSpans[0].style.transform = 'rotate(45deg) translate(4.5px, 4.5px)';
-      hamburgerSpans[1].style.opacity   = '0';
-      hamburgerSpans[2].style.transform = 'rotate(-45deg) translate(4.5px, -4.5px)';
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    if (menu.classList.contains('open')) {
+      const [s0, s1, s2] = btn.querySelectorAll('span');
+      s0.style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
+      s1.style.opacity   = '0';
+      s2.style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
     } else {
-      hamburgerSpans.forEach(span => {
-        span.style.transform = '';
-        span.style.opacity   = '';
-      });
+      resetSpans();
     }
   });
 
-  // Close the mobile menu when a link is tapped
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburgerBtn.querySelectorAll('span').forEach(span => {
-        span.style.transform = '';
-        span.style.opacity   = '';
-      });
-    });
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => { menu.classList.remove('open'); resetSpans(); });
   });
 }
 
-// Fade the page out before navigating so the loader on the next page feels intentional
 function setupPageTransitions() {
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
-
-    // Skip anchors, external links, JS handlers, mailto, and download links
-    if (!href ||
-        href.startsWith('#') ||
-        href.startsWith('http') ||
-        href.startsWith('javascript') ||
-        href.startsWith('mailto') ||
+    if (!href || href.startsWith('#') || href.startsWith('http') ||
+        href.startsWith('javascript') || href.startsWith('mailto') ||
         link.hasAttribute('download')) return;
 
-    link.addEventListener('click', event => {
-      event.preventDefault();
+    link.addEventListener('click', e => {
+      e.preventDefault();
       document.body.classList.add('page-exit');
-      // Wait for the 0.3s CSS opacity transition before navigating
       setTimeout(() => { window.location.href = href; }, 300);
     });
   });

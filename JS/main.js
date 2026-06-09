@@ -1,60 +1,54 @@
 //Project Card Renderer
 function renderProjectCards() {
-  const homeGrid    = document.querySelector('.proj-grid');
+  const homeGrid       = document.querySelector('.proj-grid');
   const portfolioStack = document.querySelector('.proj-stack');
 
   if (homeGrid && typeof projects !== 'undefined') {
-    homeGrid.innerHTML = projects.slice(0, 3).map((project, index) => `
-      <article class="pc reveal" style="transition-delay: ${index * 0.1}s">
-        <div class="pc-img"><img src="${project.img}" alt="${project.title}"></div>
+    homeGrid.innerHTML = projects.slice(0, 3).map((p, i) => `
+      <article class="pc reveal" style="transition-delay:${i * .1}s">
+        <div class="pc-img"><img src="${p.img}" alt="${p.title}"></div>
         <div class="pc-body">
-          <div class="pc-title">${project.title}</div>
-          <p class="pc-desc">${project.desc}</p>
-          <a href="javascript:void(0)" class="pc-link" onclick="openModal(${index})">View Details</a>
+          <div class="pc-title">${p.title}</div>
+          <p class="pc-desc">${p.desc}</p>
+          <a href="javascript:void(0)" class="pc-link" onclick="openModal(${i})">View Details</a>
         </div>
       </article>
     `).join('');
   }
 
   if (portfolioStack && typeof projects !== 'undefined') {
-    portfolioStack.innerHTML = projects.map((project, index) => {
-      const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-      return `
-        <article class="pc reveal" data-project="${index}">
-          <div class="pc-thumb"><img src="${project.img}" alt="${project.title}"></div>
-          <div class="pc-info">
-            <div class="pc-num">${project.num}</div>
-            <div class="pc-title">${project.title}</div>
-            <p class="pc-desc">${project.desc}</p>
-            <div class="pc-tags">${tagsHTML}</div>
-            <button class="pc-btn" onclick="openModal(${index})">View Details →</button>
-          </div>
-        </article>
-      `;
-    }).join('');
+    portfolioStack.innerHTML = projects.map((p, i) => `
+      <article class="pc reveal" data-project="${i}">
+        <div class="pc-thumb"><img src="${p.img}" alt="${p.title}"></div>
+        <div class="pc-info">
+          <div class="pc-num">${p.num}</div>
+          <div class="pc-title">${p.title}</div>
+          <p class="pc-desc">${p.desc}</p>
+          <div class="pc-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          <button class="pc-btn" onclick="openModal(${i})">View Details →</button>
+        </div>
+      </article>
+    `).join('');
   }
 
-  // Register newly-injected cards with the scroll observer
   document.querySelectorAll('.reveal, .pc').forEach(el => scrollObserver.observe(el));
 }
 
 
 //Soft Skills Renderer
 const coreStrengths = [
-  'Problem Solving', 'Technical Aptitude', 'Leadership', 'Communication',
-  'Collaboration', 'Adaptability', 'Project Management', 'Initiative',
-  'Attention to Detail', 'Continuous Learning'
+  'Problem Solving','Technical Aptitude','Leadership','Communication',
+  'Collaboration','Adaptability','Project Management','Initiative',
+  'Attention to Detail','Continuous Learning'
 ];
 
 function renderCoreStrengths() {
   const container = document.querySelector('.core-strengths');
   if (!container) return;
-
-  container.innerHTML = coreStrengths.map(skill => `
-    <div class="strength-card reveal"><h4>${skill}</h4></div>
-  `).join('');
-
-  container.querySelectorAll('.strength-card').forEach(card => scrollObserver.observe(card));
+  container.innerHTML = coreStrengths.map(s =>
+    `<div class="strength-card reveal"><h4>${s}</h4></div>`
+  ).join('');
+  container.querySelectorAll('.strength-card').forEach(el => scrollObserver.observe(el));
 }
 
 
@@ -77,14 +71,12 @@ const technologies = [
 function renderTechnologies() {
   const container = document.querySelector('.skills-grid');
   if (!container) return;
-
-  container.innerHTML = technologies.map((tech, index) => `
-    <div class="sk" data-d="${index * 60}">
-      <img src="${tech.img}" alt="${tech.name} Icon">
-      <span>${tech.name}</span>
+  container.innerHTML = technologies.map((t, i) => `
+    <div class="sk" data-d="${i * 60}">
+      <img src="${t.img}" alt="${t.name} Icon">
+      <span>${t.name}</span>
     </div>
   `).join('');
-
   container.querySelectorAll('.sk').forEach(el => scrollObserver.observe(el));
 }
 
