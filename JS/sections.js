@@ -1,27 +1,49 @@
-const tw = document.querySelector('#tw');
-if (tw) {
-    const phrases = ['Web Developer.', 'Software Engineer.', 'Game Designer.','Embedded Systems Developer.','Digital Artist.'];
-    let pi = 0, ci = 0, del = false;
-    
-    function type() {
-        const f = phrases[pi];
-        if (!del) {
-            tw.textContent = f.slice(0, ++ci);
-            if (ci === f.length) { 
-                del = true; 
-                setTimeout(type, 1800); 
-                return; 
-            }
-            setTimeout(type, 80);
-        } else {
-            tw.textContent = f.slice(0, --ci);
-            if (ci === 0) { 
-                del = false; 
-                pi = (pi + 1) % phrases.length; 
-                setTimeout(type, 400); return; 
-            }
-            setTimeout(type, 45);
-        }
+// Typewriter effect on the hero subtitle
+const typewriterEl = document.querySelector('#typewriter');
+
+if (typewriterEl) {
+  const phrases = [
+    'Web Developer.',
+    'Software Engineer.',
+    'Game Designer.',
+    'Embedded Systems Developer.',
+    'Digital Artist.'
+  ];
+
+  let phraseIndex = 0;
+  let charIndex   = 0;
+  let isDeleting  = false;
+
+  function typeNextChar() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (!isDeleting) {
+      // Type one character forward
+      typewriterEl.textContent = currentPhrase.slice(0, ++charIndex);
+
+      if (charIndex === currentPhrase.length) {
+        // Pause at end of phrase before deleting
+        isDeleting = true;
+        setTimeout(typeNextChar, 1800);
+        return;
+      }
+      setTimeout(typeNextChar, 80);
+
+    } else {
+      // Erase one character
+      typewriterEl.textContent = currentPhrase.slice(0, --charIndex);
+
+      if (charIndex === 0) {
+        // Move to next phrase once fully erased
+        isDeleting  = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(typeNextChar, 400);
+        return;
+      }
+      setTimeout(typeNextChar, 45);
     }
-    setTimeout(type, 1600);
+  }
+
+  // Delay start so the page-load animation settles first
+  setTimeout(typeNextChar, 1600);
 }

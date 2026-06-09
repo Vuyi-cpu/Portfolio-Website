@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Vuyisa Msipa</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./CSS/main.css">
-<link rel="stylesheet" href="./CSS/layout.css">
-<link rel="stylesheet" href="./CSS/components.css">
-<link rel="stylesheet" href="./CSS/nav_and_foot.css">
-<link rel="stylesheet" href="./CSS/responsive.css">
-
-<script src="./JS/loading.js" defer></script>
-<script src="./JS/navigation.js" defer></script>
-<script src="./JS/scroll-animation.js" defer></script>
-<script src="./JS/form-validation.js" defer></script>
-<script src="./JS/sections.js" defer></script>
-<script src="./JS/particles.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Vuyisa Msipa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/main.css">
+  <link rel="stylesheet" href="./CSS/layout.css">
+  <link rel="stylesheet" href="./CSS/components.css">
+  <link rel="stylesheet" href="./CSS/nav_and_foot.css">
+  <link rel="stylesheet" href="./CSS/responsive.css">
+  <script src="./JS/loading.js" defer></script>
+  <script src="./JS/navigation.js" defer></script>
+  <script src="./JS/scroll-animation.js" defer></script>
+  <script src="./JS/form-validation.js" defer></script>
+  <script src="./JS/particles.js" defer></script>
 </head>
 <body>
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
-<div id="loader">
-  <div class="ring-wrapper">
-    <div class="ring"></div>
-    <span class="loading-text">loading...</span>
-  </div>
-  
-  <p class="website-name">Contacts</p>
-</div>
- 
- <nav id="nav"></nav>
-  
-  <div class="mob-menu" id="mm"></div>
- <main>
 
-<div class="page-header reveal contact-header">
-    <h1 class="page-title">Contact <span>Me</span></h1>
- <p class="contact-intro">Have a project in mind or just want to connect? Feel free to reach out.</p>
-</div>
- 
-<section class="contact-sec">
-
-<div class="form-wrapper reveal">
-      <div class="form-card">
-      <div id="contact-form">
-        
-        <div class="field">
-  <label for="name">Your Name</label>
-  <input type="text" id="name" placeholder="Your Name">
-          <div class="err" id="name-err">Please enter your name</div>
-        </div>
-        
-        <div class="field">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" placeholder="Your Email">
-          <div class="err" id="email-err">Please enter a valid email</div>
-        </div>
-        
-        <div class="field">
-          <label for="message">Your Message</label>
-          <textarea id="message" placeholder="Your Message"></textarea>
-          <div class="err" id="msg-err">Please enter a message</div>
-        </div>
-        
-        <button class="btn-submit" id="submit-btn" onclick="submitForm()">Send Message</button>
-      </div>
-      
-      <div class="form-success" id="form-success">
-        ✓ Message sent successfully!<br>
-       <span class="form-success-note">I'll be in touch within 1–2 business days.</span>
-      </div>
+  <div id="loader">
+    <div class="ring-wrapper">
+      <div class="ring"></div>
+      <span class="loading-text">loading...</span>
     </div>
+    <p class="website-name">Contacts</p>
   </div>
-</section>
- </main>
-<footer></footer>
 
+  <nav id="nav"></nav>
+  <div class="mob-menu" id="mobile-menu"></div>
+
+  <main>
+    <div class="page-header reveal contact-header">
+      <h1 class="page-title">Contact <span>Me</span></h1>
+      <p class="contact-intro">Have a project in mind or just want to connect? Feel free to reach out.</p>
+    </div>
+
+    <section class="contact-sec">
+      <div class="form-wrapper reveal">
+        <div class="form-card">
+          <div id="contact-form">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Your Name">
+              <div class="err" id="name-err">Please enter your name</div>
+            </div>
+            <div class="field">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" placeholder="Your Email">
+              <div class="err" id="email-err">Please enter a valid email</div>
+            </div>
+            <div class="field">
+              <label for="message">Your Message</label>
+              <textarea id="message" placeholder="Your Message"></textarea>
+              <div class="err" id="msg-err">Please enter a message</div>
+            </div>
+            <button class="btn-submit" id="submit-btn" onclick="submitForm()">Send Message</button>
+          </div>
+
+          <div class="form-success" id="form-success">
+            ✓ Message sent successfully!<br>
+            <span class="form-success-note">I'll be in touch within 1–2 business days.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
 </body>
 </html>

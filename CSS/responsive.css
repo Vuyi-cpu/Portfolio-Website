@@ -25,7 +25,7 @@
 }
 
 @media (pointer: coarse) {
-  body, a, button, .soc-card, .ham {
+  body, a, button, .ham {
     cursor: auto !important;
   }
 }

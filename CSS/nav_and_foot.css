@@ -105,7 +105,6 @@ nav {
 }
 
 .mob-menu a { 
-  font-family: Inter, sans-serif; 
   font-size: 2rem; 
   font-weight: 700; 
   color: var(--text); 
@@ -135,7 +134,6 @@ footer {
 }
 
 .f-logo { 
-  font-family: Inter, sans-serif; 
   font-weight: 700; 
   font-size: 1.1rem; 
 }
@@ -143,7 +141,6 @@ footer {
 .f-copy { 
   color: var(--subtle); 
   font-size: .78rem; 
-  font-family: Inter, sans-serif; 
   margin-top: 4px; 
 }
 

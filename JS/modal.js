@@ -1,34 +1,42 @@
-function openModal(i) {
-    const p = projects[i];
-    const bg = document.querySelector('#modal-bg');
-    if (!bg) return;
-    
-    document.querySelector('#m-img').src = p.img;
-    document.querySelector('#m-num').textContent = p.num;
-    document.querySelector('#m-title').textContent = p.title;
-    document.querySelector('#m-desc').textContent = p.desc;
-    document.querySelector('#m-process').textContent = p.process;
-    document.querySelector('#m-features').textContent = p.features;
-    
-    const tags = document.querySelector('#m-tags');
-    tags.innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
-    
-    bg.classList.add('open');
-    document.body.style.overflow = 'hidden';
+// Open the project detail modal for the given project index
+function openModal(projectIndex) {
+  const project     = projects[projectIndex];
+  const modalOverlay = document.querySelector('#modal-bg');
+  if (!modalOverlay) return;
+
+  // Populate modal fields from the project data object
+  document.querySelector('#modal-img').src         = project.img;
+  document.querySelector('#modal-num').textContent  = project.num;
+  document.querySelector('#modal-title').textContent = project.title;
+  document.querySelector('#modal-desc').textContent  = project.desc;
+  document.querySelector('#modal-process').textContent = project.process;
+  document.querySelector('#modal-features').textContent = project.features;
+
+  const tagsContainer = document.querySelector('#modal-tags');
+  tagsContainer.innerHTML = project.tags
+    .map(tag => `<span class="tag">${tag}</span>`)
+    .join('');
+
+  modalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event) {
+  // Close only when clicking the darkened backdrop, not the modal content itself
+  if (event.target === document.querySelector('#modal-bg')) {
+    closeModalDirect();
+  }
 }
 
 function closeModalDirect() {
-    const bg = document.querySelector('#modal-bg');
-    if (bg) {
-        bg.classList.remove('open');
-        document.body.style.overflow = '';
-    }
+  const modalOverlay = document.querySelector('#modal-bg');
+  if (modalOverlay) {
+    modalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 }
 
-function closeModal(e) {
-    if (e.target === document.querySelector('#modal-bg')) closeModalDirect();
-}
-
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModalDirect();
+// Allow closing with the Escape key
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeModalDirect();
 });
