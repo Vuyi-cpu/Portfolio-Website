@@ -27,9 +27,9 @@ document.querySelectorAll('.reveal').forEach(el => scrollObserver.observe(el));
 const navBar = document.querySelector('#nav');
 if (navBar) {
   navBar.style.background = 'rgba(14,14,14,.85)';
-  window.addEventListener('scroll', () => {
-    navBar.style.background = window.scrollY > 60
-      ? 'rgba(14,14,14,.97)'
-      : 'rgba(14,14,14,.85)';
-  });
+//   window.addEventListener('scroll', () => {
+//     // navBar.style.background = window.scrollY > 60
+//     //   ? 'rgba(14,14,14,.97)'
+//     //   : 'rgba(14,14,14,.85)';
+//   });
 }

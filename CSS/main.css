@@ -46,7 +46,6 @@ body.page-exit {
   z-index: 9999;
   display: flex;
   flex-direction: column; /* Stacks items vertically */
-  text-align: center;
   justify-content: center;
   align-items: center;
   transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -75,17 +74,6 @@ body.page-exit {
   animation: shiny-ring 2s linear infinite;
 }
 
-.ring::before {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
-
 
 @keyframes shiny-ring {
   0% {
@@ -94,7 +82,7 @@ body.page-exit {
   }
   50% {
     transform: rotate(180deg);
-    box-shadow: 1px 5px 7px var(--surface2); /* The crisp white reflection sweep */
+    box-shadow: 1px 5px 7px var(--surface2); 
   }
   100% {
     transform: rotate(360deg);

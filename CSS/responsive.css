@@ -12,7 +12,6 @@
 }
 
 @media(max-width: 768px) {
-  .intro-grid { grid-template-columns: 1fr; }
   .goals-grid { grid-template-columns: 1fr; }
   footer {grid-template-columns: 1fr;justify-content: center; text-align: center;gap: 2.5rem;}
   footer > div {display: flex !important; flex-direction: column !important;align-items: center !important;text-align: center !important;}

@@ -56,7 +56,7 @@ const projects = [
   {
     num: '07 / 07',
     title: 'Reverse 2048',
-    img: './Assets/Images/Servo.jpeg',
+    img: './Assets/Images/reverse2048.jpeg',
     tags: ['C++', 'Algorithms', 'Game Development'],
     desc: 'A custom implementation of the Reverse 2048 puzzle game developed in C++, focusing on algorithm design, strategic gameplay, and efficient board state management.',
     process: 'The project involved designing algorithms capable of solving and playing Reverse 2048 while implementing game logic, board manipulation, and testing across multiple board sizes and tile configurations.',

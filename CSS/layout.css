@@ -5,7 +5,7 @@ section { position: relative; z-index: 1; }
 .page-kicker::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
 .page-title { font-family: 'Inter', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; margin-bottom: 1.2rem; }
 .page-title span { color: var(--accent); }
-.page-intro { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 600px; }
+.page-intro { color: var(--muted); line-height: 1.8; max-width: 600px; }
 
 /* Section Specific Layouts */
 .hero { min-height: 100vh; padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 4rem) 5rem; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; max-width: 1200px; margin: 0 auto; }
