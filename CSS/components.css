@@ -106,7 +106,7 @@ ul.styled li::before { content: '→'; color: var(--accent); font-family: Inter,
 
 .form-success { display: none; text-align: center; padding: 2rem; color: var(--accent); font-family: Inter, sans-serif; font-size: .9rem; }
 .form-success.show { display: block; }
-.err { color: #e05; font-size: .78rem; margin-top: 4px; font-family: Inter, sans-serif; display: none; }
+.err { color: rgb(199, 18, 27); font-size: .78rem; margin-top: 4px; font-family: Inter, sans-serif; display: none; }
 .err.show { display: block; }
 
 /* Modals */
