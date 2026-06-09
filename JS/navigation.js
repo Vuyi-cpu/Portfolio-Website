@@ -53,19 +53,19 @@ function injectLayoutComponents() {
    // C. Dynamic Fixed 3-Column Footer Component Rendering
     if (footerContainer) {
         footerContainer.innerHTML = `
-            <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div>
                 <div class="f-logo">Social Links</div>
                 
-             <div class="soc-row" style="display: flex; gap: 10px;">
+             <div class="soc-row">
              <a href="https://github.com/Vuyi-cpu" class="soc" aria-label="GitHub">
              <img src="./Assets/Icons/Github.png" alt="GitHub">
              </a> 
     
-    <a href="https://linkedin.com/in/your-username" class="soc" aria-label="LinkedIn">
+    <a href="https://linkedin.com/in/vuyi-msipa-71b5a3293" class="soc" aria-label="LinkedIn">
         <img src="./Assets/Icons/linkedin-original.svg" alt="LinkedIn">
     </a>
     
-    <a href="https://www.instagram.com/jake_msipa/?hl=en" class="soc" aria-label="Instagram">
+    <a href="https://instagram.com/jake_msipa/?hl=en" class="soc" aria-label="Instagram">
         <img src="./Assets/Icons/instagram.png" alt="Instagram">
     </a>
 </div>

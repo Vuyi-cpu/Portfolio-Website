@@ -8,33 +8,33 @@ function renderAllCards() {
         homeGrid.innerHTML = projects.slice(0, 3).map((project, index) => {
             const delay = index * 0.1;
             return `
-                <div class="pc reveal" style="transition-delay: ${delay}s">
-                    <div class="pc-img"><img src="${project.img}" alt="${project.title}"></div>
-                    <div class="pc-body">
-                        <div class="pc-title">${project.title}</div>
-                        <p class="pc-desc">${project.desc}</p>
-                        <a href="javascript:void(0)" class="pc-link" onclick="openModal(${index})">View Details</a>
-                    </div>
-                </div>
-            `;
+    <article class="pc reveal" style="transition-delay: ${delay}s">
+        <div class="pc-img"><img src="${project.img}" alt="${project.title}"></div>
+        <div class="pc-body">
+            <div class="pc-title">${project.title}</div>
+            <p class="pc-desc">${project.desc}</p>
+            <a href="javascript:void(0)" class="pc-link" onclick="openModal(${index})">View Details</a>
+        </div>
+    </article>
+`;
         }).join('');
     }
 
     if (portStack && typeof projects !== 'undefined') {
         portStack.innerHTML = projects.map((project, index) => {
             const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-            return `
-                <div class="pc reveal" data-project="${index}">
-                    <div class="pc-thumb"><img src="${project.img}" alt="${project.title}"></div>
-                    <div class="pc-info">
-                        <div class="pc-num">${project.num}</div>
-                        <div class="pc-title">${project.title}</div>
-                        <p class="pc-desc">${project.desc}</p>
-                        <div class="pc-tags">${tagsHTML}</div>
-                        <button class="pc-btn" onclick="openModal(${index})">View Details →</button>
-                    </div>
-                </div>
-            `;
+           return `
+    <article class="pc reveal" data-project="${index}">
+        <div class="pc-thumb"><img src="${project.img}" alt="${project.title}"></div>
+        <div class="pc-info">
+            <div class="pc-num">${project.num}</div>
+            <div class="pc-title">${project.title}</div>
+            <p class="pc-desc">${project.desc}</p>
+            <div class="pc-tags">${tagsHTML}</div>
+            <button class="pc-btn" onclick="openModal(${index})">View Details →</button>
+        </div>
+    </article>
+`;
         }).join('');
     }
 
@@ -75,7 +75,6 @@ function renderCoreStrengths() {
 }
 
 //Technology Icon Renderer
-
 const technologies = [
     { name: 'HTML5', img: './Assets/Icons/html.png'},
     { name: 'CSS3', img: './Assets/Icons/css3-original.svg' },

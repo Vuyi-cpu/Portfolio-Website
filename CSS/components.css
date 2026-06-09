@@ -98,8 +98,6 @@ ul.styled li::before { content: '→'; color: var(--accent); font-family: Inter,
 
 /* Contact Forms & Elements */
 .form-card { background: var(--section-area-bg); border: 1px solid var(--border); border-radius: 16px; padding: clamp(2.5rem, 6vw, 3.5rem); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
-.form-card h3 { font-family: 'Inter', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: .5rem; }
-.form-card p { color: var(--muted); font-size: .88rem; line-height: 1.6; margin-bottom: 2rem; }
 .field { margin-bottom: 2rem; }
 .field label { display: block; font-family: Inter, sans-serif; font-size: .72rem; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .5rem; }
 .field input, .field textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; color: var(--text); font-family: Inter, sans-serif; font-size: .95rem; line-height: 1.5; transition: border-color .2s, background-color .2s; outline: none; resize: vertical; }

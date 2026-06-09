@@ -178,3 +178,4 @@ footer {
 }
 
 .soc:hover img {opacity: 0.8;}
+.f-col { display: flex; flex-direction: column; gap: 8px; }
