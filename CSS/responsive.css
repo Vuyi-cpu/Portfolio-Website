@@ -1,4 +1,4 @@
-@media(max-width: 900px) {
+@media(max-width: 768px) {
   .hero { grid-template-columns: 1fr; text-align: center; padding-top: 8rem; }
   .hero-vis { order: -1; }
   .photo-frame { width: 180px; }
@@ -8,17 +8,16 @@
   .proj-grid { grid-template-columns: 1fr; }
   .proj-stack .pc { grid-template-columns: 1fr; }
   .proj-stack .pc:nth-child(even) { direction: ltr; }
+    .nav-links { display: none; }
+  .ham { display: flex; }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 480px) {
   .goals-grid { grid-template-columns: 1fr; }
   footer { grid-template-columns: 1fr; justify-content: center; text-align: center; gap: 2.5rem; }
   footer div { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .soc-row { flex-direction: row; }
 }
 
-@media(max-width: 640px) {
-  .nav-links { display: none; }
-  .ham { display: flex; }
-}
+
 
