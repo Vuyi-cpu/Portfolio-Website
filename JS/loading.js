@@ -1,11 +1,17 @@
 // Lock scroll immediately before anything renders
 document.documentElement.classList.add('loading');
 
-window.addEventListener('load', () => {
+window.addEventListener('pageshow', (event) => {
+    // Reset loader state when returning via back button
+    const loader = document.querySelector('#loader');
+    if (loader) {
+        loader.classList.remove('done');
+    }
+
     setTimeout(() => {
-        const loader = document.querySelector('#loader');
         if (loader) loader.classList.add('done');
-        // Unlock after the CSS fade-out transition finishes (0.6s in main.css)
+
+        // Unlock after CSS fade-out
         setTimeout(() => {
             document.documentElement.classList.remove('loading');
         }, 600);
