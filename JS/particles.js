@@ -56,7 +56,7 @@
       this.driftVY= Math.sin(driftAngle) * driftSpeed;
     }
 
-    // Projects the 3-D sphere position onto 2-D screen coords using rotation + perspective
+  
     project() {
       const cosY= Math.cos(rotationY);
       const sinY= Math.sin(rotationY);
@@ -90,7 +90,7 @@
     const clientX = event.clientX || (event.touches && event.touches[0].clientX) || canvasCenterX();
     const clientY = event.clientY || (event.touches && event.touches[0].clientY) || canvasCenterY();
 
-    // Offset click Y by scroll so the origin lines up with the canvas parallax position
+    
     const originX = clientX;
     const originY = clientY + (currentScrollY * PARALLAX_SPEED);
 
@@ -121,13 +121,13 @@
   function drawSphere() {
     rotationY += 0.005;
 
-    // Sort back-to-front so closer particles render on top
+    // Sort back to front so closer particles render on top
     const sorted = particles
       .map(p => ({ p, ...p.project() }))
       .sort((a, b) => a.z - b.z);
 
     sorted.forEach(({ p, x, y, z, scale }) => {
-      // Map depth (-1…1) to 0…1 for colour and size calculations
+      // Map depth 
       const depth = (z + 1) * 0.5;
       const r     = Math.round(5  + depth * 65);
       const g     = Math.round(20 + depth * 130);
@@ -146,7 +146,7 @@
     const elapsed  = timestamp - explosionStart;
     const progress = Math.min(elapsed / 1500, 1);
 
-    // Once the explosion animation completes, switch to free-floating
+    // Once the explosion animation completes, switch to free floating
     if (progress >= 1) animationState = 'floating';
 
     const scrollOffset = currentScrollY * PARALLAX_SPEED;

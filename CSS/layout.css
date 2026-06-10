@@ -42,4 +42,6 @@
 .proj-stack { display: flex; flex-direction: column; gap: 2px; }
 .contact-sec { padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem); }
 .cta-sec { padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem); }
-.divider { border: none; border-top: 1px solid var(--border); margin: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 4rem); }
+
+/* section lines */
+.divider { border: none; border-top: 1px solid var(--border); margin: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 4rem); } 

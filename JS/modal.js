@@ -10,7 +10,7 @@ if (modalBg) {
 if (modalClose) {
   modalClose.addEventListener('click', closeModalDirect);
 }
-
+//open modal when view project clicked
 function openModal(index) {
   if (typeof projects === 'undefined') return;
   const p  = projects[index];
@@ -37,7 +37,7 @@ function closeModalDirect() {
     document.body.style.overflow = '';
   }
 }
-
+// close modal when escape pressed
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModalDirect();
 });

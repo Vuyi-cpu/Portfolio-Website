@@ -1,3 +1,4 @@
+/* Tablet responsive */
 @media(max-width: 768px) {
   .hero { grid-template-columns: 1fr; text-align: center; padding-top: 8rem; }
   .hero-vis { order: -1; }
@@ -12,6 +13,7 @@
   .ham { display: flex; }
 }
 
+/* Mobile responsive */
 @media(max-width: 480px) {
   .goals-grid { grid-template-columns: 1fr; }
   footer { grid-template-columns: 1fr; justify-content: center; text-align: center; gap: 2.5rem; }

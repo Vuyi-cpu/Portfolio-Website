@@ -7,12 +7,13 @@
   --text: #f0f0f0; --muted: #888; --subtle: #444;
 }
 html { scroll-behavior: smooth; }
-html.loading { overflow: hidden; }
+html.loading { overflow: hidden; }/* prevent scrolling before done loading */
 body {
   background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; transition: opacity .3s ease;
 }
 body.page-exit { opacity: 0; pointer-events: none; }
 
+/* loading screen */
 .website-name { font-size: 48px; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
 .loading-text  { color: var(--text); font-size: 16px; text-transform: uppercase; letter-spacing: 2px; animation: pulse-text 2s ease-in-out infinite; }
 

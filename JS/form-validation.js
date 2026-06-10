@@ -19,7 +19,7 @@ function submitForm() {
     document.querySelector('#name-err').classList.add('show');
     isValid = false;
   }
-  if (!emailValue || !/^[^@]+@[^@]+\.[^@]+$/.test(emailValue)) {
+  if (!emailValue || !/^[^@]+@[^@]+\.[^@]+$/.test(emailValue)) {//check for symbols for valid email address and if not display error
     document.querySelector('#email-err').classList.add('show');
     isValid = false;
   }
@@ -32,7 +32,7 @@ function submitForm() {
 
   const btn = document.querySelector('#submit-btn');
   btn.textContent = 'Sending...';
-  btn.disabled = true;
+  btn.disabled = true; // disable clicks on button while message sending
 
   setTimeout(() => {
     document.querySelector('#contact-form').style.display = 'none';

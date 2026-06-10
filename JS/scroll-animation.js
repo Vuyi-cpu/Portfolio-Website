@@ -1,4 +1,4 @@
-// Elements with class 'reveal' or 'sk' are watched; 'visible' is toggled as they enter/leave the viewport.
+// Elements with class 'reveal' or 'sk' are watched; 'visible' is toggled as they enter or leave the viewport.
 window.scrollObserver = new IntersectionObserver(entries => {
   entries.forEach(({ target, isIntersecting }) => {
     if (isIntersecting) {

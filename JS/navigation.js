@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function injectLayoutComponents() {
-  const navEl    = document.querySelector('nav');
-  const mobEl    = document.querySelector('#mobile-menu');
-  const footerEl = document.querySelector('footer');
+  const navEl= document.querySelector('nav');
+  const mobEl= document.querySelector('#mobile-menu');
+  const footerEl= document.querySelector('footer');
 
   const pages = [
-    { name: 'Home',      url: 'index.html' },
-    { name: 'About',     url: 'about.html' },
+    { name: 'Home',url: 'index.html' },
+    { name: 'About',url: 'about.html' },
     { name: 'Portfolio', url: 'portfolio.html' },
-    { name: 'Contact',   url: 'contact.html' }
+    { name: 'Contact',url: 'contact.html' }
   ];
-
+// Extracts the current page filename to highlight
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const activeClass = url => currentPage === url ? 'class="active"' : '';
 
@@ -63,7 +63,7 @@ function setupHamburgerMenu() {
   const btn  = document.querySelector('#hamburger');
   const menu = document.querySelector('#mobile-menu');
   if (!btn || !menu) return;
-
+// Restores the hamburger icon after the menu closes.
   const resetSpans = () => btn.querySelectorAll('span').forEach(s => {
     s.style.transform = '';
     s.style.opacity   = '';
@@ -72,16 +72,17 @@ function setupHamburgerMenu() {
   btn.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
-    if (open) {
-      const [s0, s1, s2] = btn.querySelectorAll('span');
-      s0.style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
-      s1.style.opacity   = '0';
-      s2.style.transform = 'rotate(-45deg) translate(4.5px,-4.5px)';
+    if (open) {// Rotates the three bars into a cross ("X") icon
+      const [s0, s1, s2]= btn.querySelectorAll('span');
+      s0.style.transform= 'rotate(45deg) translate(4.5px,4.5px)';
+      s1.style.opacity= '0';
+      s2.style.transform= 'rotate(-45deg) translate(4.5px,-4.5px)';
     } else {
       resetSpans();
     }
   });
 
+// Automatically closes the mobile menu after a
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('open');
