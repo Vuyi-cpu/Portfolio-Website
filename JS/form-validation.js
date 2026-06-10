@@ -2,14 +2,14 @@ const submitBtn = document.querySelector('#submit-btn');
 if (submitBtn) submitBtn.addEventListener('click', submitForm);
 
 function submitForm() {
-  const nameInput    = document.querySelector('#name');
-  const emailInput   = document.querySelector('#email');
-  const messageInput = document.querySelector('#message');
+  const nameInput = document.querySelector('#name');
+  const emailInput = document.querySelector('#email');
+  const messageInput= document.querySelector('#message');
   if (!nameInput || !emailInput || !messageInput) return;
 
-  const nameValue    = nameInput.value.trim();
-  const emailValue   = emailInput.value.trim();
-  const messageValue = messageInput.value.trim();
+  const nameValue = nameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+  const messageValue= messageInput.value.trim();
 
   document.querySelectorAll('.err').forEach(el => el.classList.remove('show'));
 

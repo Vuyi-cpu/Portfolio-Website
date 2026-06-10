@@ -99,10 +99,10 @@
       particle.x = projected.x;
       particle.y = projected.y;
 
-      const dx       = projected.x - originX;
-      const dy       = projected.y - originY;
+      const dx = projected.x - originX;
+      const dy = projected.y - originY;
       const distance = Math.sqrt(dx * dx + dy * dy) || 1;
-      const speed    = Math.random() * 18 + 8;
+      const speed = Math.random() * 18 + 8;
 
       // Particles fly outward from the click point with slight random spread
       particle.vx = (dx / distance) * speed + (Math.random() - 0.5) * 4;
@@ -129,11 +129,11 @@
     sorted.forEach(({ p, x, y, z, scale }) => {
       // Map depth 
       const depth = (z + 1) * 0.5;
-      const r     = Math.round(5  + depth * 65);
-      const g     = Math.round(20 + depth * 130);
-      const b     = Math.round(90 + depth * 165);
-      const alpha  = Math.max(0.05, Math.pow(depth, 1.5) * p.opacity);
-      const radius = Math.max(p.baseSize * Math.pow(depth, 1.2) * scale * 1.5, 0.2);
+      const r = Math.round(5  + depth * 65);
+      const g = Math.round(20 + depth * 130);
+      const b = Math.round(90 + depth * 165);
+      const alpha= Math.max(0.05, Math.pow(depth, 1.5) * p.opacity);
+      const radius= Math.max(p.baseSize * Math.pow(depth, 1.2) * scale * 1.5, 0.2);
 
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, Math.PI * 2);
@@ -167,9 +167,9 @@
       p.y += p.vy;
 
       // Wrap around canvas edges so particles never disappear permanently
-      if (p.x < -100)                     p.x = canvas.width  + 100;
-      if (p.x >  canvas.width  + 100)     p.x = -100;
-      if (p.y < -100 + scrollOffset)      p.y = canvas.height + 100 + scrollOffset;
+      if (p.x < -100) p.x = canvas.width  + 100;
+      if (p.x >  canvas.width  + 100) p.x = -100;
+      if (p.y < -100 + scrollOffset) p.y = canvas.height + 100 + scrollOffset;
       if (p.y >  canvas.height + 100 + scrollOffset) p.y = -100 + scrollOffset;
 
       ctx.beginPath();
@@ -187,9 +187,9 @@
       p.y += p.driftVY;
 
       // Wrap around canvas edges
-      if (p.x < -100)                     p.x = canvas.width  + 100;
-      if (p.x >  canvas.width  + 100)     p.x = -100;
-      if (p.y < -100 + scrollOffset)      p.y = canvas.height + 100 + scrollOffset;
+      if (p.x < -100)  p.x = canvas.width  + 100;
+      if (p.x >  canvas.width  + 100)  p.x = -100;
+      if (p.y < -100 + scrollOffset) p.y = canvas.height + 100 + scrollOffset;
       if (p.y >  canvas.height + 100 + scrollOffset) p.y = -100 + scrollOffset;
 
       ctx.beginPath();
@@ -211,7 +211,7 @@
     ctx.save();
     ctx.translate(0, -currentScrollY * PARALLAX_SPEED);
 
-    if      (animationState === 'sphere')    drawSphere();
+    if (animationState === 'sphere')    drawSphere();
     else if (animationState === 'exploding') drawExploding(timestamp);
     else                                     drawFloating();
 

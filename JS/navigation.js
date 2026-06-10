@@ -13,10 +13,10 @@ function injectLayoutComponents() {
   const footerEl = document.querySelector('footer');
 
   const pages = [
-    { name: 'Home',      url: 'index.html'     },
-    { name: 'About',     url: 'about.html'     },
-    { name: 'Portfolio', url: 'portfolio.html' },
-    { name: 'Contact',   url: 'contact.html'   }
+    { name: 'Home', url: 'index.html'     },
+    { name: 'About',url: 'about.html'     },
+    { name: 'Portfolio',url: 'portfolio.html' },
+    { name: 'Contact',url: 'contact.html'   }
   ];
 
   // grab just the filename from the URL so we can highlight the current page

@@ -1,7 +1,7 @@
 //Project Card Renderer
 function renderProjectCards() {
-  const homeGrid       = document.querySelector('.proj-grid');
-  const portfolioStack = document.querySelector('.proj-stack');
+  const homeGrid= document.querySelector('.proj-grid');
+  const portfolioStack= document.querySelector('.proj-stack');
 
   if (homeGrid && typeof projects !== 'undefined') {
     homeGrid.innerHTML = projects.slice(0, 3).map((p, i) => `
@@ -54,18 +54,18 @@ function renderCoreStrengths() {
 
 //Technology Icon Renderer
 const technologies = [
-  { name: 'HTML5',  img: './Assets/Icons/html.png' },
-  { name: 'CSS3',   img: './Assets/Icons/css3-original.svg' },
-  { name: 'JS',     img: './Assets/Icons/javascript-original.svg' },
-  { name: 'Python', img: './Assets/Icons/python-original.svg' },
-  { name: 'Java',   img: './Assets/Icons/java-original.svg' },
-  { name: 'C++',    img: './Assets/Icons/cplusplus-original.svg' },
-  { name: 'C#',     img: './Assets/Icons/csharp-original.svg' },
-  { name: 'Unity',  img: './Assets/Icons/unity-original.svg' },
-  { name: 'Git',    img: './Assets/Icons/git-original.svg' },
-  { name: 'MySQL',  img: './Assets/Icons/mysql-plain-wordmark.svg' },
-  { name: 'MATLAB', img: './Assets/Icons/matlab-original.svg' },
-  { name: 'Shell',  img: './Assets/Icons/powershell-original.svg' }
+  { name: 'HTML5',img: './Assets/Icons/html.png' },
+  { name: 'CSS3', img: './Assets/Icons/css3-original.svg' },
+  { name: 'JS', img: './Assets/Icons/javascript-original.svg' },
+  { name: 'Python',img: './Assets/Icons/python-original.svg' },
+  { name: 'Java', img: './Assets/Icons/java-original.svg' },
+  { name: 'C++', img: './Assets/Icons/cplusplus-original.svg' },
+  { name: 'C#', img: './Assets/Icons/csharp-original.svg' },
+  { name: 'Unity',img: './Assets/Icons/unity-original.svg' },
+  { name: 'Git', img: './Assets/Icons/git-original.svg' },
+  { name: 'MySQL', img: './Assets/Icons/mysql-plain-wordmark.svg' },
+  { name: 'MATLAB',img: './Assets/Icons/matlab-original.svg' },
+  { name: 'Shell',img: './Assets/Icons/powershell-original.svg' }
 ];
 
 function renderTechnologies() {
