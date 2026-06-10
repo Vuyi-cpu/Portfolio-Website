@@ -64,7 +64,7 @@ footer {
 }
 .f-logo { font-weight: 700; font-size: 1.1rem; }
 
-.f-copy { color: var(--subtle); font-size: .78rem; margin-top: 4px; }
+.f-copy { color: var(--muted); font-size: .78rem; margin-top: 4px; }
 
 /* Social Links & Icons */
 .soc-row { display: flex; gap: 10px; }
