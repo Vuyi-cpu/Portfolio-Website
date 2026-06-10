@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //Nav & Footer Injection
 
 function injectLayoutComponents() {
-  const navEl    = document.querySelector('nav');
-  const mobEl    = document.querySelector('#mobile-menu');
-  const footerEl = document.querySelector('footer');
+  const navEl = document.querySelector('nav');
+  const mobEl = document.querySelector('#mobile-menu');
+  const footerEl= document.querySelector('footer');
 
   const pages = [
     { name: 'Home', url: 'index.html'     },
