@@ -1,6 +1,6 @@
 # Vuyisa Msipa - Portfolio Website
 ## Links
-[1]Website: https://portfolio-website-rosy-pi-30.vercel.app/index.html or https://vuyi-cpu.github.io/Portfolio-Website/index.html
+[1]Website:https://vuyi-cpu.github.io/Portfolio-Website/index.html or https://portfolio-website-rosy-pi-30.vercel.app/index.html
 
 [2]Github Repo: https://github.com/Vuyi-cpu/Portfolio-Website
 ## Overview
