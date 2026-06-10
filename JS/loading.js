@@ -4,7 +4,7 @@ document.documentElement.classList.add('loading');
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         document.body.classList.remove('page-exit');
-        //skip the loading animation 
+        //skip the loading animation on back
         const loader = document.querySelector('#loader');
         if (loader) loader.classList.add('done');
         document.documentElement.classList.remove('loading');

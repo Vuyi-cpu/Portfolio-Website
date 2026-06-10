@@ -18,7 +18,7 @@
 
   //State
   let rotationY= 0;
-  let animationState= 'sphere';   // 'sphere' | 'exploding' | 'floating'
+  let animationState= 'sphere';   // 'sphere' or 'exploding' or 'floating'
   let explosionStart= 0;          // timestamp when the explosion began
 
   let targetScrollY  = window.scrollY;
@@ -81,7 +81,7 @@
   const particles = Array.from({ length: PARTICLE_COUNT }, (_, i) => new Particle(i));
 
 
-  //Trigger explosion on click / scroll
+  //Trigger explosion on scroll
   function triggerExplosion(event) {
     if (animationState !== 'sphere') return;
     animationState = 'exploding';
