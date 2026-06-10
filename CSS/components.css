@@ -135,7 +135,7 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 }
 .proj-grid .pc:hover { border-color: var(--accent-border); transform: translateY(-4px); }
 .pc-body { padding: 1.2rem 1.4rem; }
-.pc-link { font-size: .82rem; color: var(--accent); text-decoration: none; letter-spacing: .04em; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; border-radius: 50px; }
+.pc-link {font-size: .82rem; color: var(--accent); text-decoration: none; letter-spacing: .04em; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; border-radius: 50px; }
 .pc-link:hover { gap: 12px; }
 .pc-link::after { content: '→'; }
 
@@ -165,8 +165,8 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .pc-tags  { display: flex; flex-wrap: wrap; gap: 6px; }
 
 .tag {
-  font-size: .72rem; color: var(--muted); background: var(--surface2);
-  border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px;
+  font-size: .72rem; color: var(--accent); background: var(--accent-tint);
+  border: 1px solid var(--accent-border); border-radius: 4px; padding: 3px 10px;
   letter-spacing: .04em;
 }
 .pc-btn {
@@ -201,66 +201,13 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .err.show          { display: block; }
 
 
-/* ── Modal ───────────────────────────────────────────────────────────────── */
-.modal-bg {
-  position: fixed; inset: 0; background: rgba(0,5,15,.75); z-index: 2000;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; visibility: hidden;
-  transition: opacity .4s cubic-bezier(.4,0,.2,1), visibility .4s;
-  backdrop-filter: blur(12px) saturate(150%); padding: 1.5rem;
-}
-.modal-bg.open { opacity: 1; visibility: visible; }
-
-.modal {
-  background: linear-gradient(145deg, rgba(74,144,226,.12), rgba(14,14,14,.95));
-  border: 1px solid var(--accent-border);
-  border-radius: 24px; width: 100%; max-width: 780px; max-height: 85vh;
-  overflow-y: auto; position: relative;
-  transform: scale(.95) translateY(30px);
-  transition: transform .5s cubic-bezier(.34,1.56,.64,1);
-  box-shadow: 0 30px 60px rgba(0,0,0,.8), 0 0 60px var(--accent-dim), inset 0 0 20px var(--accent-tint);
-  scrollbar-width: thin; scrollbar-color: var(--accent) transparent;
-}
-.modal-bg.open .modal { transform: scale(1) translateY(0); }
-
-.modal-img {
-  width: 100%; aspect-ratio: 21/9; object-fit: cover; object-position: center;
-  display: block; border-radius: 24px 24px 0 0;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
-}
-.modal-body  { padding: 0 2.5rem 2.5rem; position: relative; top: -1.5rem; }
-.modal-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -.02em; text-shadow: 0 2px 15px var(--accent-glow); }
-.modal-tags  { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
-.modal-num   { font-size: .72rem; color: var(--subtle); letter-spacing: .1em; margin-bottom: .5rem; }
-
-.modal-close {
-  position: absolute; top: 1.2rem; right: 1.2rem;
-  background: rgba(5,10,20,.75); backdrop-filter: blur(8px);
-  border: 1px solid var(--accent-border); border-radius: 50%;
-  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; font-weight: 700; color: #fff; cursor: pointer;
-  transition: all .3s cubic-bezier(.4,0,.2,1); z-index: 10;
-  box-shadow: 0 4px 12px rgba(0,0,0,.5);
-}
-.modal-close:hover { background: var(--accent); border-color: var(--accent); transform: rotate(90deg) scale(1.1); box-shadow: 0 0 20px var(--accent-glow); }
-
-.modal-section {
-  margin-bottom: 1.5rem; background: var(--accent-tint);
-  padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(74,144,226,.1);
-  transition: background .3s, transform .3s, border-color .3s;
-}
-.modal-section:hover { background: rgba(74,144,226,.08); transform: translateX(4px); border-color: var(--accent-border); }
-.modal-section h4 { font-size: .85rem; font-weight: 700; margin-bottom: .8rem; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; }
-.modal-section p  { color: var(--text); font-size: .9rem; line-height: 1.8; margin: 0; }
-
 
 /* ── Scroll Reveal & Hero Animations ─────────────────────────────────────── */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
 .reveal.visible { opacity: 1; transform: none; }
 
 .hero-text { opacity: 0; transform: translateY(24px); animation: heroIn .8s  .9s cubic-bezier(.4,0,.2,1) forwards; }
-.hero-vis  { opacity: 0;                              animation: heroIn .8s 1.1s cubic-bezier(.4,0,.2,1) forwards; display: flex; align-items: center; justify-content: center; }
+.hero-vis  { opacity: 0;animation: heroIn .8s 1.1s cubic-bezier(.4,0,.2,1) forwards; display: flex; align-items: center; justify-content: center; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
 
 .scroll-ind {
@@ -294,4 +241,4 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .form-success-note { color: var(--muted); font-size: .82rem; }
 .mb-1 { margin-bottom: 1rem; }
 .mt-16 { margin-top: 16px; }
-.mb-0  { margin-bottom: 0 !important; }
+.mb-0  { margin-bottom: 0; }
