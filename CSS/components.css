@@ -136,7 +136,7 @@ ul.styled li::before{ content: '→'; color: var(--accent); font-size: .8rem; fl
 .pc-body{ padding: 1.2rem 1.4rem; display: flex; flex-direction: column; flex: 1; }
 
 .pc-link{
-  display: inline-flex; align-items: center; gap: 6px;
+  align-self: flex-start;
   padding: .4rem .9rem; border-radius: 2px; background: transparent;
   border: 1px solid var(--subtle); color: var(--muted);
   font-size: .76rem; font-weight: 500; letter-spacing: .04em;

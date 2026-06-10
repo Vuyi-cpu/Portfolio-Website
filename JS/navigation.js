@@ -97,8 +97,7 @@ function setupPageTransitions() {
     const link = e.target.closest('a[href]');
     if (!link) return;
     const href = link.getAttribute('href');
-    // FIX: use 'javascript:' and 'mailto:' (with colon) to avoid false matches
-    // against path segments that happen to start with those words
+
     if (!href || href.startsWith('#') || href.startsWith('http') ||
         href.startsWith('javascript:') || href.startsWith('mailto:') ||
         link.hasAttribute('download')) return;
