@@ -1,4 +1,7 @@
 # Vuyisa Msipa — Portfolio Website
+##Links
+[1]Website: https://portfolio-website-rosy-pi-30.vercel.app/index.html or https://vuyi-cpu.github.io/Portfolio-Website/index.html
+[2]Github Repo: https://github.com/Vuyi-cpu/Portfolio-Website
 ## Overview
  
 This is the source code for my personal portfolio website, built using vanilla HTML, CSS, and JavaScript across four pages: Home, About, Portfolio, and Contact.
