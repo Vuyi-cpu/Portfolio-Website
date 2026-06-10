@@ -6,20 +6,33 @@
   .hero-desc { max-width: 100%; margin-inline: auto; }
   .kicker { justify-content: center; }
   .skills-lay { grid-template-columns: 1fr; gap: 2rem; }
-  .proj-grid { grid-template-columns: 1fr; }
-  .proj-stack .pc { grid-template-columns: 1fr; }
-  .proj-stack .pc:nth-child(even) { direction: ltr; }
-    .nav-links { display: none; }
+  .nav-links { display: none; }
   .ham { display: flex; }
+
+  /* Home project grid */
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-grid .pc { flex-direction: row; }
+  .proj-grid .pc-img { width: 200px; height: auto; flex-shrink: 0; }
+  .proj-grid .pc-img img { object-fit: cover; }
+  .proj-grid .pc:nth-child(even) { flex-direction: row-reverse; }
+
+  .proj-stack .pc { grid-template-columns: 260px 1fr; }
 }
 
 /* Mobile responsive */
-@media(max-width: 480px) {
+@media(max-width: 468px) {
   .goals-grid { grid-template-columns: 1fr; }
+
+  /* Home grid */
+  .proj-grid .pc,
+  .proj-grid .pc:nth-child(even) { flex-direction: column; }
+  .proj-grid .pc-img { width: 100%; height: 220px; }
+
+  /* Portfolio stack */
+  .proj-stack .pc { grid-template-columns: 1fr; }
+  .proj-stack .pc:nth-child(even) { direction: ltr; }
+
   footer { grid-template-columns: 1fr; justify-content: center; text-align: center; gap: 2.5rem; }
   footer div { display: flex; flex-direction: column; align-items: center; text-align: center; }
   .soc-row { flex-direction: row; }
 }
-
-
-

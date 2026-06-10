@@ -82,7 +82,7 @@ function setupHamburgerMenu() {
     }
   });
 
-// Automatically closes the mobile menu after a
+// Automatically closes the mobile menu after a link is tapped
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('open');
@@ -97,8 +97,10 @@ function setupPageTransitions() {
     const link = e.target.closest('a[href]');
     if (!link) return;
     const href = link.getAttribute('href');
+    // FIX: use 'javascript:' and 'mailto:' (with colon) to avoid false matches
+    // against path segments that happen to start with those words
     if (!href || href.startsWith('#') || href.startsWith('http') ||
-        href.startsWith('javascript') || href.startsWith('mailto') ||
+        href.startsWith('javascript:') || href.startsWith('mailto:') ||
         link.hasAttribute('download')) return;
 
     e.preventDefault();

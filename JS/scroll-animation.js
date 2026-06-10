@@ -3,11 +3,16 @@ window.scrollObserver = new IntersectionObserver(entries => {
   entries.forEach(({ target, isIntersecting }) => {
     if (isIntersecting) {
       if (target.classList.contains('sk')) {
-        setTimeout(() => target.classList.add('visible'), +(target.dataset.d || 0));
+        const tid = setTimeout(() => target.classList.add('visible'), +(target.dataset.d || 0));
+        target._skTid = tid;
       } else {
         target.classList.add('visible');
       }
     } else {
+      if (target._skTid) {
+        clearTimeout(target._skTid);
+        delete target._skTid;
+      }
       target.classList.remove('visible');
     }
   });

@@ -37,9 +37,6 @@ Colour shades were adjusted slightly from the original PRD specification to impr
 - **PRD Wireframe and Content Inventory:** The contact page was specified to include a standalone social links section (LinkedIn, GitHub, Email, Instagram) alongside the contact form.
 - **Final Implementation:** The standalone social links section was removed from the contact page body. Social links are accessible exclusively through the footer, which is present on every page. This decision reduces redundancy and keeps the contact page focused on the form interaction, while ensuring social links remain consistently accessible site-wide.
 
-#### Portfolio Page - Projects Section
-PRD Wireframe: The projects section displayed project cards in an alternating left-and-right arrangement, with each successive card aligned to the opposite side of the page to create visual variation.
-Final Implementation: The alternating layout was replaced with a vertically stacked arrangement where all project cards share the same alignment and structure. This change was made to improve readability and user experience by creating a more consistent visual flow, reducing unnecessary eye movement, and allowing users to scan project information more efficiently. The stacked design also adapts more naturally to responsive layouts, providing a cleaner and more maintainable presentation across desktop and mobile devices.
  
 ## References
  

@@ -94,7 +94,7 @@ ul.styled li::before{ content: '→'; color: var(--accent); font-size: .8rem; fl
 .sk{
   aspect-ratio: 1; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 7px; padding: 14px 8px 10px;
-  opacity: 0;;
+  opacity: 0;
 }
 .sk.visible{ opacity: 1;}
 .sk img { width: 26px; height: 26px; }
@@ -116,7 +116,6 @@ ul.styled li::before{ content: '→'; color: var(--accent); font-size: .8rem; fl
   width: 100%; height: 100%; 
   filter: grayscale(25%) brightness(.85);
   transition: filter .45s, transform .45s;
-  content:""
 }
 .proj-grid .pc:hover .pc-img img,
 .proj-stack .pc:hover .pc-thumb img { filter: none; transform: scale(1.05);}
@@ -135,11 +134,12 @@ ul.styled li::before{ content: '→'; color: var(--accent); font-size: .8rem; fl
   flex-shrink: 0;
 }
 .pc-body{ padding: 1.2rem 1.4rem; display: flex; flex-direction: column; flex: 1; }
+
 .pc-link{
-  align-items: center; gap: 8px;
-  padding: .6rem 1.4rem; border-radius: 2px; background: transparent;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: .4rem .9rem; border-radius: 2px; background: transparent;
   border: 1px solid var(--subtle); color: var(--muted);
-  font-size: .85rem; font-weight: 500; letter-spacing: .04em;
+  font-size: .76rem; font-weight: 500; letter-spacing: .04em;
   text-decoration: none; cursor: pointer;
   transition: border-color .2s, color .2s, gap .2s;
 }
