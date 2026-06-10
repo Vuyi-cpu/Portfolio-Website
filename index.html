@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vuyisa Msipa — portfolio of a Digital Arts student and aspiring software engineer based in Johannesburg.">
   <title>Home | Vuyisa Msipa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./CSS/main.css">
   <link rel="stylesheet" href="./CSS/layout.css">
   <link rel="stylesheet" href="./CSS/components.css">
@@ -93,10 +95,9 @@
 
   <footer></footer>
 
-  <!-- Project detail modal -->
-  <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+  <div class="modal-bg" id="modal-bg">
     <div class="modal" id="modal">
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      <button class="modal-close" id="modal-close">✕</button>
       <img class="modal-img" id="modal-img" src="" alt="">
       <div class="modal-body">
         <div class="modal-num" id="modal-num"></div>

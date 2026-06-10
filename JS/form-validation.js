@@ -1,38 +1,39 @@
+const submitBtn = document.getElementById('submit-btn');
+if (submitBtn) submitBtn.addEventListener('click', submitForm);
+
 function submitForm() {
-  const nameInput= document.querySelector('#name');
-  const emailInput= document.querySelector('#email');
-  const messageInput= document.querySelector('#message');
+  const nameInput    = document.querySelector('#name');
+  const emailInput   = document.querySelector('#email');
+  const messageInput = document.querySelector('#message');
   if (!nameInput || !emailInput || !messageInput) return;
 
-  const nameValue= nameInput.value.trim();
-  const emailValue= emailInput.value.trim();
-  const messageValue= messageInput.value.trim();
+  const nameValue    = nameInput.value.trim();
+  const emailValue   = emailInput.value.trim();
+  const messageValue = messageInput.value.trim();
 
-  // Clear previous error messages before re-validating
-  document.querySelectorAll('.err').forEach(errorEl => errorEl.classList.remove('show'));
+  document.querySelectorAll('.err').forEach(el => el.classList.remove('show'));
 
   let isValid = true;
-  if (!nameValue){ 
-    document.querySelector('#name-err').classList.add('show');  
-    isValid = false; 
-}
 
-  if (!emailValue || !/^[^@]+@[^@]+\.[^@]+$/.test(emailValue)) {
-    document.querySelector('#email-err').classList.add('show'); isValid = false;
+  if (!nameValue) {
+    document.querySelector('#name-err').classList.add('show');
+    isValid = false;
   }
-  if (!messageValue) { 
-    document.querySelector('#msg-err').classList.add('show');   
-    isValid = false; 
-}
+  if (!emailValue || !/^[^@]+@[^@]+\.[^@]+$/.test(emailValue)) {
+    document.querySelector('#email-err').classList.add('show');
+    isValid = false;
+  }
+  if (!messageValue) {
+    document.querySelector('#msg-err').classList.add('show');
+    isValid = false;
+  }
 
   if (!isValid) return;
 
-  // Disable button to prevent duplicate submissions
-  const submitBtn = document.querySelector('#submit-btn');
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled    = true;
+  const btn = document.querySelector('#submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
 
-  // Simulate network delay then show the success state
   setTimeout(() => {
     document.querySelector('#contact-form').style.display = 'none';
     document.querySelector('#form-success').classList.add('show');

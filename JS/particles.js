@@ -33,7 +33,7 @@
   //Particle
   class Particle {
     constructor(index) {
-      // Fibonacci sphere distribution — spreads points evenly across a sphere surface
+      // Fibonacci sphere distribution
       const phi= Math.acos(1 - 2 * (index + 0.5) / PARTICLE_COUNT);
       const theta= Math.PI * (1 + Math.sqrt(5)) * index;
 

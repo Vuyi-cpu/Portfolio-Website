@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function injectLayoutComponents() {
-  const navEl= document.getElementById('nav');
-  const mobEl= document.getElementById('mobile-menu');
-  const footerEl= document.querySelector('footer');
+  const navEl    = document.getElementById('nav');
+  const mobEl    = document.getElementById('mobile-menu');
+  const footerEl = document.querySelector('footer');
 
   const pages = [
-    { name: 'Home',url: 'index.html'},
-    { name: 'About',url: 'about.html'},
-    { name: 'Portfolio',url: 'portfolio.html'},
-    { name: 'Contact',url: 'contact.html'}
+    { name: 'Home',      url: 'index.html' },
+    { name: 'About',     url: 'about.html' },
+    { name: 'Portfolio', url: 'portfolio.html' },
+    { name: 'Contact',   url: 'contact.html' }
   ];
 
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -25,7 +25,7 @@ function injectLayoutComponents() {
       <ul class="nav-links">
         ${pages.map(p => `<li><a href="${p.url}" ${activeClass(p.url)}>${p.name}</a></li>`).join('')}
       </ul>
-      <button class="ham" id="hamburger" aria-label="Menu">
+      <button class="ham" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     `;
@@ -64,11 +64,15 @@ function setupHamburgerMenu() {
   const menu = document.querySelector('#mobile-menu');
   if (!btn || !menu) return;
 
-  const resetSpans = () => btn.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  const resetSpans = () => btn.querySelectorAll('span').forEach(s => {
+    s.style.transform = '';
+    s.style.opacity   = '';
+  });
 
   btn.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    if (menu.classList.contains('open')) {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    if (open) {
       const [s0, s1, s2] = btn.querySelectorAll('span');
       s0.style.transform = 'rotate(45deg) translate(4.5px,4.5px)';
       s1.style.opacity   = '0';
@@ -79,7 +83,11 @@ function setupHamburgerMenu() {
   });
 
   menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => { menu.classList.remove('open'); resetSpans(); });
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      resetSpans();
+    });
   });
 }
 

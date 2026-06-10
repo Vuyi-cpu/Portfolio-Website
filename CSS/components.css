@@ -1,4 +1,4 @@
-/* ── Labels ──────────────────────────────────────────────────────────────── */
+/*Labels*/
 .sec-label, .kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: .76rem; color: var(--accent); letter-spacing: .14em; text-transform: uppercase;
@@ -14,7 +14,7 @@
 @keyframes blink { 50% { opacity: 0; } }
 
 
-/* ── Buttons ─────────────────────────────────────────────────────────────── */
+/*Buttons*/
 .btn-p, .btn-submit {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--accent); color: #fff; border: none; cursor: pointer;
@@ -27,7 +27,7 @@
 .btn-submit { width: 100%; padding: .9rem 1.5rem; justify-content: center; margin-top: .5rem; font-size: .95rem; }
 
 
-/* ── Cards ───────────────────────────────────────────────────────────────── */
+/*Cards*/
 .card {
   background: var(--section-area-bg); border: 1px solid var(--border);
   border-radius: 4px; padding: 2rem; margin-bottom: 2px;
@@ -48,7 +48,7 @@
 .cta-box p  { color: var(--muted); font-size: .95rem; line-height: 1.7; max-width: 500px; margin: 0 auto 2rem; }
 
 
-/* ── Lists & Goal Cards ──────────────────────────────────────────────────── */
+/*Lists & Goal Cards*/
 ul.styled { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 ul.styled li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: .9rem; line-height: 1.55; }
 ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; flex-shrink: 0; margin-top: 2px; }
@@ -59,7 +59,7 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .goal-card p  { color: var(--muted); font-size: .88rem; line-height: 1.7; }
 
 
-/* ── Images & Profile Visuals ────────────────────────────────────────────── */
+/*Images & Profile Visuals*/
 .intro-img { border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
 .intro-img img { width: 100%; height: 320px; object-fit: cover; object-position: center; display: block; }
 
@@ -77,17 +77,15 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 }
 .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%; border: 3px solid var(--surface2); }
 @keyframes pulse {
-  0%, 100% { transform: scale(1);    opacity: 1; }
-  50%       { transform: scale(1.04); opacity: .6; }
+  0%, 100%{ transform: scale(1);    opacity: 1; }
+  50%{ transform: scale(1.04); opacity: .6; }
 }
 
-
-/* ── Skills & Strengths ──────────────────────────────────────────────────── */
+/*Skills & Strengths*/
 .sk-tech-label { font-size: .68rem; color: var(--subtle); text-transform: uppercase; margin-bottom: 14px; font-weight: 500; }
 .sk-divider    { width: 100%; height: 1px; background: var(--border); margin: 20px 0; }
 .skills-grid   { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
 
-/* Shared surface + hover between skill icons and strength cards */
 .sk, .strength-card {
   background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
   transition: border-color .2s, background .2s, transform .2s;
@@ -110,14 +108,13 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
   min-height: 52px; display: flex; align-items: center; justify-content: flex-start;
   gap: 12px; padding: .85rem 1.25rem;
 }
-.strength-card:hover { position: relative; }
 .strength-card::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background .2s; }
 .strength-card:hover::before { background: var(--accent); }
 .strength-card h4 { margin: 0; font-size: .85rem; font-weight: 600; color: var(--text); transition: color .2s; }
 .strength-card:hover h4 { color: var(--accent); }
 
 
-/* ── Shared project image base ───────────────────────────────────────────── */
+/*Project image base*/
 .pc-img, .pc-thumb { overflow: hidden; aspect-ratio: 16/10; }
 .pc-img img, .pc-thumb img {
   width: 100%; height: 100%; object-fit: cover; display: block;
@@ -128,14 +125,14 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .proj-stack .pc:hover .pc-thumb img { filter: none; transform: scale(1.05); }
 
 
-/* ── Home Project Grid ───────────────────────────────────────────────────── */
+/*Home Project Grid*/
 .proj-grid .pc {
   background: var(--section-area-bg); border: 1px solid var(--border);
   border-radius: 16px; overflow: hidden; transition: border-color .3s, transform .3s;
 }
 .proj-grid .pc:hover { border-color: var(--accent-border); transform: translateY(-4px); }
 .pc-body { padding: 1.2rem 1.4rem; }
-.pc-link {font-size: .82rem; color: var(--accent); text-decoration: none; letter-spacing: .04em; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; border-radius: 50px; }
+.pc-link { font-size: .82rem; color: var(--accent); text-decoration: none; letter-spacing: .04em; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; border-radius: 50px; }
 .pc-link:hover { gap: 12px; }
 .pc-link::after { content: '→'; }
 
@@ -144,7 +141,7 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .proj-grid .pc-desc  { color: var(--muted); font-size: .85rem; line-height: 1.65; margin-bottom: 1rem; }
 
 
-/* ── Portfolio Project Stack ─────────────────────────────────────────────── */
+/*Portfolio Project Stack*/
 .proj-stack .pc {
   background: var(--section-area-bg); border: 1px solid var(--border);
   border-radius: 16px; overflow: hidden;
@@ -157,7 +154,6 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .proj-stack .pc:nth-child(even) { direction: rtl; }
 .proj-stack .pc:nth-child(even) * { direction: ltr; }
 
-.pc-thumb { aspect-ratio: 16/10; }
 .pc-info  { padding: 2rem 2.2rem; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
 .pc-num   { font-size: .72rem; color: var(--subtle); letter-spacing: .1em; }
 .proj-stack .pc-title { font-size: 1.25rem; }
@@ -179,7 +175,7 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .pc-btn:hover { border-color: var(--accent); color: var(--accent); gap: 14px; cursor: pointer; }
 
 
-/* ── Contact Form ────────────────────────────────────────────────────────── */
+/*Contact Form*/
 .form-card {
   background: var(--section-area-bg); border: 1px solid var(--border);
   border-radius: 16px; padding: clamp(2.5rem,6vw,3.5rem);
@@ -201,13 +197,9 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .err.show          { display: block; }
 
 
-
-/* ── Scroll Reveal & Hero Animations ─────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
-.reveal.visible { opacity: 1; transform: none; }
-
+/*Hero Animations*/
 .hero-text { opacity: 0; transform: translateY(24px); animation: heroIn .8s  .9s cubic-bezier(.4,0,.2,1) forwards; }
-.hero-vis  { opacity: 0;animation: heroIn .8s 1.1s cubic-bezier(.4,0,.2,1) forwards; display: flex; align-items: center; justify-content: center; }
+.hero-vis  { opacity: 0; animation: heroIn .8s 1.1s cubic-bezier(.4,0,.2,1) forwards; display: flex; align-items: center; justify-content: center; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
 
 .scroll-ind {
@@ -222,10 +214,8 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
   50%       { transform: translateX(-50%) translateY(6px); }
 }
 
-#particle-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; display: block; z-index: -1; pointer-events: none; }
 
-
-/* ── Utilities ───────────────────────────────────────────────────────────── */
+/*Utilities*/
 .text-accent  { color: var(--accent); }
 .text-center  { text-align: center; }
 .intro-text p        { color: var(--muted); line-height: 1.85; font-size: .95rem; }
@@ -235,7 +225,6 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 .large-title    { font-size: 3rem; margin-bottom: 0; }
 .left-label     { text-align: left; margin-bottom: 14px; }
 .btn-wrapper-centered { text-align: center; margin-top: 4rem; }
-.contact-header { display: flex; flex-direction: column; align-items: center; padding-bottom: 2rem; }
 .contact-intro  { text-align: center; margin: 0 auto; }
 .form-wrapper   { max-width: 650px; margin: 0 auto; }
 .form-success-note { color: var(--muted); font-size: .82rem; }

@@ -21,11 +21,4 @@
 @media(max-width: 640px) {
   .nav-links { display: none; }
   .ham { display: flex; }
-  .proj-grid { grid-template-columns: 1fr; }
 }
-
-/* @media (pointer: coarse) {
-  body, a, button, .ham {
-    cursor: auto;
-  }
-} */

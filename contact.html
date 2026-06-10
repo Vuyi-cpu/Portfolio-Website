@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Vuyisa Msipa — send a message or connect via social links.">
   <title>Contact | Vuyisa Msipa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./CSS/main.css">
   <link rel="stylesheet" href="./CSS/layout.css">
   <link rel="stylesheet" href="./CSS/components.css">
@@ -32,10 +34,10 @@
   <div class="mob-menu" id="mobile-menu"></div>
 
   <main>
-    <div class="page-header reveal contact-header">
+    <header class="page-header">
       <h1 class="page-title">Contact <span>Me</span></h1>
       <p class="contact-intro">Have a project in mind or just want to connect? Feel free to reach out.</p>
-    </div>
+    </header>
 
     <section class="contact-sec">
       <div class="form-wrapper reveal">
@@ -43,12 +45,12 @@
           <div id="contact-form">
             <div class="field">
               <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="Your Name">
+              <input type="text" id="name" placeholder="Your Name" autocomplete="name">
               <div class="err" id="name-err">Please enter your name</div>
             </div>
             <div class="field">
               <label for="email">Your Email</label>
-              <input type="email" id="email" placeholder="Your Email">
+              <input type="email" id="email" placeholder="Your Email" autocomplete="email">
               <div class="err" id="email-err">Please enter a valid email</div>
             </div>
             <div class="field">
@@ -56,7 +58,7 @@
               <textarea id="message" placeholder="Your Message"></textarea>
               <div class="err" id="msg-err">Please enter a message</div>
             </div>
-            <button class="btn-submit" id="submit-btn" onclick="submitForm()">Send Message</button>
+            <button class="btn-submit" id="submit-btn" type="button">Send Message</button>
           </div>
 
           <div class="form-success" id="form-success">

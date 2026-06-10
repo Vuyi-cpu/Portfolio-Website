@@ -18,7 +18,7 @@ function renderProjectCards() {
 
   if (portfolioStack && typeof projects !== 'undefined') {
     portfolioStack.innerHTML = projects.map((p, i) => `
-      <article class="pc reveal" data-project="${i}">
+      <article class="pc reveal">
         <div class="pc-thumb"><img src="${p.img}" alt="${p.title}"></div>
         <div class="pc-info">
           <div class="pc-num">${p.num}</div>
