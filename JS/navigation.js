@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function injectLayoutComponents() {
-  const navEl    = document.getElementById('nav');
-  const mobEl    = document.getElementById('mobile-menu');
+  const navEl    = document.querySelector('nav');
+  const mobEl    = document.querySelector('#mobile-menu');
   const footerEl = document.querySelector('footer');
 
   const pages = [
@@ -92,16 +92,16 @@ function setupHamburgerMenu() {
 }
 
 function setupPageTransitions() {
-  document.querySelectorAll('a[href]').forEach(link => {
+  document.body.addEventListener('click', e => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('http') ||
         href.startsWith('javascript') || href.startsWith('mailto') ||
         link.hasAttribute('download')) return;
 
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      document.body.classList.add('page-exit');
-      setTimeout(() => { window.location.href = href; }, 300);
-    });
+    e.preventDefault();
+    document.body.classList.add('page-exit');
+    setTimeout(() => { window.location.href = href; }, 300);
   });
 }

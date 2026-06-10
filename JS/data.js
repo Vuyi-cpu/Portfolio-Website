@@ -21,7 +21,7 @@ const projects = [
     num: '03 / 07',
     title: 'Crypto-box Locking System',
     img: './Assets/Images/Servo.jpeg',
-    tags: ['AVR Assembly', 'Hardware Design', 'Embedded Systems'],
+    tags: ['Electronic engineering', 'Hardware Design', 'Embedded Systems'],
     desc: 'An embedded access control system designed for a cryogenic storage box, providing secure locking and unlocking through hardware integration and low-level programming.',
     process: 'The system was designed by combining electronic circuit design with AVR Assembly programming. Components including a keypad, servo motor, LEDs, and sensors were integrated and tested to ensure reliable access control and system feedback.',
     features: 'Password-protected access, servo-controlled locking mechanism, LED status indicators, hardware-software integration, embedded programming, and secure authentication logic.'

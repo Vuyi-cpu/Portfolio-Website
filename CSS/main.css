@@ -29,10 +29,8 @@ body.page-exit { opacity: 0; pointer-events: none; }
 .ring-wrapper { position: relative; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px; }
 .ring         { position: absolute; inset: 0; border-radius: 50%; animation: shiny-ring 2s linear infinite; }
 
-/* Fixed background layer — same family as #loader */
 #particle-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; display: block; z-index: -1; pointer-events: none; }
 
-/* Site-wide scroll-reveal utility — document-state class toggled on every page */
 .reveal         { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
 .reveal.visible { opacity: 1; transform: none; }
 

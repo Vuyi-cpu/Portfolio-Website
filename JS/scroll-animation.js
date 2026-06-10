@@ -1,5 +1,5 @@
 // Elements with class 'reveal' or 'sk' are watched; 'visible' is toggled as they enter/leave the viewport.
-const scrollObserver = new IntersectionObserver(entries => {
+window.scrollObserver = new IntersectionObserver(entries => {
   entries.forEach(({ target, isIntersecting }) => {
     if (isIntersecting) {
       if (target.classList.contains('sk')) {

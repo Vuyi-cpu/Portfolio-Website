@@ -10,7 +10,7 @@ function renderProjectCards() {
         <div class="pc-body">
           <div class="pc-title">${p.title}</div>
           <p class="pc-desc">${p.desc}</p>
-          <a href="javascript:void(0)" class="pc-link" onclick="openModal(${i})">View Details</a>
+          <button class="pc-link" onclick="openModal(${i})">View Details</button>
         </div>
       </article>
     `).join('');
