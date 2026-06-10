@@ -152,9 +152,16 @@ ul.styled li::before { content: '→'; color: var(--accent); font-size: .8rem; f
 }
 .proj-grid .pc:hover { border-color: var(--accent-border); transform: translateY(-4px); }
 .pc-body { padding: 1.2rem 1.4rem; }
-.pc-link { font-size: .82rem; color: var(--accent); text-decoration: none; letter-spacing: .04em; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; border-radius: 50px; }
-.pc-link:hover { gap: 12px; }
-.pc-link::after { content: '→'; }
+.pc-link {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: .6rem 1.4rem; border-radius: 2px; background: transparent;
+  border: 1px solid var(--subtle); color: var(--muted);
+  font-size: .85rem; font-weight: 500; letter-spacing: .04em;
+  text-decoration: none; cursor: pointer;
+  transition: border-color .2s, color .2s, gap .2s;
+}
+.pc-link:hover { border-color: var(--accent); color: var(--accent); gap: 14px; }
 
 .pc-title { font-weight: 700; }
 .proj-grid .pc-title { font-size: 1rem; margin-bottom: .5rem; }

@@ -25,7 +25,7 @@ function renderProjectCards() {
           <div class="pc-title">${p.title}</div>
           <p class="pc-desc">${p.desc}</p>
           <div class="pc-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-          <button class="pc-btn" onclick="openModal(${i})">View Details →</button>
+          <button class="pc-btn" onclick="openModal(${i})">View Details</button>
         </div>
       </article>
     `).join('');
