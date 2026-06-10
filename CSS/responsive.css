@@ -19,17 +19,7 @@
 }
 
 @media(max-width: 640px) {
-  .pc-img img, .pc-thumb img {
-    filter: grayscale(10%) brightness(.95);
-  }
+  .nav-links { display: none; }
+  .ham { display: flex; }
+}
 
-  .proj-grid .pc {
-    background: #1c1c1c;
-  }
-
-  .sk, .strength-card {
-    background: #242424;
-   }
-  }
-
- 
